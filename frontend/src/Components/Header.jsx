@@ -65,7 +65,7 @@ function Header() {
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
 >
     {/* <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
-    <span className="self-center whitespace-nowrap text-xl font-bold dark:text-white">Divulge.</span>
+    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Divulge.</span>
 </Link>
 
 

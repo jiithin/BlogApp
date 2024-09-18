@@ -62,10 +62,10 @@ function Header() {
 <Navbar className='border-b-2 p-4'>
 <Link
   to='/'
-  className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+  className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
 >
-    {/* <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Divulge.</span>
+    <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">DIVULGE.</span>
 </Link>
 
 

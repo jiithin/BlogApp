@@ -64,8 +64,8 @@ function Header() {
   to='/'
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
 >
-    <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">DIVULGE.</span>
+    <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo" />
+    <span className="self-center whitespace-nowrap text-2xl font-bold dark:text-white text-blue-600/50">Divulge.</span>
 </Link>
 
 
@@ -93,7 +93,7 @@ function Header() {
   
     
     <Link to='/sign-in'>
-      <Button color='dark' outline>
+      <Button gradientDuoTone='purpleToBlue' outline>
         Sign In
       </Button>
     </Link>

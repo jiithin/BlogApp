@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div><p>DIVULGE</p></div>
+    <div><p id='head'>DIVULGE</p></div>
   )
 }
 

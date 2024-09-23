@@ -93,7 +93,7 @@ function Header() {
   
     
     <Link to='/sign-in'>
-      <Button gradientDuoTone='purpleToBlue' outline>
+      <Button className='sigh' outline>
         Sign In
       </Button>
     </Link>

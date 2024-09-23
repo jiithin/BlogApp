@@ -12,3 +12,24 @@
     color:transparent;
     text-align: center;
 }
+
+#auth{
+    font: 900 70px "Poppins", sans-serif;
+    background-image: url("giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:transparent;
+    text-align: center;
+}
+
+.sigh{
+    background-image: url("giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-clip: button;
+    -webkit-background-clip: button;
+    color:white;
+    text-align: center;
+}

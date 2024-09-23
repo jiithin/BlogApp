@@ -46,7 +46,7 @@ const handleSubmit=async (e)=>{
       <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5'>
 
         {/* left */}
-        <div className='flex-1'>
+        <div className='flex-1 mb-5'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
           <p id='auth'>SignUp</p>
             
@@ -59,6 +59,7 @@ const handleSubmit=async (e)=>{
 
         {/* right */}
         <div className='flex-1'>
+        <p className='font-bold text-2xl text-purple-600/50'>Create a Free Account</p>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div className="div">
             <Label value='Your Username'/>

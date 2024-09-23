@@ -50,7 +50,7 @@ function SignIn() {
             <div className='flex gap-2 text-sm mt-5'>
             <span>Don't have an account?</span>
             <Link to='/sign-up' className='font-semibold text-purple-600'>
-              Sign Up
+              Create an account.
             </Link>
           </div>
 

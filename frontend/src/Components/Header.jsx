@@ -59,7 +59,7 @@ function Header() {
 // </Navbar.Collapse>
 // </Navbar> 
 
-<Navbar className='border-b-2 p-4'>
+<Navbar className='border-b-2 p-4 shadow-[0_35px_60px_-15px_rgba(188,140,255,0.12)]'>
 <Link
   to='/'
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'

@@ -59,7 +59,7 @@ function Header() {
 // </Navbar.Collapse>
 // </Navbar> 
 
-<Navbar className='border-b-2 p-4 shadow-[0_35px_60px_-15px_rgba(188,140,255,0.12)]'>
+<Navbar className='bg-transparent backdrop-blur-0 p-5 '>
 <Link
   to='/'
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
@@ -99,24 +99,27 @@ function Header() {
   <Navbar.Toggle className='sigh'/>
 </div>
 
-<Navbar.Collapse className='ms-auto me-5'>
+<Navbar.Collapse className='lg:text-center  me-5'>
 <form >
   <TextInput
     type='text'
     placeholder='Search...'
     rightIcon={IoSearchOutline}
-    className='lg:hidden'
+    className='lg:hidden sm:hidden'
 
   />
 </form>
-  <Navbar.Link active={path === '/'} as={'div'}>
-    <Link to='/' className='text-purple-600'>Home</Link>
+  <Navbar.Link active={path === '/'} as={'div'} >
+    <Link to='/' className='text-purple-500 lg:text-base'>Home</Link>
   </Navbar.Link>
   <Navbar.Link active={path === '/projects'} as={'div'}>
-    <Link to='/projects' className='text-purple-600'>Projects</Link>
+    <Link to='/projects' className='text-purple-500 lg:text-base'>Blogs</Link>
   </Navbar.Link>
   <Navbar.Link active={path === '/about'} as={'div'}>
-    <Link to='/about' className='text-purple-600'>About</Link>
+    <Link to='/about' className='text-purple-500 lg:text-base'>Features</Link>
+  </Navbar.Link>
+  <Navbar.Link active={path === '/about'} as={'div'}>
+    <Link to='/about' className='text-purple-500 lg:text-base'>Contact</Link>
   </Navbar.Link>
   
 </Navbar.Collapse>

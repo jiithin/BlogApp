@@ -85,8 +85,8 @@ function Header() {
 
   />
 </form>
-
-  <button type="button" className="w-12 h-10 hidden sm:inline  text-gray-500 bg-white hover:bg-gray-100 border border-gray-200 hover:text-purple-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 text-center items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-teal-500  dark:hover:bg-gray-700 ">
+{/* darkmode button */}
+  <button type="button" className="w-12 h-10 hidden sm:inline  text-purple-500 bg-white hover:bg-gray-100 border border-gray-200 hover:text-purple-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 text-center items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-teal-500  dark:hover:bg-gray-700 ">
   <CgDarkMode />
 </button>
     
@@ -96,7 +96,7 @@ function Header() {
       </Button>
     </Link>
 
-  <Navbar.Toggle />
+  <Navbar.Toggle className='sigh'/>
 </div>
 
 <Navbar.Collapse className='ms-auto me-5'>

@@ -15,10 +15,10 @@ function SignIn() {
           <p id='auth'>Sign In</p>
             
           </Link>
-          <p className='font-semibold text-center text-xl text-purple-400/75'>Sign In with your existing email.</p>
-          <p className='font-semibold text-center text-base text-purple-400/50'>Sign In with your existing email.</p>
-          <p className='font-semibold text-center text-sm text-purple-400/25'>Sign In with your existing email.</p>
-          <p className='font-semibold text-center text-xs text-purple-300/25'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/75'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-base text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/50'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-sm text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-xs text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Sign In with your existing email.</p>
         </div>
 
         {/* right */}

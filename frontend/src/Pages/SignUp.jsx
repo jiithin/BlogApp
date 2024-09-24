@@ -51,10 +51,10 @@ const handleSubmit=async (e)=>{
           <p id='auth'>SignUp</p>
             
           </Link>
-          <p className='font-semibold text-center text-xl text-purple-400/75'>Create a Free Account</p>
-          <p className='font-semibold text-center text-base text-purple-400/50'>Create a Free Account</p>
-          <p className='font-semibold text-center text-sm text-purple-400/25'>Create a Free Account</p>
-          <p className='font-semibold text-center text-xs text-purple-300/25'>Create a Free Account</p>
+          <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/75'>Create a Free Account</p>
+          <p className='font-semibold text-center text-base text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/50'>Create a Free Account</p>
+          <p className='font-semibold text-center text-sm text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Create a Free Account</p>
+          <p className='font-semibold text-center text-xs text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Create a Free Account</p>
 
         </div>
 

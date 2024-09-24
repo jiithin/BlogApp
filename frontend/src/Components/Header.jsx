@@ -65,7 +65,7 @@ function Header() {
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
 >
     <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo" />
-    <span className="self-center whitespace-nowrap text-2xl font-bold dark:text-white text-blue-600/50">Divulge.</span>
+    <span className="self-center whitespace-nowrap text-xl font-bold dark:text-white text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400">Divulge.</span>
 </Link>
 
 
@@ -81,16 +81,14 @@ function Header() {
     type='text'
     placeholder='Search...'
     rightIcon={IoSearchOutline}
-    className='hidden lg:inline'
+    className='hidden lg:inline '
 
   />
 </form>
-  <Button
-    className='w-12 h-10 hidden sm:inline'
-    gradientDuoTone='gray'  >
-     <CgDarkMode />
-  </Button>
-  
+
+  <button type="button" className="w-12 h-10 hidden sm:inline  text-gray-500 bg-white hover:bg-gray-100 border border-gray-200 hover:text-purple-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 text-center items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-teal-500  dark:hover:bg-gray-700 ">
+  <CgDarkMode />
+</button>
     
     <Link to='/sign-in'>
       <Button className='sigh' outline>
@@ -112,13 +110,13 @@ function Header() {
   />
 </form>
   <Navbar.Link active={path === '/'} as={'div'}>
-    <Link to='/'>Home</Link>
+    <Link to='/' className='text-purple-600'>Home</Link>
   </Navbar.Link>
   <Navbar.Link active={path === '/projects'} as={'div'}>
-    <Link to='/projects'>Projects</Link>
+    <Link to='/projects' className='text-purple-600'>Projects</Link>
   </Navbar.Link>
   <Navbar.Link active={path === '/about'} as={'div'}>
-    <Link to='/about'>About</Link>
+    <Link to='/about' className='text-purple-600'>About</Link>
   </Navbar.Link>
   
 </Navbar.Collapse>

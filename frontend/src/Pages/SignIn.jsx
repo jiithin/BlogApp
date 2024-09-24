@@ -15,16 +15,17 @@ function SignIn() {
           <p id='auth'>Sign In</p>
             
           </Link>
-          <p className='text-sm text-center mt-5 font-semibold text-purple-600/75'>
-            Sign in with your email and password
-          </p>
+          <p className='font-semibold text-center text-xl text-purple-400/75'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-base text-purple-400/50'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-sm text-purple-400/25'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-xs text-purple-300/25'>Sign In with your existing email.</p>
         </div>
 
         {/* right */}
         <div className='flex-1'>
           <form className='flex flex-col gap-4'>
             <div>
-              <Label value='Your email' />
+              <Label value='Your email' className='text-purple-800'/>
               <TextInput
                 type='email'
                 placeholder='example@mail.com'
@@ -32,7 +33,7 @@ function SignIn() {
               />
             </div>
             <div>
-              <Label value='Your password' />
+              <Label value='Your password' className='text-purple-800'/>
               <TextInput
                 type='password'
                 placeholder='Password'
@@ -47,9 +48,9 @@ function SignIn() {
             </Button>
             </form>
 
-            <div className='flex gap-2 text-sm mt-5'>
+            <div className='flex gap-2 text-sm mt-5 text-purple-800'>
             <span>Don't have an account?</span>
-            <Link to='/sign-up' className='font-semibold text-purple-600'>
+            <Link to='/sign-up' className='font-bold text-purple-500'>
               Create an account.
             </Link>
           </div>

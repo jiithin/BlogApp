@@ -11,11 +11,11 @@ function Footer() {
 <footer class="bg-white shadow dark:bg-gray-900  border border-t-4 border-purple-600/25 shadow-[0_17px_60px_50px_rgba(188,140,255,0.12)]">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <a href="https://github.com/jiithin/BlogApp/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src={logo} class="h-5" alt="Flowbite Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-purple-600/75">Divulge.</span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-transparent bg-clip-text bg-gradient-to-r to-blue-200 from-purple-300">Divulge.</span>
             </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-purple-500 sm:mb-0 dark:text-purple-400">
                 <li>
                     <a href="#" class="hover:underline me-4 md:me-6">About</a>
                 </li>
@@ -31,9 +31,10 @@ function Footer() {
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-4">© 2024 <a href="https://github.com/jiithin/BlogApp/" class="hover:underline">Its just a blog app. Fork it if youwant.</a></span>
+        <div className="text-center">
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-4">© Hey <a href="https://github.com/jiithin/BlogApp/" class="hover:underline">its me jithin this was a fun project, Fork it if youwant.</a></span>
         
-        <div class="flex mt-4 sm:justify-center sm:mt-0">
+        <div class="flex mt-4 justify-center sm:mt-0">
               <a href="https://www.linkedin.com/in/jiithin-gangadharan/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
               <FaLinkedin />
                   
@@ -49,6 +50,8 @@ function Footer() {
               </a>
               
           </div>
+        </div>
+        
     </div>
 </footer>
 

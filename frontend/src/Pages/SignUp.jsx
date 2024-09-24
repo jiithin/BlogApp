@@ -51,18 +51,18 @@ const handleSubmit=async (e)=>{
           <p id='auth'>SignUp</p>
             
           </Link>
-          <p className='text-sm text-center mt-5 font-semibold text-purple-600/75'>
-            Create a free account. Sign up with any bogus email and password
-            or sign up with Google. 
-          </p>
+          <p className='font-semibold text-center text-xl text-purple-400/75'>Create a Free Account</p>
+          <p className='font-semibold text-center text-base text-purple-400/50'>Create a Free Account</p>
+          <p className='font-semibold text-center text-sm text-purple-400/25'>Create a Free Account</p>
+          <p className='font-semibold text-center text-xs text-purple-300/25'>Create a Free Account</p>
+
         </div>
 
         {/* right */}
         <div className='flex-1'>
-        <p className='font-bold text-2xl text-purple-600/50'>Create a Free Account</p>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div className="div">
-            <Label value='Your Username'/>
+            <Label value='Your Username' className='text-purple-800'/>
             <TextInput 
             type='text'
             placeholder='Username'
@@ -71,7 +71,7 @@ const handleSubmit=async (e)=>{
             />
             </div>
             <div>
-              <Label value='Your email' />
+              <Label value='Your email' className='text-purple-800'/>
               <TextInput
                 type='email'
                 placeholder='example@mail.com'
@@ -80,7 +80,7 @@ const handleSubmit=async (e)=>{
               />
             </div>
             <div>
-              <Label value='Your password' />
+              <Label value='Your password' className='text-purple-800'/>
               <TextInput
                 type='password'
                 placeholder='Password'
@@ -107,9 +107,9 @@ const handleSubmit=async (e)=>{
             </Button>
             </form>
 
-            <div className='flex gap-2 text-sm mt-5'>
+            <div className='flex gap-2 text-sm  mt-5 text-purple-800'>
             <span>Already have an account?</span>
-            <Link to='/sign-in' className='font-semibold text-purple-600'>
+            <Link to='/sign-in' className='font-bold text-purple-600'>
               Sign In
             </Link>
           </div>

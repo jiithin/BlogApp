@@ -59,19 +59,19 @@ const handleSubmit=async (e)=>{
         </div>
 
         {/* right */}
-        <div className='flex-1'>
+        <div className='flex-1 px-5'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div className="div">
             <Label value='Your Username' className='text-purple-800'/>
             <TextInput 
             type='text'
-            placeholder='Username'
+            placeholder='username'
             id='username' 
             onChange={handleChange}
             />
             </div>
             <div>
-              <Label value='Your email' className='text-purple-800'/>
+              <Label value='Your Email' className='text-purple-800'/>
               <TextInput
                 type='email'
                 placeholder='example@mail.com'
@@ -80,10 +80,10 @@ const handleSubmit=async (e)=>{
               />
             </div>
             <div>
-              <Label value='Your password' className='text-purple-800'/>
+              <Label value='Your Password' className='text-purple-800'/>
               <TextInput
                 type='password'
-                placeholder='Password'
+                placeholder='password'
                 id='password' 
                 onChange={handleChange}
               />
@@ -107,7 +107,7 @@ const handleSubmit=async (e)=>{
             </Button>
             </form>
 
-            <div className='flex gap-2 text-sm  mt-5 text-purple-800'>
+            <div className='flex gap-2 text-sm  mt-5 text-gray-500'>
             <span>Already have an account?</span>
             <Link to='/sign-in' className='font-bold text-purple-600'>
               Sign In

@@ -22,10 +22,10 @@ function SignIn() {
         </div>
 
         {/* right */}
-        <div className='flex-1'>
+        <div className='flex-1 px-5'>
           <form className='flex flex-col gap-4'>
             <div>
-              <Label value='Your email' className='text-purple-800'/>
+              <Label value='Your Email' className='text-purple-800'/>
               <TextInput
                 type='email'
                 placeholder='example@mail.com'
@@ -33,10 +33,10 @@ function SignIn() {
               />
             </div>
             <div>
-              <Label value='Your password' className='text-purple-800'/>
+              <Label value='Your Password' className='text-purple-800'/>
               <TextInput
                 type='password'
-                placeholder='Password'
+                placeholder='password'
                 id='password'
               />
             </div>
@@ -48,7 +48,7 @@ function SignIn() {
             </Button>
             </form>
 
-            <div className='flex gap-2 text-sm mt-5 text-purple-800'>
+            <div className='flex gap-2 text-sm mt-5 text-gray-500'>
             <span>Don't have an account?</span>
             <Link to='/sign-up' className='font-bold text-purple-500'>
               Create an account.

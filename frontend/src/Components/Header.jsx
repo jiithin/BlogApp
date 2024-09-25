@@ -86,8 +86,8 @@ function Header() {
   />
 </form>
 {/* darkmode button */}
-  <button type="button" className="w-12 h-10 hidden sm:inline  text-purple-500 bg-white hover:bg-gray-100 border border-gray-200 hover:text-purple-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 text-center items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-teal-500  dark:hover:bg-gray-700 ">
-  <CgDarkMode />
+  <button type="button" className="w-12 h-10 hidden sm:inline  text-purple-500 bg-white hover:bg-gray-100  border-gray-200 hover:text-purple-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-3 text-center items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-teal-500  dark:hover:bg-gray-700 ">
+  <CgDarkMode className='w-5 h-5'/>
 </button>
     
     <Link to='/sign-in'>
@@ -99,7 +99,7 @@ function Header() {
   <Navbar.Toggle className=' text-purple-400 '/>
 </div>
 
-<Navbar.Collapse className='lg:text-center bg-transparent  me-5'>
+<Navbar.Collapse className='lg:text-center bg-transparent '>
 <form >
   <TextInput
     type='text'

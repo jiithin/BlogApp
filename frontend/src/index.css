@@ -34,3 +34,13 @@
     text-align: center;
 }
 
+.sigh1{
+    background-image: url("giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-clip: content-box;
+    -webkit-background-clip: content-box;
+    color:#a7bcfd;
+    text-align: center;
+}
+

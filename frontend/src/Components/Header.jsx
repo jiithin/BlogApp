@@ -96,10 +96,10 @@ function Header() {
       </Button>
     </Link>
 
-  <Navbar.Toggle className='sigh'/>
+  <Navbar.Toggle className=' text-purple-400 '/>
 </div>
 
-<Navbar.Collapse className='lg:text-center  me-5'>
+<Navbar.Collapse className='lg:text-center bg-transparent  me-5'>
 <form >
   <TextInput
     type='text'
@@ -109,16 +109,16 @@ function Header() {
 
   />
 </form>
-  <Navbar.Link active={path === '/'} as={'div'} >
-    <Link to='/' className='text-purple-500 lg:text-base'>Home</Link>
+  <Navbar.Link  as={'div'} >
+    <Link to='/' className='text-purple-500  lg:text-base'>Home</Link>
   </Navbar.Link>
-  <Navbar.Link active={path === '/projects'} as={'div'}>
+  <Navbar.Link  as={'div'}>
     <Link to='/projects' className='text-purple-500 lg:text-base'>Blogs</Link>
   </Navbar.Link>
-  <Navbar.Link active={path === '/about'} as={'div'}>
+  <Navbar.Link  as={'div'}>
     <Link to='/about' className='text-purple-500 lg:text-base'>Features</Link>
   </Navbar.Link>
-  <Navbar.Link active={path === '/about'} as={'div'}>
+  <Navbar.Link  as={'div'}>
     <Link to='/about' className='text-purple-500 lg:text-base'>Contact</Link>
   </Navbar.Link>
   

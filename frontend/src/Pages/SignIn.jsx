@@ -1,8 +1,44 @@
-import { Button, Label, TextInput } from 'flowbite-react'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { SignInStart,SignInSuccess,SignInFailure } from '../redux/user/userSlice'
 
 function SignIn() {
+  const [formData, setFormData] = useState({});
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+  };
+  //console.log(formData);
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.email || !formData.password) {
+      return dispatch(SignInFailure('Please fill all the fields'));
+    }
+    try {
+      dispatch(SignInStart());
+      const res = await fetch('/api/auth/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(SignInFailure(data.message));
+      }
+
+      if (res.ok) {
+        dispatch(SignInSuccess(data));
+        navigate('/');
+      }
+    } catch (error) {
+      dispatch(SignInFailure(error.message));
+    }
+  }
   return (
     
     <div className='min-h-screen mt-20'>
@@ -23,13 +59,14 @@ function SignIn() {
 
         {/* right */}
         <div className='flex-1 px-5'>
-          <form className='flex flex-col gap-4'>
+          <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
               <Label value='Your Email' className='text-purple-800'/>
               <TextInput
                 type='email'
                 placeholder='example@mail.com'
                 id='email'
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -38,13 +75,24 @@ function SignIn() {
                 type='password'
                 placeholder='password'
                 id='password'
+                onChange={handleChange}
               />
             </div>
             <Button
             className='sigh'
               type='submit'
+              disabled={loading}
               >
-                Sign In
+                 {
+                  loading?(
+                  <>
+                  <Spinner size='sm'/>
+                    <span className='pl-3'>Loading...</span>
+                  </>
+                    
+                  )
+                  :'Sign In'
+                }
             </Button>
             </form>
 
@@ -54,6 +102,13 @@ function SignIn() {
               Create an account.
             </Link>
           </div>
+          {
+            errorMessage && (
+              <Alert className='mt-5 'color='failure'>
+                {errorMessage}
+              </Alert>
+            )
+          }
 
         </div>
         </div>

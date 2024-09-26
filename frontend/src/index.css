@@ -35,6 +35,18 @@
 }
 
 .divulge{
+        font: 900 20px "Poppins", sans-serif;
+    background-image: url("giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:transparent;
+    text-align: center;
+}
+
+.signin{
+    font: 900 15px "Poppins", sans-serif;
     background-image: url("giphy.gif");
     background-size: cover;
     background-position: center;

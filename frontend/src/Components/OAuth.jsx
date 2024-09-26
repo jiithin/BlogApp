@@ -43,8 +43,8 @@ export default function OAuth() {
     } 
 
   return (
-    <Button type='button' color='light' outline onClick={handleGoogleClick}>
-        <FcGoogle className='w-6 h-5 mr-2'/>
+    <Button type='button' color='light' className='bg-transparent dark:bg-inherit'  onClick={handleGoogleClick}>
+        <FcGoogle className='w-6 h-5 mr-2 '/>
         Sign in with Google
     </Button>
   )

@@ -7,12 +7,14 @@ import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
   
 
   import logo from "../assets/divulge.png"
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../redux/theme/themeSlice';
 
 function Header() {
   const path = useLocation().pathname;
   const currentUser = useSelector((state) => state.user);
-
+  const dispatch = useDispatch();
+  const { theme } = useSelector((state) => state.theme);
 
 //console.log(currentUser.currentUser.username);
 
@@ -65,13 +67,13 @@ function Header() {
 // </Navbar.Collapse>
 // </Navbar> 
 
-<Navbar className='bg-transparent backdrop-blur-0 p-5 '>
+<Navbar className='bg-transparent dark:bg-inherit backdrop-blur-0 p-5 '>
 <Link
   to='/'
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
 >
-    <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo" />
-    <span className="divulge self-center whitespace-nowrap lg:text-2xl md:text-xl sm:text-xl  font-bold ">Divulge.</span>
+    <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo" onClick={() => dispatch(toggleTheme())}/>
+    <span className="divulge self-center whitespace-nowrap lg:text-2xl md:text-xl sm:text-xl">Divulge.</span>
 </Link>
 
 
@@ -92,8 +94,10 @@ function Header() {
   />
 </form>
 {/* darkmode button */}
-  <button type="button" className="w-12 h-10 hidden sm:inline  text-purple-500 bg-white hover:bg-gray-100  border-gray-200 hover:text-purple-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-3 text-center items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-teal-500  dark:hover:bg-gray-700 ">
-  <CgDarkMode className='w-5 h-5'/>
+
+  <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent hover:bg-gray-100  rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit " 
+  onClick={() => dispatch(toggleTheme())}>
+  {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-600'/>):(<CgDarkMode className='w-5 h-5 text-indigo-300'/>)}
 </button>
     
     {currentUser.currentUser ? (
@@ -119,10 +123,10 @@ function Header() {
       <Dropdown.Item className=' text-red-400 '>Sign out</Dropdown.Item>
     </Dropdown>
     ):(
-          <Link to='/sign-in'>
-          <Button className='sigh' outline>
+          <Link to='/sign-in' className=' '>
+            <button className='signin bg-transparent dark:bg-inherit mt-2'>
             Sign In
-          </Button>
+            </button>
         </Link>
     )}
 
@@ -141,16 +145,16 @@ function Header() {
   />
 </form>
   <Navbar.Link  as={'div'} >
-    <Link to='/' className='text-purple-500  lg:text-base'>Home</Link>
+    <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base'>Home</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'}>
-    <Link to='/projects' className='text-purple-500 lg:text-base'>Blogs</Link>
+    <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base'>Blogs</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'}>
-    <Link to='/about' className='text-purple-500 lg:text-base'>Features</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base'>Features</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'}>
-    <Link to='/about' className='text-purple-500 lg:text-base'>Contact</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base'>Contact</Link>
   </Navbar.Link>
   
 </Navbar.Collapse>

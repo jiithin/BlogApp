@@ -62,7 +62,7 @@ function SignIn() {
         <div className='flex-1 px-5'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
-              <Label value='Your Email' className='text-purple-800'/>
+              <Label value='Your Email' className='text-indigo-800 dark:text-indigo-400'/>
               <TextInput
                 type='email'
                 placeholder='example@mail.com'
@@ -71,7 +71,7 @@ function SignIn() {
               />
             </div>
             <div>
-              <Label value='Your Password' className='text-purple-800'/>
+              <Label value='Your Password' className='text-indigo-800 dark:text-indigo-400'/>
               <TextInput
                 type='password'
                 placeholder='password'
@@ -98,9 +98,9 @@ function SignIn() {
             <OAuth/>
             </form>
 
-            <div className='flex gap-2 text-sm mt-5 text-gray-500'>
+            <div className='flex gap-2 text-sm mt-5 text-gray-500 dark:text-gray-400'>
             <span>Don't have an account?</span>
-            <Link to='/sign-up' className='font-bold text-purple-500'>
+            <Link to='/sign-up' className='font-bold text-purple-500 dark:text-purple-400'>
               Create an account.
             </Link>
           </div>

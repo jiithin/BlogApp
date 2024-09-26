@@ -7,9 +7,15 @@ import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
   
 
   import logo from "../assets/divulge.png"
+import { useSelector } from 'react-redux';
 
 function Header() {
   const path = useLocation().pathname;
+  const currentUser = useSelector((state) => state.user);
+
+
+//console.log(currentUser.currentUser.username);
+
   return (
 
 
@@ -65,7 +71,7 @@ function Header() {
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
 >
     <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo" />
-    <span className="self-center whitespace-nowrap lg:text-2xl md:text-xl sm:text-xl  font-bold dark:text-white text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400">Divulge.</span>
+    <span className="divulge self-center whitespace-nowrap lg:text-2xl md:text-xl sm:text-xl  font-bold ">Divulge.</span>
 </Link>
 
 
@@ -90,11 +96,36 @@ function Header() {
   <CgDarkMode className='w-5 h-5'/>
 </button>
     
-    <Link to='/sign-in'>
-      <Button className='sigh' outline>
-        Sign In
-      </Button>
-    </Link>
+    {currentUser.currentUser ? (
+      <Dropdown
+      label={<Avatar alt="User settings" img={currentUser.currentUser.profilePicture} square size='sm' />}
+      arrowIcon={false}
+      inline
+    >
+      <Dropdown.Header>
+        <span className="block text-sm text-purple-500">{currentUser.currentUser.username}</span>
+        <span className="block truncate text-sm font-medium">{currentUser.currentUser.email}</span>
+      </Dropdown.Header>
+
+      <Link to={'/dashboard'}>
+      <Dropdown.Item >Dashboard</Dropdown.Item>
+      </Link>
+
+      <Link to={'/dashboard?tab=profile'}>
+      <Dropdown.Item>Settings</Dropdown.Item>
+      </Link>
+      
+      <Dropdown.Divider />
+      <Dropdown.Item className=' text-red-400 '>Sign out</Dropdown.Item>
+    </Dropdown>
+    ):(
+          <Link to='/sign-in'>
+          <Button className='sigh' outline>
+            Sign In
+          </Button>
+        </Link>
+    )}
+
 
   <Navbar.Toggle className=' text-purple-400 '/>
 </div>

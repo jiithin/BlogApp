@@ -95,9 +95,9 @@ function Header() {
 </form>
 {/* darkmode button */}
 
-  <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent hover:bg-gray-100  rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit " 
+  <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit " 
   onClick={() => dispatch(toggleTheme())}>
-  {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-600'/>):(<CgDarkMode className='w-5 h-5 text-indigo-300'/>)}
+  {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-700'/>):(<CgDarkMode className='w-5 h-5 text-indigo-200'/>)}
 </button>
     
     {currentUser.currentUser ? (
@@ -120,11 +120,11 @@ function Header() {
       </Link>
       
       <Dropdown.Divider />
-      <Dropdown.Item className=' text-red-400 '>Sign out</Dropdown.Item>
+      <Dropdown.Item className=' text-red-400 dark:text-inherrit '>Sign out</Dropdown.Item>
     </Dropdown>
     ):(
           <Link to='/sign-in' className=' '>
-            <button className='signin bg-transparent dark:bg-inherit mt-2'>
+            <button className='signin bg-transparent dark:bg-inherit py-2'>
             Sign In
             </button>
         </Link>

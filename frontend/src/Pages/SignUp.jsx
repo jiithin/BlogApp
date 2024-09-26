@@ -48,7 +48,7 @@ const handleSubmit=async (e)=>{
 
         {/* left */}
         <div className='flex-1 mb-5'>
-          <Link to='/' className='font-bold dark:text-white text-4xl'>
+          <Link to='/sign-up' className='font-bold dark:text-white text-4xl'>
           <p id='auth'>SignUp</p>
             
           </Link>

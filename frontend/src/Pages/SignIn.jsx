@@ -48,7 +48,7 @@ function SignIn() {
 
         {/* left */}
         <div className='flex-1'>
-          <Link to='/' className='font-bold dark:text-white text-4xl'>
+          <Link to='/sign-in' className='font-bold dark:text-white text-4xl'>
           <p id='auth'>Sign In</p>
             
           </Link>

@@ -1,4 +1,5 @@
 import React from 'react'
+import DarkMode from '../Components/DarkMode'
 
 function Home() {
   return (
@@ -65,6 +66,7 @@ function Home() {
         </div>
     </div>
 </div>
+<DarkMode/>
 </>
   )
 }

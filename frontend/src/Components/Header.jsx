@@ -107,8 +107,8 @@ function Header() {
       inline
     >
       <Dropdown.Header>
-        <span className="block text-sm text-purple-500">{currentUser.currentUser.username}</span>
-        <span className="block truncate text-sm font-medium">{currentUser.currentUser.email}</span>
+        <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.currentUser.username}</span>
+        <span className="block truncate text-sm text-center font-medium">{currentUser.currentUser.email}</span>
       </Dropdown.Header>
 
       <Link to={'/dashboard'}>
@@ -131,7 +131,7 @@ function Header() {
     )}
 
 
-  <Navbar.Toggle className=' text-purple-400 '/>
+  <Navbar.Toggle className=' text-purple-400 dark:text-purple-400'/>
 </div>
 
 <Navbar.Collapse className='lg:text-center bg-transparent '>

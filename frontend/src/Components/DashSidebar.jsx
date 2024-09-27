@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Sidebar } from "flowbite-react";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
+import { HiArrowSmRight, HiChartPie, HiInbox, HiUser } from "react-icons/hi";
 import { useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 
 function DashSidebar() {
     const currentUser = useSelector((state) => state.user);
+    const location = useLocation();
   return (
     <>
-    <Sidebar aria-label="Sidebar with logo branding example" className='fixed top-48 left-5 border-radius-5 h-100 lg:block hidden'>
+    <Sidebar aria-label="Sidebar with logo branding example" className='fixed top-48 left-5 h-100  lg:block hidden'>
        {currentUser.currentUser ? (
     <p   className="divulge font-bold text-xl text-center py-2 lg:block hidden"  >
       {currentUser.currentUser.username}  
@@ -16,33 +18,57 @@ SignIn Please...
 </p>)}
     <Sidebar.Items>
       <Sidebar.ItemGroup>
-        <Sidebar.Item href="#" icon={HiChartPie}>
+        <Link to='/dashboard'>
+        <Sidebar.Item  icon={HiChartPie}>
           <p className="lg:inline hidden">Dashboard</p>
         </Sidebar.Item>
-        <Sidebar.Item href="#" icon={HiUser}>
+        </Link>
+        
+        <Link to='/dashboard?tab=profile'>
+        <Sidebar.Item icon={HiUser}>
         <p className="lg:inline hidden">Profile</p>
         </Sidebar.Item>
-        <Sidebar.Item href="#" icon={HiInbox}>
+        </Link>
+        
+        <Link to='/dashboard?tab=posts'>
+        <Sidebar.Item  icon={HiInbox}>
         <p className="lg:inline hidden">Posts</p>
         </Sidebar.Item>
-        <Sidebar.Item href="#" icon={HiArrowSmRight}>
+        </Link>
+        
+        <Sidebar.Item  icon={HiArrowSmRight}>
         <p className="font-bold text-pink-500 dark:text-pink-500 lg:inline hidden">Sign Out</p>
         </Sidebar.Item>
       </Sidebar.ItemGroup>
     </Sidebar.Items>
   </Sidebar>
 
-  <Sidebar aria-label="Sidebar with logo branding example" className='fixed top-72 left-4 h-100 w-11 lg:hidden'>
-    <Sidebar.Items className='px-3'>
+  <Sidebar aria-label="Sidebar with logo branding example" className='fixed top-72 left-4 h-100 w-11 lg:hidden '>
+    <Sidebar.Items>
       <Sidebar.ItemGroup>
-        <Sidebar.Item href="#" icon={HiChartPie}>
+
+      <Link to='/dashboard'>
+        <Sidebar.Item >
+        <HiChartPie className='text-gray-500 dark:text-indigo-300'/>
         </Sidebar.Item>
-        <Sidebar.Item href="#" icon={HiUser}>
+      </Link>
+
+      <Link to='/dashboard?tab=profile'>
+        <Sidebar.Item >
+        <HiUser className='text-gray-500 dark:text-indigo-300'/>
         </Sidebar.Item>
-        <Sidebar.Item href="#" icon={HiInbox}>
+       </Link>
+
+       <Link to='/dashboard?tab=posts'>
+        <Sidebar.Item >
+        <HiInbox className='text-gray-500 dark:text-indigo-300'/>
         </Sidebar.Item>
-        <Sidebar.Item href="#" icon={HiArrowSmRight}>
+       </Link>
+
+        <Sidebar.Item >
+          <HiArrowSmRight className='text-pink-500 '/>
         </Sidebar.Item>
+
       </Sidebar.ItemGroup>
     </Sidebar.Items>
   </Sidebar>

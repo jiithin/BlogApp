@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #head {
-    font: 900 200px "Poppins", sans-serif;
+    font: 900 70px "Poppins", sans-serif;
     background-image: url("giphy.gif");
     background-size: cover;
     background-position: center;

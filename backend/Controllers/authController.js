@@ -1,7 +1,7 @@
 import User from "../Models/UserModel.js";
 import bcryptjs from 'bcryptjs'
-import { errorHandler } from "../Utils/Error.js";
 import jwt from 'jsonwebtoken';
+import { errorHandler } from "../Utils/Error.js";
 
 
 //signup post request and validation

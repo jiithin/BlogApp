@@ -4,17 +4,31 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaDev } from "react-icons/fa";
 import { BiSolidUserRectangle } from "react-icons/bi";
+import { toggleTheme } from '../redux/theme/themeSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { IoMoon } from "react-icons/io5";
+import { TbSunFilled } from "react-icons/tb";
 
 function Footer() {
+    const dispatch = useDispatch();
+    const { theme } = useSelector((state) => state.theme);
+
   return (
   
 <footer class="bg-transparent backdrop-blur-0">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://github.com/jiithin/BlogApp/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+        <div class="flex items-center justify-between">
+            <a href='/' class="flex items-center  space-x-3 rtl:space-x-reverse">
                 <img src={logo} class="h-5" alt="Flowbite Logo" />
                 <span class="self-center text-xl font-semibold whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400">Divulge.</span>
             </a>
+
+            {/* darkmode button footer */}
+            <button type="button" className="w-12 h-10 lg:hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit  " 
+               onClick={() => dispatch(toggleTheme())}>
+               {theme === 'light' ?(<IoMoon className='w-6 h-6 text-purple-500'/>):(<TbSunFilled className='w-7 h-7 text-indigo-300'/>)}
+           </button>
+
             {/* <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-purple-500 sm:mb-0 dark:text-purple-400">
                 <li>
                     <a href="#" class="hover:underline me-4 md:me-6">About</a>

@@ -52,10 +52,10 @@ function SignIn() {
           <p id='auth'>Sign In</p>
             
           </Link>
-          <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/75'>Sign In with your existing email.</p>
-          <p className='font-semibold text-center text-base text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/50'>Sign In with your existing email.</p>
-          <p className='font-semibold text-center text-sm text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Sign In with your existing email.</p>
-          <p className='font-semibold text-center text-xs text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-80'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-base text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-45'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-sm text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-25'>Sign In with your existing email.</p>
+          <p className='font-semibold text-center text-xs text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-15'>Sign In with your existing email.</p>
         </div>
 
         {/* right */}

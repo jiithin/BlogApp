@@ -47,15 +47,15 @@ const handleSubmit=async (e)=>{
       <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5'>
 
         {/* left */}
-        <div className='flex-1 mb-5'>
+        <div className='flex-1 '>
           <Link to='/sign-up' className='font-bold dark:text-white text-4xl'>
           <p id='auth'>SignUp</p>
             
           </Link>
-          <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/75'>Create a Free Account</p>
-          <p className='font-semibold text-center text-base text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/50'>Create a Free Account</p>
-          <p className='font-semibold text-center text-sm text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Create a Free Account</p>
-          <p className='font-semibold text-center text-xs text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400/25'>Create a Free Account</p>
+          <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-80'>Create a Free Account</p>
+          <p className='font-semibold text-center text-base text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-45'>Create a Free Account</p>
+          <p className='font-semibold text-center text-sm text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-25'>Create a Free Account</p>
+          <p className='font-semibold text-center text-xs text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-15'>Create a Free Account</p>
 
         </div>
 

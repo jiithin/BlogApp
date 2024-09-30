@@ -72,7 +72,7 @@ function Header() {
   to='/'
   className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
 >
-    <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo" onClick={() => dispatch(toggleTheme())}/>
+    <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo"/>
     <span className="divulge self-center whitespace-nowrap lg:text-2xl md:text-xl sm:text-xl">Divulge.</span>
 </Link>
 
@@ -97,12 +97,12 @@ function Header() {
 
   <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit " 
   onClick={() => dispatch(toggleTheme())}>
-  {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-700'/>):(<CgDarkMode className='w-5 h-5 text-indigo-200'/>)}
+  {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-600'/>):(<CgDarkMode className='w-5 h-5 text-indigo-300'/>)}
 </button>
     
     {currentUser.currentUser ? (
       <Dropdown
-      label={<Avatar alt="User settings" img={currentUser.currentUser.profilePicture} square size='sm' />}
+      label={<Avatar alt="User settings" img={currentUser.currentUser.profilePicture} size='sm' />}
       arrowIcon={false}
       inline
     >

@@ -46,7 +46,7 @@ function Footer() {
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="text-center">
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-4">© Hey <a href="https://github.com/jiithin/BlogApp/" class="hover:underline">its me jithin this was a fun project, Fork it if youwant.</a></span>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-4">© Hey <a href="https://github.com/jiithin/BlogApp/" class="hover:underline">this was a fun project, Fork it if youwant.</a></span>
         
         <div class="flex mt-4 justify-center sm:mt-0">
               <a href="https://www.linkedin.com/in/jiithin-gangadharan/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">

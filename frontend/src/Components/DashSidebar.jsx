@@ -4,7 +4,7 @@ import {  HiChartPie, HiInbox, HiUser } from "react-icons/hi";
 import { PiPowerBold } from "react-icons/pi";
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-
+import { IoExit  } from "react-icons/io5";
 
 
 function DashSidebar() {
@@ -74,7 +74,7 @@ function DashSidebar() {
   <Link
     className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
   >
-          <PiPowerBold className='text-pink-500 '/>
+          <IoExit  className='text-pink-500 '/>
   </Link>
 </div>
 

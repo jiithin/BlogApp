@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { IoTrashBin } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { Alert, Button } from 'flowbite-react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
+import {updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice.js'
 
 
 function DashProfile() {
@@ -20,6 +21,7 @@ function DashProfile() {
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({});
     const fileSelector =useRef();
+    const dispatch=useDispatch();
 
     console.log(profileImageUploadProgress,profileImageUploadError);
     const handleImage=(e)=>{
@@ -68,15 +70,98 @@ function DashProfile() {
               setImageUrl(downloadURL);
               setFormData({ ...formData, profilePicture: downloadURL });
               setProfileImageUploading(false);
+              console.log(downloadURL)
             });
           }
         );
       };
+
+      //form data
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+      };
+       console.log(formData)
+      //form submission
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        setUpdateUserError(null);
+        setUpdateUserSuccess(null);
+        if (Object.keys(formData).length === 0) {
+          setUpdateUserError('Zero changes made');
+          return;
+        }
+        if (profileImageUploading) {
+          setUpdateUserError('Wait for image to upload');
+          return;
+        }
+        try {
+          dispatch(updateStart());
+          //userId changes with user, url has to be dynamic so use backtics
+          const res = await fetch(`/blog/user/update/${currentUser.currentUser._id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+          const data = await res.json();
+          console.log(data)
+          if (!res.ok) {
+            dispatch(updateFailure(data.message));
+            setUpdateUserError(data.message);
+          } else {
+            dispatch(updateSuccess(data));
+            setUpdateUserSuccess("Profile updated successfully");
+          }
+        } catch (error) {
+          dispatch(updateFailure(error.message));
+          setUpdateUserError(error.message);
+        }
+      };
+
+
+      //delete user
+      const handleDeleteUser = async () => {
+        setShowModal(false);
+        try {
+          dispatch(deleteUserStart());
+          const res = await fetch(`/blog/user/delete/${currentUser.currentUser._id}`, {
+            method: 'DELETE',
+          });
+          const data = await res.json();
+          if (!res.ok) {
+            dispatch(deleteUserFailure(data.message));
+          } else {
+            dispatch(deleteUserSuccess(data));
+          }
+        } catch (error) {
+          dispatch(deleteUserFailure(error.message));
+        }
+      };
+      
+
+      // signout
+      const handleSignout = async () => {
+        try {
+          const res = await fetch('/blog/user/signout', {
+            method: 'POST',
+          });
+          const data = await res.json();
+          if (!res.ok) {
+            console.log(data.message);
+          } else {
+            dispatch(signoutSuccess());
+          }
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
+
   return (
     <>
     <div className="h-full bg-transparent p-8  ">
         <div className="bg-transparent dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-500/25 pb-8">
-        <form  className='flex flex-col'>
+        <form  className='flex flex-col' onSubmit={handleSubmit}>
             <div className="w-full h-[150px] rounded-t-2xl bg-gradient-to-r to-blue-400 from-purple-500">
 
             </div>
@@ -122,28 +207,33 @@ function DashProfile() {
                     
                     <ul className="mt-2 text-gray-700">
 
-                        <li className="flex border-y py-2 dark:border-gray-600">
+                        <li className="flex border-y py-2 dark:border-gray-800">
                             <span className="font-bold w-24 dark:text-gray-400">User name:</span>
                             <div class="relative z-0">
-                            <input type="text" name="username" class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200" placeholder="Usernmae" defaultValue={currentUser.currentUser.username}   />
+                            <input type='text' id='username' name="username" class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200" placeholder="Usernmae"
+                             defaultValue={currentUser.currentUser.username} 
+                              onChange={handleChange} />
                             </div>
                         </li>
 
-                        <li className="flex border-b py-2 dark:border-gray-600">
+                        <li className="flex border-b py-2 dark:border-gray-800">
                             <span className="font-bold w-24 dark:text-gray-400">Email:</span>
                             <div class="relative z-0">
-                            <input type="email" name="name" class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200" placeholder="Email" defaultValue={currentUser.currentUser.email}/>
+                            <input type='email' id='email' name="name" class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200" placeholder="Email" 
+                            defaultValue={currentUser.currentUser.email} 
+                            onChange={handleChange}/>
                             </div>
                         </li>
 
-                        <li className="flex border-b py-2 dark:border-gray-600">
+                        <li className="flex border-b py-2 dark:border-gray-800">
                             <span className="font-bold w-24 dark:text-gray-400">Password:</span>
                             <div class="relative z-0">
-                            <input type="password" name="name" class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-300" placeholder="Password" />
+                            <input type='password' id='password' name="name" class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-300" placeholder="Password" 
+                            onChange={handleChange}/>
                             </div>
                         </li>
 
-                        <li className="flex border-b py-2 dark:border-gray-600">
+                        <li className="flex border-b py-2 dark:border-gray-800">
                             <span className="font-bold w-24 dark:text-gray-400">Languages:</span>
                             <span className="text-gray-700 dark:text-gray-200">English</span>
                         </li>

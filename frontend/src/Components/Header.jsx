@@ -10,6 +10,8 @@ import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 
+import { signoutSuccess } from '../redux/user/userSlice.js';
+
 function Header() {
   const path = useLocation().pathname;
   const currentUser = useSelector((state) => state.user);
@@ -17,6 +19,23 @@ function Header() {
   const { theme } = useSelector((state) => state.theme);
 
 //console.log(currentUser.currentUser.username);
+
+     // signout
+     const handleSignout = async () => {
+      try {
+        const res = await fetch('/blog/user/signout', {
+          method: 'POST',
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          console.log(data.message);
+        } else {
+          dispatch(signoutSuccess());
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
 
   return (
 
@@ -105,6 +124,7 @@ function Header() {
       label={<Avatar alt="User settings" img={currentUser.currentUser.profilePicture} size='sm' />}
       arrowIcon={false}
       inline
+      className='rounded-2xl'
     >
       <Dropdown.Header>
         <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.currentUser.username}</span>
@@ -116,11 +136,14 @@ function Header() {
       </Link>
 
       <Link to={'/dashboard?tab=profile'}>
-      <Dropdown.Item>Settings</Dropdown.Item>
+      <Dropdown.Item>Profile</Dropdown.Item>
       </Link>
       
       <Dropdown.Divider />
-      <Dropdown.Item className=' text-red-400 dark:text-inherrit '>Sign out</Dropdown.Item>
+      <Dropdown.Item className=' text-red-400 dark:text-inherrit rounded-b-2xl' 
+      onClick={handleSignout}>
+        Sign out
+        </Dropdown.Item>
     </Dropdown>
     ):(
           <Link to='/sign-in' className=' '>

@@ -162,7 +162,7 @@ function DashProfile() {
     <div className="h-full bg-transparent p-8  ">
         <div className="bg-transparent dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-500/25 pb-8">
         <form  className='flex flex-col' onSubmit={handleSubmit}>
-            <div className="w-full h-[150px] rounded-t-2xl bg-gradient-to-r to-blue-400 from-purple-500">
+            <div className="giff w-full h-[150px] rounded-t-2xl ">
 
             </div>
             <div className="flex flex-col items-center -mt-20">

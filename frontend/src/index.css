@@ -55,3 +55,9 @@
     color:transparent;
     text-align: center;
 }
+
+.giff{
+    background-image: url("giphy.gif");
+    background-size: cover;
+    background-position: center;
+}

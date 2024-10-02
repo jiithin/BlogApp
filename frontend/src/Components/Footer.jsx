@@ -24,7 +24,7 @@ function Footer() {
             </a>
 
             {/* darkmode button footer */}
-            <button type="button" className="w-12 h-10 lg:hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit  " 
+            <button type="button" className="w-12 h-10 lg:hidden md:hidden sm:inline   bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit  " 
                onClick={() => dispatch(toggleTheme())}>
                {theme === 'light' ?(<IoMoon className='w-6 h-6 text-purple-500'/>):(<TbSunFilled className='w-7 h-7 text-indigo-300'/>)}
            </button>

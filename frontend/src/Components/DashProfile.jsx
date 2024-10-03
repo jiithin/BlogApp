@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { IoTrashBin } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { Alert, Button } from 'flowbite-react';
+import { Alert, Button, Modal } from 'flowbite-react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import {updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice.js'
+import { BsExclamationTriangle } from "react-icons/bs";
+import { BiSolidTrashAlt } from "react-icons/bi";
 
 
 function DashProfile() {
@@ -191,7 +193,7 @@ function DashProfile() {
             <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8">
                 <div className="flex items-center space-x-4 mt-2">
 
-                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-2 rounded font-bold text-sm space-x-2 transition duration-300" onClick={handleDeleteUser}>
+                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-3 rounded-lg font-bold text-sm space-x-2 transition duration-300" onClick={() => setShowModal(true)}>
                         <span>Delete Account</span><IoTrashBin/>
                     </button>
                     
@@ -274,6 +276,28 @@ function DashProfile() {
 
 
     </div>
+
+
+      <Modal show={showModal} size="md" onClose={() => setShowModal(false)} popup>
+        <Modal.Header />
+        <Modal.Body>
+          <div className="text-center">
+            <BsExclamationTriangle className="mx-auto mb-4 h-14 w-14 text-red-500 dark:text-red-400" />
+            <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+              Are you sure you want to delete this Account?
+            </h3>
+            <div className="flex justify-center gap-4">
+              <Button color="failure" onClick={handleDeleteUser}>
+                Delete <BiSolidTrashAlt className='h-5 w-5 mx-2'/>
+              </Button>
+              <Button color="gray" onClick={() => setShowModal(false)}>
+                Cancel
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
+      
     </>
   )
 }

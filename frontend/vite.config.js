@@ -13,3 +13,6 @@ export default defineConfig({
 },
   plugins: [react()],
 })
+ 
+
+// Any requests to /blog will be forwarded to http://localhost:3000.

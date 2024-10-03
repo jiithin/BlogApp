@@ -191,7 +191,7 @@ function DashProfile() {
             <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8">
                 <div className="flex items-center space-x-4 mt-2">
 
-                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-2 rounded font-bold text-sm space-x-2 transition duration-300">
+                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-2 rounded font-bold text-sm space-x-2 transition duration-300" onClick={handleDeleteUser}>
                         <span>Delete Account</span><IoTrashBin/>
                     </button>
                     

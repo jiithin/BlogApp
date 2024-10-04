@@ -167,17 +167,17 @@ function Header() {
 
   />
 </form>
-  <Navbar.Link  as={'div'} className='hover:scale-105  duration-100'>
-    <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base'>Home</Link>
+  <Navbar.Link  as={'div'} className='hover:scale-105  duration-100 '>
+    <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base hover:underline underline-offset-8 '>Home</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:scale-105  duration-100'>
-    <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base'>Blogs</Link>
+    <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base hover:underline underline-offset-8'>Blogs</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:scale-105  duration-100'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base'>Features</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base hover:underline underline-offset-8'>Features</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:scale-105  duration-100'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base'>Contact</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base hover:underline underline-offset-8'>Contact</Link>
   </Navbar.Link>
   
 </Navbar.Collapse>

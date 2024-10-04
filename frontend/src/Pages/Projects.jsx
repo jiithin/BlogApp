@@ -15,7 +15,7 @@ function Projects() {
 
     {/* <!-- Image --> */}
     <a href="" className="bg-purple-500 rounded-xl">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-100" />
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-300" />
     </a>
 
     {/* <!-- Games Title --> */}
@@ -36,7 +36,7 @@ function Projects() {
   <div className="flex flex-col gap-1">
 
     <a href="" className="bg-purple-500 rounded-xl">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/509658-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-100" />
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/509658-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-300" />
     </a>
 
 
@@ -57,7 +57,7 @@ function Projects() {
 
 
     <a href="" className="bg-purple-500 rounded-xl">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/512953_IGDB-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-100" />
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/512953_IGDB-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-300" />
     </a>
 
 
@@ -79,7 +79,7 @@ function Projects() {
 
 
     <a href="" className="bg-purple-500 rounded-xl">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/511224-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-100" />
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/511224-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-300" />
     </a>
 
 
@@ -100,7 +100,7 @@ function Projects() {
 
 
     <a href="" className="bg-purple-500 rounded-xl">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/513181-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-100" />
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/513181-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-300" />
     </a>
 
 
@@ -121,7 +121,7 @@ function Projects() {
   <div className="flex flex-col gap-1 ">
 
     <a href="" className="bg-purple-500 rounded-xl">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/490100-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-100" />
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/490100-285x380.jpg" className="rounded-xl hover:translate-x-0 hover:-translate-y-2 delay-50 duration-300" />
     </a>
 
 

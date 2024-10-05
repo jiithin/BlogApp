@@ -282,12 +282,12 @@ function DashProfile() {
     </div>
 
 
-      <Modal show={showModal} size="lg" onClose={() => setShowModal(false)} popup >
-        <Modal.Header className='bg-slate-200 '/>
-        <Modal.Body className='bg-gray-200'>
-          <div className="text-center">
+      <Modal show={showModal} size="md" onClose={() => setShowModal(false)} popup className='bg-transparent backdrop-blur-sm '>
+        <Modal.Header className='bg-slate-800 rounded-t-lg '/>
+        <Modal.Body className='bg-slate-800 rounded-b-lg'>
+          <div className='text-center bg-transparent'>
             <BsExclamationTriangle className="mx-auto mb-4 h-14 w-14 text-red-600" />
-            <h3 className="mb-5 text-lg font-normal text-gray-600 dark:text-gary-100">
+            <h3 className="mb-5 text-lg font-normal text-gray-200 dark:text-gary-100">
               Are you sure you want to delete this Account?
             </h3>
             <div className="flex justify-center gap-4">

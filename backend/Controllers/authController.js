@@ -40,7 +40,7 @@ export const signin=async(req,res,next)=>{
         if (!validPassword){
             return next(errorHandler(401, 'Invalid email or password'));//returns if password is wrong
         }
-        const token=jwt.sign({id:validUser._id},process.env.SECRET_KEY);
+        const token=jwt.sign({id:validUser._id, isAdmin: validUser.isAdmin},process.env.SECRET_KEY);
         const {password:pass, ...rest}=validUser._doc;//not gonna sent password back
         res.status(200).cookie('access_token',token,{httpOnly:true}).json(rest);
 
@@ -57,7 +57,7 @@ export const google = async (req, res, next) => {
       const validUser = await User.findOne({ email });
       //if user exists then assign token
       if (validUser) {
-        const token = jwt.sign({ id: validUser._id },process.env.SECRET_KEY);
+        const token = jwt.sign({ id: validUser._id, isAdmin: validUser.isAdmin },process.env.SECRET_KEY);
         const { password, ...rest } = validUser._doc;//not gonna sent password back
         res.status(200).cookie('access_token', token, {httpOnly: true}).json(rest);
 
@@ -75,7 +75,7 @@ export const google = async (req, res, next) => {
           profilePicture: googlePhotoUrl,
         });
         await newUser.save();
-        const token = jwt.sign({ id: newUser._id },process.env.SECRET_KEY);
+        const token = jwt.sign({ id: newUser._id, isAdmin: newUser.isAdmin },process.env.SECRET_KEY);
         const { password, ...rest } = newUser._doc;
         res.status(200).cookie('access_token', token, {httpOnly: true}).json(rest);
       }

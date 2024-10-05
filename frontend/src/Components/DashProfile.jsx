@@ -283,8 +283,8 @@ function DashProfile() {
 
 
       <Modal show={showModal} size="md" onClose={() => setShowModal(false)} popup className='bg-transparent backdrop-blur-sm '>
-        <Modal.Header className='bg-slate-800 rounded-t-lg '/>
-        <Modal.Body className='bg-slate-800 rounded-b-lg'>
+        <Modal.Header className='bg-slate-800 rounded-t-md '/>
+        <Modal.Body className='bg-slate-800 rounded-b-md'>
           <div className='text-center bg-transparent'>
             <BsExclamationTriangle className="mx-auto mb-4 h-14 w-14 text-red-600" />
             <h3 className="mb-5 text-lg font-normal text-gray-200 dark:text-gary-100">
@@ -294,7 +294,7 @@ function DashProfile() {
               <Button color="failure" onClick={handleDeleteUser} className='w-full'>
                 Delete <BiSolidTrashAlt className='h-5 w-5 mx-2'/>
               </Button>
-              <Button color="light" onClick={() => setShowModal(false)} className='w-full'>
+              <Button color="dark"  onClick={() => setShowModal(false)} className='w-full'>
                 Cancel
               </Button>
             </div>

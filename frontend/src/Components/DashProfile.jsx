@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { IoTrashBin } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { Alert, Button, Modal } from 'flowbite-react';
+import { Alert, Button, Modal, Tooltip } from 'flowbite-react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import {updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice.js'
@@ -171,10 +171,12 @@ function DashProfile() {
                 {/* dont have to map */}
                 <input type="file" accept='image/*' onChange={handleImage} ref={fileSelector} hidden/>
 
+                <Tooltip content="Change profile picture" style="light" animation="duration-500" arrow={false}>
                 <div onClick={()=>fileSelector.current.click()} className='bg-purple-400 rounded-2xl'>
                 <img src={profileImageUploadProgress && profileImageUploadProgress ==100 && imageUrl || currentUser.currentUser.profilePicture}   
                 className={`w-40 border-4 border-purple-400 rounded-2xl ${profileImageUploadProgress && profileImageUploadProgress <100 && 'opacity-60'}`}/>
                 </div>
+                </Tooltip>
                 <div className="flex items-center space-x-2 mt-2">
 
                 

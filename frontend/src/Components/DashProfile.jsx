@@ -193,11 +193,12 @@ function DashProfile() {
             </div>
 
             <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8">
-                <div className="flex items-center space-x-4 mt-2">
+                <div className="flex items-center space-x-4 mt-3">
 
-                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-3 rounded-lg font-bold text-sm space-x-2 transition duration-300" onClick={() => setShowModal(true)}>
+                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-3 rounded-lg font-bold text-sm space-x-2 hover:-translate-y-2 transition duration-300" onClick={() => setShowModal(true)}>
                         <span>Delete Account</span><IoTrashBin/>
                     </button>
+                    
                     
                 </div>
                 {profileImageUploadError && (
@@ -280,25 +281,26 @@ function DashProfile() {
     </div>
 
 
-      <Modal show={showModal} size="md" onClose={() => setShowModal(false)} popup>
-        <Modal.Header />
-        <Modal.Body>
+      <Modal show={showModal} size="lg" onClose={() => setShowModal(false)} popup >
+        <Modal.Header className='bg-slate-200 '/>
+        <Modal.Body className='bg-gray-200'>
           <div className="text-center">
-            <BsExclamationTriangle className="mx-auto mb-4 h-14 w-14 text-red-500 dark:text-red-400" />
-            <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+            <BsExclamationTriangle className="mx-auto mb-4 h-14 w-14 text-red-600" />
+            <h3 className="mb-5 text-lg font-normal text-gray-600 dark:text-gary-100">
               Are you sure you want to delete this Account?
             </h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={handleDeleteUser}>
+              <Button color="failure" onClick={handleDeleteUser} className='w-full'>
                 Delete <BiSolidTrashAlt className='h-5 w-5 mx-2'/>
               </Button>
-              <Button color="gray" onClick={() => setShowModal(false)}>
+              <Button color="light" onClick={() => setShowModal(false)} className='w-full'>
                 Cancel
               </Button>
             </div>
           </div>
         </Modal.Body>
       </Modal>
+      
       
     </>
   )

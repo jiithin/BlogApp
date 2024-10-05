@@ -68,9 +68,9 @@ function DashSidebar() {
 
       <Link
       onClick={handleSignout}
-        class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-b-lg bg-cover dark:text-red-500 hover:bg-red-500/25 dark:hover:bg-red-600/25   text-red-500 transition-all ease-linear"
+        class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-b-lg bg-cover dark:text-red-500 hover:bg-red-500/25 dark:hover:bg-red-600/25   text-red-600 transition-all ease-linear"
       >
-          <PiPowerBold className='text-red-500 mt-1'/>  
+          <PiPowerBold className='text-red-600 dark:text-red-500 mt-1'/>  
         Logout
       </Link>
 
@@ -102,7 +102,7 @@ function DashSidebar() {
   onClick={handleSignout}
     className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
   >
-          <IoExit  className='text-pink-500 '/>
+          <IoExit  className='text-red-500 '/>
   </Link>
  </div>
 </div>

@@ -193,11 +193,12 @@ function DashProfile() {
             </div>
 
             <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8">
-                <div className="flex items-center space-x-4 mt-3">
+                <div className="flex items-center space-x-4 mt-2">
 
-                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-4 py-3 rounded-lg font-bold text-sm space-x-2 hover:-translate-y-2 transition duration-300" onClick={() => setShowModal(true)}>
+                    <button className="flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300" onClick={() => setShowModal(true)}>
                         <span>Delete Account</span><IoTrashBin/>
                     </button>
+                    
                     
                     
                 </div>

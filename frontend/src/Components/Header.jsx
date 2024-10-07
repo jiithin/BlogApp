@@ -114,10 +114,12 @@ function Header() {
 </form>
 {/* darkmode button */}
 
-  <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit " 
+  <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit" 
   onClick={() => dispatch(toggleTheme())}>
   {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-600'/>):(<CgDarkMode className='w-5 h-5 text-indigo-300'/>)}
 </button>
+
+
     
     {currentUser ? (
       <Dropdown

@@ -18,17 +18,17 @@ function About() {
                     <img src={logo} className="w-36 z-0  h-full   object-fill fill-y text-y   "/>
                 </div>
                 <div className="lg:max-w-xl lg:pr-5 relative z-40">
-                    <p className="flex text-sm uppercase text-g1  ">
+                    {/* <p className="flex text-sm uppercase text-g1  ">
                          
                         About Us
-                    </p>
+                    </p> */}
                     <h2 className="mb-6 max-w-lg text-5xl font-light leading-snug tracking-tight text-g1 sm:text-7xl sm:leading-snug">
                         We make you look
                         <span className="my-1 inline-block border-b-8 border-g4 bg-purple-500 px-4 font-bold text-g4 animate__animated animate__flash">different</span>
                     </h2>
                     <p className="text-base text-gray-700">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                         accusantium doloremque it.</p>
-                    <div className="mt-10 flex flex-col items-center md:flex-row">
+                    <div className="mt-10 flex flex-col items-center md:flex-row backdrop-blur-md">
                         <a href="/" className="mb-3 inline-flex h-12 w-full items-center justify-center rounded-xl bg-purple-600/50 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-500/50 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
                             View More</a>
                         <a href="/" aria-label="" className="group inline-flex items-center font-semibold text-g1">Watch how

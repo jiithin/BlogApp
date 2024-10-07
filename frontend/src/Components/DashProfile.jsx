@@ -11,6 +11,7 @@ import { BiSolidTrashAlt } from "react-icons/bi";
 import { BsFilePost } from "react-icons/bs";
 import { HiInformationCircle } from "react-icons/hi";
 import { FcOk } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 function DashProfile() {
     const {currentUser,loading} = useSelector((state) => state.user);
@@ -222,12 +223,14 @@ function DashProfile() {
               
               {/* create post button */}
               {currentUser.isAdmin && (
+                <Link to={'/create-post'}>
                 <button
-                  className="sigh mt-2 mb-2 flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
+                  className="sigh mt-2 mb-2 w-44 flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
                 >
                   <span>Create a Post</span>
                   <BsFilePost />
                 </button>
+                </Link>
               )}
 
               {/* image upload error */}
@@ -258,12 +261,12 @@ function DashProfile() {
                   <span className="font-bold w-24 dark:text-gray-400">
                     User name:
                   </span>
-                  <div class="relative z-0">
+                  <div className="relative z-0">
                     <input
                       type="text"
                       id="username"
                       name="username"
-                      class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200"
+                      className="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200"
                       placeholder="Usernmae"
                       defaultValue={currentUser.username}
                       onChange={handleChange}
@@ -275,12 +278,12 @@ function DashProfile() {
                   <span className="font-bold w-24 dark:text-gray-400">
                     Email:
                   </span>
-                  <div class="relative z-0">
+                  <div className="relative z-0">
                     <input
                       type="email"
                       id="email"
                       name="name"
-                      class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200"
+                      className="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-200"
                       placeholder="Email"
                       defaultValue={currentUser.email}
                       onChange={handleChange}
@@ -292,12 +295,12 @@ function DashProfile() {
                   <span className="font-bold w-24 dark:text-gray-400">
                     Password:
                   </span>
-                  <div class="relative z-0">
+                  <div className="relative z-0">
                     <input
                       type="password"
                       id="password"
                       name="name"
-                      class="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-300"
+                      className="peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 dark:text-gray-300"
                       placeholder="Password"
                       onChange={handleChange}
                     />
@@ -314,6 +317,7 @@ function DashProfile() {
                 </li>
 
                 <li className="flex py-2 w-full">
+                  {/* update button */}
                   <Button type="submit" color="purple" className="px-11 mt-4" disabled={loading || profileImageUploading}>
                   {loading ? 'Loading...' : 'Update'}
                   </Button>

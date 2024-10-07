@@ -10,6 +10,8 @@ import Dashboard from './Pages/Dashboard'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import PrivateRoute from './Components/PrivateRoute'
+import CreatePost from './Pages/CreatePost'
+import AdminPrivateRoute from './Components/AdminPrivateRoute'
 
 function App() {
 
@@ -25,6 +27,10 @@ function App() {
 
       <Route element={<PrivateRoute />}>
       <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
+
+      <Route element={<AdminPrivateRoute />}>
+      <Route path="/create-post" element={<CreatePost />} />
       </Route>
       
       <Route path="/projects" element={<Projects />} />

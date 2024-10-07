@@ -59,6 +59,7 @@ function CreatePost() {
         console.log(error);
       }
     };
+    
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
@@ -113,7 +114,7 @@ function CreatePost() {
             placeholder='Title'
             required
             id='title'
-            className='flex-1 hidden lg:block md:block peer w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-200'
+            className='flex-1 hidden lg:block md:block peer w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-100'
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
@@ -136,7 +137,7 @@ function CreatePost() {
         <ReactQuill
           theme='snow'
           placeholder='Write something...'
-          className='h-72 mb-12'
+          className='h-72 mb-12 text-gray-100'
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });

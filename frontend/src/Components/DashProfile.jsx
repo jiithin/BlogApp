@@ -8,7 +8,9 @@ import { app } from '../firebase';
 import {updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice.js'
 import { BsExclamationTriangle } from "react-icons/bs";
 import { BiSolidTrashAlt } from "react-icons/bi";
-
+import { BsFilePost } from "react-icons/bs";
+import { HiInformationCircle } from "react-icons/hi";
+import { FcOk } from "react-icons/fc";
 
 function DashProfile() {
     const {currentUser,loading} = useSelector((state) => state.user);
@@ -84,6 +86,7 @@ function DashProfile() {
         setFormData({ ...formData, [e.target.id]: e.target.value });
       };
        console.log(formData)
+
       //form submission
       const handleSubmit = async (e) => {
         e.preventDefault();
@@ -94,7 +97,7 @@ function DashProfile() {
           return;
         }
         if (profileImageUploading) {
-          setUpdateUserError('Wait for image to upload');
+          setUpdateUserError('Click Upload for image to upload');
           return;
         }
         try {
@@ -220,15 +223,28 @@ function DashProfile() {
               {/* create post button */}
               {currentUser.isAdmin && (
                 <button
-                  className="sigh mt-2 flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
+                  className="sigh mt-2 mb-2 flex items-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
                 >
-                  <span>Crate A Post</span>
-                  <IoTrashBin />
+                  <span>Create a Post</span>
+                  <BsFilePost />
                 </button>
               )}
+
+              {/* image upload error */}
               {profileImageUploadError && (
-                <Alert color="failure">{profileImageUploadError}</Alert>
+                <Alert color="failure" icon={HiInformationCircle} >{profileImageUploadError}</Alert>
               )}
+
+              {/* user update success */}
+              {updateUserSuccess && (
+                <Alert color="success" icon={FcOk}>{updateUserSuccess}</Alert>
+              )}
+
+              {/* user update failed */}
+              {updateUserError && (
+                <Alert color="failure" icon={HiInformationCircle} withBorderAccent>{updateUserError}</Alert>
+              )}
+
             </div>
 
             {/* personal info */}

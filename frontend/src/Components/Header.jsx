@@ -14,11 +14,11 @@ import { signoutSuccess } from '../redux/user/userSlice.js';
 
 function Header() {
   const path = useLocation().pathname;
-  const currentUser = useSelector((state) => state.user);
+  const {currentUser} = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
 
-//console.log(currentUser.currentUser.username);
+//console.log(currentUser.currentUser.username); if not in {}
 
      // signout
      const handleSignout = async () => {
@@ -119,16 +119,16 @@ function Header() {
   {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-600'/>):(<CgDarkMode className='w-5 h-5 text-indigo-300'/>)}
 </button>
     
-    {currentUser.currentUser ? (
+    {currentUser ? (
       <Dropdown
-      label={<Avatar alt="User settings" img={currentUser.currentUser.profilePicture} size='sm' />}
+      label={<Avatar alt="User settings" img={currentUser.profilePicture} size='sm' />}
       arrowIcon={false}
       inline
       className='rounded-2xl'
     >
       <Dropdown.Header>
-        <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.currentUser.username}</span>
-        <span className="block truncate text-sm text-center font-medium">{currentUser.currentUser.email}</span>
+        <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}</span>
+        <span className="block truncate text-sm text-center font-medium">{currentUser.email}</span>
       </Dropdown.Header>
 
       <Link to={'/dashboard'} >

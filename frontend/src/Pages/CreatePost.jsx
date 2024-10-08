@@ -11,6 +11,8 @@ import {
 import { app } from '../firebase';
 import { useState } from 'react';
 import { PiPaperPlaneRightFill  } from "react-icons/pi";
+import { IoMdCloudUpload } from "react-icons/io";
+import { HiInformationCircle } from "react-icons/hi";
 
 
 import { useNavigate } from 'react-router-dom';
@@ -26,10 +28,8 @@ function CreatePost() {
 
     console.log(formData);
 //  can tput handle image inside handle submit bcoz handle submit async functn , try another way or set if file exist in handle submit
-const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleUpdloadImage = async () => {
     try {
-      // First, upload the image
       if (!file) {
         setImageUploadError('Please select an image');
         return;
@@ -42,37 +42,19 @@ const handleSubmit = async (e) => {
       uploadTask.on(
         'state_changed',
         (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
           setImageUploadError('Image upload failed');
           setImageUploadProgress(null);
-          throw error; // re-throw the error to catch it below
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setImageUploadProgress(null);
             setImageUploadError(null);
             setFormData({ ...formData, image: downloadURL });
-            // Now that the image is uploaded, post the data to the API
-            const res = fetch('/blog/post/create', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(formData),
-            });
-            res.then((res) => res.json()).then((data) => {
-              if (!res.ok) {
-                setPublishError(data.message);
-                return;
-              }
-              setPublishError(null);
-              navigate(`/post/${data.slug}`);
-            }).catch((error) => {
-              setPublishError('Something went wrong');
-            });
           });
         }
       );
@@ -82,16 +64,52 @@ const handleSubmit = async (e) => {
       console.log(error);
     }
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('/blog/post/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setPublishError(data.message);
+        return;
+      }
+
+      if (res.ok) {
+        setPublishError(null);
+        navigate(`/post/${data.slug}`);
+      }
+    } catch (error) {
+      setPublishError('Something went wrong');
+    }
+  };
   
   return (
     <>
     <div className='p-3 max-w-6xl mx-auto min-h-screen'>
       <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl my-7 '>Create a post</p>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-        <div className='flex flex-col gap-4 sm:flex-row justify-between'>
+
+        {/*image upload error alerts */}
+      {imageUploadError && <Alert color='failure' icon={HiInformationCircle} >{imageUploadError}</Alert>}
+
+      {/* post publist error alert */}
+      {publishError && (
+          <Alert className='mt-1' color='failure' icon={HiInformationCircle}>
+            {publishError}
+          </Alert>
+        )}
+
+        <div className='flex gap-4 justify-between'>
 
             {/* small devices */}
-            <div className=" lg:hidden md:hidden flex justify-between">
+            {/* <div className=" lg:hidden md:hidden flex justify-between">
             <input
             type='text'
             placeholder='Post Title'
@@ -105,29 +123,31 @@ const handleSubmit = async (e) => {
           <button type='submit' className=' mx-3 bg-purple-600 w-auto h-10 px-5 font-semibold text-white rounded-md'>
           Publish
         </button>
-            </div>
+            </div> */}
 
           {/* large devices */}
+
           <input
             type='text'
             placeholder='Post Title'
             required
             id='title'
-            className='flex-1 hidden lg:block md:block peer w-full appearance-none border-0 bg-transparent py-1 px-2 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-100'
+            className='flex-1  peer w-full appearance-none border-0 bg-transparent py-1 px-2 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-100'
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
           />
           
-          <div className=" justify-between hidden lg:inline md:inline">
-          <button type='button' className='hover:bg-gray-100 hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'
+          
+          {/* <button type='button' className='hover:bg-gray-100 hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'
           onClick={() => { setFormData({});window.location.reload();}}>
           Cancel
+        </button> */}
+          <button type='submit' className='  bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>
+          <span className='flex items-center hover:translate-x-1  transition duration-300'>
+            Publish <PiPaperPlaneRightFill className='ms-2' /></span>
         </button>
-          <button type='submit' className='mx-3  bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>
-          <span className='flex items-center hover:translate-x-1  transition duration-300'>Publish <PiPaperPlaneRightFill className='ms-2' /></span>
-        </button>
-          </div>
+
           
         </div>
 
@@ -136,7 +156,7 @@ const handleSubmit = async (e) => {
         {/* post-input */}
         <ReactQuill
           theme='snow'
-          placeholder='Start writing...'
+          placeholder='Content...'
           className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {
@@ -144,11 +164,17 @@ const handleSubmit = async (e) => {
           }}
         />
 
-        {publishError && (
-          <Alert className='mt-5' color='failure'>
-            {publishError}
-          </Alert>
+
+          {/* image preview */}
+    {formData.image && (
+          <img
+            src={formData.image}
+            alt='upload'
+            className='w-full h-72 object-cover'
+          />
         )}
+
+        
 
         <div className="flex gap-4 justify-between">
          {/* category */}
@@ -177,15 +203,16 @@ const handleSubmit = async (e) => {
             className='bg-transparent'
             onChange={(e) => setFile(e.target.files[0])}
           />
-          {/* <Button
+          <Button
             type='button'
-            gradientDuoTone='purpleToBlue'
             size='sm'
             outline
+            color='purple'
+            className='h-10'
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
           >
-            {imageUploadProgress ? (
+            {/* {imageUploadProgress ? (
               <div className='w-16 h-16'>
                 <CircularProgressbar
                   value={imageUploadProgress}
@@ -194,21 +221,28 @@ const handleSubmit = async (e) => {
               </div>
             ) : (
               'Upload Image'
-            )}
-            Upload Image
-          </Button> */}
+            )} */}
+            <IoMdCloudUpload className=' h-5 w-5'/>
+          </Button>
         </div>
-        {imageUploadError && <Alert color='failure'>{imageUploadError}</Alert>}
-        {formData.image && (
+        
+        {/* {formData.image && (
           <img
             src={formData.image}
             alt='upload'
             className='w-full h-72 object-cover'
           />
-        )}
+        )} */}
 
     </div>
-        
+  
+
+                  {/* <button type='button' className='hover:bg-gray-100 hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'
+          onClick={() => { setFormData({});window.location.reload();}}>
+          Cancel
+        </button> */}
+
+        <p className='flex justify-center text-gray-400 mt-12 px-5'><HiInformationCircle className='h-5 w-5 mt-1 me-2 text-blue-300'/>  Please upload image to cloud before publishing the post.</p>
       </form>
     </div>
     </>

@@ -97,11 +97,11 @@ const handleUpdloadImage = async () => {
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
 
         {/*image upload error alerts */}
-      {imageUploadError && <Alert color='failure' icon={HiInformationCircle} >{imageUploadError}</Alert>}
+      {imageUploadError && <Alert color='failure' className='items-center' icon={HiInformationCircle} >{imageUploadError}</Alert>}
 
       {/* post publist error alert */}
       {publishError && (
-          <Alert className='mt-1' color='failure' icon={HiInformationCircle}>
+          <Alert color='failure' className='items-center mt-1' icon={HiInformationCircle}>
             {publishError}
           </Alert>
         )}
@@ -156,7 +156,7 @@ const handleUpdloadImage = async () => {
         {/* post-input */}
         <ReactQuill
           theme='snow'
-          placeholder='Content...'
+          placeholder='Write content here...'
           className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {

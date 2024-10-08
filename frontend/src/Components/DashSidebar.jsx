@@ -71,7 +71,7 @@ function DashSidebar() {
         class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-b-lg bg-cover dark:text-red-500 hover:bg-red-500/25 dark:hover:bg-red-600/25   text-red-600 transition-all ease-linear"
       >
           <PiPowerBold className='text-red-600 dark:text-red-500 mt-1'/>  
-        Logout
+        Sign out
       </Link>
 
 </div>

@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    height: 100vh;
+}
+
+.ql-editor{
+    font-size: 1.05rem;
+    background-color: #f3f4f6;
+    color: #262627;
+    
+
+}
+
+.ql-toolbar{
+    background-color: #f3f4f6;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
 #head {
     font: 900 70px "Poppins", sans-serif;
     background-image: url("giphy.gif");

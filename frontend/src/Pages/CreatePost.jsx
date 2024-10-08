@@ -22,68 +22,65 @@ function CreatePost() {
     const [publishError, setPublishError] = useState(null);
   
     const navigate = useNavigate();
-  
-    const handleUpdloadImage = async () => {
-      try {
-        if (!file) {
-          setImageUploadError('Please select an image');
-          return;
-        }
-        setImageUploadError(null);
-        const storage = getStorage(app);
-        const fileName = new Date().getTime() + '-' + file.name;
-        const storageRef = ref(storage, fileName);
-        const uploadTask = uploadBytesResumable(storageRef, file);
-        uploadTask.on(
-          'state_changed',
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            setImageUploadProgress(progress.toFixed(0));
-          },
-          (error) => {
-            setImageUploadError('Image upload failed');
+
+//  can tput handle image inside handle submit bcoz handle submit async functn , try another way or set if file exist in handle submit
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // First, upload the image
+      if (!file) {
+        setImageUploadError('Please select an image');
+        return;
+      }
+      setImageUploadError(null);
+      const storage = getStorage(app);
+      const fileName = new Date().getTime() + '-' + file.name;
+      const storageRef = ref(storage, fileName);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setImageUploadProgress(progress.toFixed(0));
+        },
+        (error) => {
+          setImageUploadError('Image upload failed');
+          setImageUploadProgress(null);
+          throw error; // re-throw the error to catch it below
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setImageUploadProgress(null);
-          },
-          () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              setImageUploadProgress(null);
-              setImageUploadError(null);
-              setFormData({ ...formData, image: downloadURL });
+            setImageUploadError(null);
+            setFormData({ ...formData, image: downloadURL });
+            // Now that the image is uploaded, post the data to the API
+            const res = fetch('/blog/post/create', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
             });
-          }
-        );
-      } catch (error) {
-        setImageUploadError('Image upload failed');
-        setImageUploadProgress(null);
-        console.log(error);
-      }
-    };
-    
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const res = await fetch('/blog/post/create', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-        const data = await res.json();
-        if (!res.ok) {
-          setPublishError(data.message);
-          return;
+            res.then((res) => res.json()).then((data) => {
+              if (!res.ok) {
+                setPublishError(data.message);
+                return;
+              }
+              setPublishError(null);
+              navigate(`/post/${data.slug}`);
+            }).catch((error) => {
+              setPublishError('Something went wrong');
+            });
+          });
         }
+      );
+    } catch (error) {
+      setImageUploadError('Image upload failed');
+      setImageUploadProgress(null);
+      console.log(error);
+    }
+  };
   
-        if (res.ok) {
-          setPublishError(null);
-          navigate(`/post/${data.slug}`);
-        }
-      } catch (error) {
-        setPublishError('Something went wrong');
-      }
-    };
   return (
     <>
     <div className='p-3 max-w-6xl mx-auto min-h-screen'>
@@ -95,15 +92,15 @@ function CreatePost() {
             <div className=" lg:hidden md:hidden flex justify-between">
             <input
             type='text'
-            placeholder='Title'
+            placeholder='Post Title'
             required
             id='title'
-            className='flex-1 peer block w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 font-semibold dark:text-gray-100'
+            className='flex-1 peer block w-full appearance-none border-0 bg-transparent py-1 px-2 text-sm focus:outline-none focus:ring-0 font-semibold dark:text-gray-100'
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
           />
-          <button type='submit' className=' mx-3 bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>
+          <button type='submit' className=' mx-3 bg-purple-600 w-auto h-10 px-5 font-semibold text-white rounded-md'>
           Publish
         </button>
             </div>
@@ -111,10 +108,10 @@ function CreatePost() {
           {/* large devices */}
           <input
             type='text'
-            placeholder='Title'
+            placeholder='Post Title'
             required
             id='title'
-            className='flex-1 hidden lg:block md:block peer w-full appearance-none border-0 bg-transparent py-1 px-0 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-100'
+            className='flex-1 hidden lg:block md:block peer w-full appearance-none border-0 bg-transparent py-1 px-2 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-100'
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
@@ -137,7 +134,7 @@ function CreatePost() {
         <ReactQuill
           theme='snow'
           placeholder='Write something...'
-          className='h-72 mb-12 text-gray-100'
+          className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
@@ -153,14 +150,19 @@ function CreatePost() {
         <div className="flex gap-4 justify-between">
          {/* category */}
           <Select
+          className='w-48'
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
             }
+            
           >
-            <option value='uncategorized'>Select a category</option>
-            <option value='javascript'>JavaScript</option>
-            <option value='reactjs'>React.js</option>
-            <option value='nextjs'>Next.js</option>
+            <option value='uncategorized' disabled>Add Category</option>
+            <option value='Technology'>Technology</option>
+            <option value='Travel'>Travel</option>
+            <option value='Food'>Food</option>
+            <option value='Fashion'>Fashion</option>
+            <option value='Fitness'>Fitness</option>
+            <option value='Eduction'>Eduction</option>
           </Select>
 
 
@@ -169,9 +171,10 @@ function CreatePost() {
           <FileInput
             type='file'
             accept='image/*'
+            className='bg-transparent'
             onChange={(e) => setFile(e.target.files[0])}
           />
-          <Button
+          {/* <Button
             type='button'
             gradientDuoTone='purpleToBlue'
             size='sm'
@@ -179,7 +182,7 @@ function CreatePost() {
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
           >
-            {/* {imageUploadProgress ? (
+            {imageUploadProgress ? (
               <div className='w-16 h-16'>
                 <CircularProgressbar
                   value={imageUploadProgress}
@@ -188,9 +191,9 @@ function CreatePost() {
               </div>
             ) : (
               'Upload Image'
-            )} */}
+            )}
             Upload Image
-          </Button>
+          </Button> */}
         </div>
         {imageUploadError && <Alert color='failure'>{imageUploadError}</Alert>}
         {formData.image && (

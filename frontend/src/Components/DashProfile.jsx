@@ -245,7 +245,7 @@ function DashProfile() {
 
               {/* user update failed */}
               {updateUserError && (
-                <Alert color="failure" icon={HiInformationCircle} withBorderAccent>{updateUserError}</Alert>
+                <Alert color="warning" icon={HiInformationCircle} >{updateUserError}</Alert>
               )}
 
             </div>

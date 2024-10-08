@@ -168,6 +168,8 @@ function Header() {
     className='lg:hidden sm:hidden'
 
   />
+
+  
 </form>
   <Navbar.Link  as={'div'} className='hover:scale-105  duration-100 '>
     <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base  '>Home</Link>

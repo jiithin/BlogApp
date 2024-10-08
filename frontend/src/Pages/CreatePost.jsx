@@ -222,7 +222,7 @@ const handleUpdloadImage = async () => {
             ) : (
               'Upload Image'
             )} */}
-            <IoMdCloudUpload className=' h-5 w-5'/>
+            <IoMdCloudUpload className=' h-5 w-5 text-purple-900 group-hover:text-white'/>
           </Button>
         </div>
         
@@ -242,7 +242,7 @@ const handleUpdloadImage = async () => {
           Cancel
         </button> */}
 
-        <p className='flex justify-center text-gray-400 mt-12 px-5'><HiInformationCircle className='h-5 w-5 mt-1 me-2 text-blue-300'/>  Please upload image to cloud before publishing the post.</p>
+        <p className='flex justify-center text-gray-400 mt-12 px-5'><HiInformationCircle className='h-5 w-5 mt-1 me-2 text-blue-300'/>  Upload image to cloud before publishing.</p>
       </form>
     </div>
     </>

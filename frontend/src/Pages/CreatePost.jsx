@@ -119,7 +119,7 @@ const handleSubmit = async (e) => {
           />
           
           <div className=" justify-between hidden lg:inline md:inline">
-          <button type='button' className='hover:bg-white hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'>
+          <button type='button' className='hover:bg-gray-100 hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'>
           Cancel
         </button>
           <button type='submit' className='mx-3  bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>
@@ -134,7 +134,7 @@ const handleSubmit = async (e) => {
         {/* post-input */}
         <ReactQuill
           theme='snow'
-          placeholder='Instigate your ideas...'
+          placeholder='Start here...'
           className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {

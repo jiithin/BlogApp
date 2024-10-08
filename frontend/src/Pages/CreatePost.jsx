@@ -10,6 +10,7 @@ import {
 } from 'firebase/storage';
 import { app } from '../firebase';
 import { useState } from 'react';
+import { PiPaperPlaneRightFill  } from "react-icons/pi";
 
 
 import { useNavigate } from 'react-router-dom';
@@ -118,11 +119,11 @@ const handleSubmit = async (e) => {
           />
           
           <div className=" justify-between hidden lg:inline md:inline">
-          <button type='button' className='hover:bg-red-500 hover:text-white font-semibold w-auto h-11 px-5 dark:text-white rounded-md'>
+          <button type='button' className='hover:bg-white hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'>
           Cancel
         </button>
-          <button type='submit' className='mx-3 bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>
-          Publish
+          <button type='submit' className='mx-3  bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>
+          <span className='flex items-center hover:translate-x-1  transition duration-300'>Publish <PiPaperPlaneRightFill className='ms-2' /></span>
         </button>
           </div>
           
@@ -133,7 +134,7 @@ const handleSubmit = async (e) => {
         {/* post-input */}
         <ReactQuill
           theme='snow'
-          placeholder='Write something...'
+          placeholder='Instigate your ideas...'
           className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {
@@ -156,7 +157,7 @@ const handleSubmit = async (e) => {
             }
             
           >
-            <option value='uncategorized' disabled>Add Category</option>
+            <option value='uncategorized' >Add Category</option>
             <option value='Technology'>Technology</option>
             <option value='Travel'>Travel</option>
             <option value='Food'>Food</option>

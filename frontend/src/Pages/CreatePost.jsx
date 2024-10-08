@@ -222,7 +222,7 @@ const handleUpdloadImage = async () => {
             ) : (
               'Upload Image'
             )} */}
-            <IoMdCloudUpload className=' h-5 w-5 text-purple-900 group-hover:text-white'/>
+            <IoMdCloudUpload className=' h-5 w-5 text-purple-800 group-hover:text-white dark:text-white'/>
           </Button>
         </div>
         

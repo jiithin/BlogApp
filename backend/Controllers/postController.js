@@ -10,7 +10,7 @@ export const create = async (req, res, next) => {
     if (!req.body.title || !req.body.content) {
       return next(errorHandler(400, 'Please provide all required fields'));
     }
-    const slug = req.body.title //is used for removing special charactors
+    const slug = req.body.title //is used for removing special charactors in the title
       .split(' ')
       .join('-')
       .toLowerCase()

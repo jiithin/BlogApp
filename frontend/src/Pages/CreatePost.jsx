@@ -134,7 +134,7 @@ const handleSubmit = async (e) => {
         {/* post-input */}
         <ReactQuill
           theme='snow'
-          placeholder='Start here...'
+          placeholder='Start writing...'
           className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {

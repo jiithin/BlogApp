@@ -15,12 +15,12 @@ function Footer() {
 
   return (
   
-<footer class="bg-transparent backdrop-blur-0">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="flex items-center justify-between">
-            <a href='/' class="flex items-center  space-x-3 rtl:space-x-reverse">
-                <img src={logo} class="h-5" alt="Flowbite Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400">Divulge.</span>
+<footer className="bg-transparent backdrop-blur-0">
+    <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="flex items-center justify-between">
+            <a href='/' className="flex items-center  space-x-3 rtl:space-x-reverse">
+                <img src={logo} className="h-5" alt="Flowbite Logo" />
+                <span className="self-center text-xl font-semibold whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400">Divulge.</span>
             </a>
 
             {/* darkmode button footer */}
@@ -44,22 +44,22 @@ function Footer() {
                 </li>
             </ul> */}
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="text-center">
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-4">© Hey <a href="https://github.com/jiithin/BlogApp/" class="hover:underline">this was a fun project, Fork it if youwant.</a></span>
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-4">© Hey <a href="https://github.com/jiithin/BlogApp/" className="hover:underline">this was a fun project, Fork it if youwant.</a></span>
         
-        <div class="flex mt-4 justify-center sm:mt-0">
-              <a href="https://www.linkedin.com/in/jiithin-gangadharan/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+        <div className="flex mt-4 justify-center sm:mt-0">
+              <a href="https://www.linkedin.com/in/jiithin-gangadharan/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
               <FaLinkedin />
                   
               </a>
-              <a href="https://github.com/jiithin/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+              <a href="https://github.com/jiithin/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
               <FaGithubSquare />
               </a>
-              <a href="https://dev.to/jiithin/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+              <a href="https://dev.to/jiithin/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
               <FaDev />
               </a>
-              <a href="https://portfolio-jithin.vercel.app/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+              <a href="https://portfolio-jithin.vercel.app/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
               <BiSolidUserRectangle />
               </a>
               

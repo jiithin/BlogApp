@@ -24,6 +24,7 @@ function CreatePost() {
   
     const navigate = useNavigate();
 
+    console.log(formData);
 //  can tput handle image inside handle submit bcoz handle submit async functn , try another way or set if file exist in handle submit
 const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,7 +120,8 @@ const handleSubmit = async (e) => {
           />
           
           <div className=" justify-between hidden lg:inline md:inline">
-          <button type='button' className='hover:bg-gray-100 hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'>
+          <button type='button' className='hover:bg-gray-100 hover:text-gray-700 font-semibold w-auto h-11 px-5 dark:text-white dark:hover:text-gray-800 rounded-md'
+          onClick={() => { setFormData({});window.location.reload();}}>
           Cancel
         </button>
           <button type='submit' className='mx-3  bg-purple-600 w-auto h-11 px-5 font-semibold text-white rounded-md'>

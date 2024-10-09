@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert, Button, FileInput, Select, TextInput } from 'flowbite-react';
+import { Alert, Button, FileInput, Select, Spinner, TextInput } from 'flowbite-react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import {
@@ -157,7 +157,7 @@ const handleUpdloadImage = async () => {
         <ReactQuill
           theme='snow'
           placeholder='Write content here...'
-          className='h-72 mb-12 shadow-xl'
+          className='h-72 mb-14 shadow-xl'
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
@@ -212,17 +212,13 @@ const handleUpdloadImage = async () => {
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
           >
-            {/* {imageUploadProgress ? (
-              <div className='w-16 h-16'>
-                <CircularProgressbar
-                  value={imageUploadProgress}
-                  text={`${imageUploadProgress || 0}%`}
-                />
-              </div>
+            {imageUploadProgress ? (
+             <Spinner color="purple" aria-label="Purple spinner example" size="md"/>
             ) : (
-              'Upload Image'
-            )} */}
-            <IoMdCloudUpload className=' h-5 w-5 text-purple-800 group-hover:text-white dark:text-white'/>
+              <IoMdCloudUpload className=' h-5 w-5 text-purple-800 group-hover:text-white dark:text-white'/>
+            )}
+            
+            
           </Button>
         </div>
         

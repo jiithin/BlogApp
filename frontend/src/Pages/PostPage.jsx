@@ -65,11 +65,11 @@ function PostPage() {
         </a>
 
         <a className="w-full md:w-1/3 relative rounded" 
-          style="height: 24em;"
+          
           href="#"
         />
           <div className="absolute left-0 top-0 w-full h-full z-10"
-            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+            ></div>
           <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80" className="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
           <div className="p-4 absolute bottom-0 left-0 z-20">
             <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Science</span>
@@ -97,7 +97,7 @@ function PostPage() {
           >
             <div 
               className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
-              style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')" 
+              
               title="deit is very important"
             >
             </div>

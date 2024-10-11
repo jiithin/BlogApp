@@ -12,6 +12,7 @@ import Footer from './Components/Footer'
 import PrivateRoute from './Components/PrivateRoute'
 import CreatePost from './Pages/CreatePost'
 import AdminPrivateRoute from './Components/AdminPrivateRoute'
+import PostPage from './Pages/PostPage'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       </Route>
       
       <Route path="/projects" element={<Projects />} />
+      <Route path="/post" element={<PostPage />} />
       
      </Routes>
      <Footer/>

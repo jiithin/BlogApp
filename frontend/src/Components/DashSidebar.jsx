@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import {  HiChartPie, HiInbox, HiUser } from "react-icons/hi";
 import { PiPowerBold } from "react-icons/pi";
@@ -35,6 +35,8 @@ function DashSidebar() {
     };
 
     
+
+    
   return (
     <>
    
@@ -47,7 +49,7 @@ function DashSidebar() {
 
       <Link to='/dashboard'
         className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-t-lg bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
-      >
+        >
      <HiChartPie className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Dashboard
       </Link>

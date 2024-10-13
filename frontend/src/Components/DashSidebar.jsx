@@ -11,7 +11,7 @@ import { signoutSuccess } from '../redux/user/userSlice';
 
 
 function DashSidebar() {
-    const currentUser = useSelector((state) => state.user);
+    const {currentUser} = useSelector((state) => state.user);
     const location = useLocation();
     
     const dispatch=useDispatch();
@@ -61,12 +61,21 @@ function DashSidebar() {
         Profile
       </Link>
 
+      {/* is admin */}
+      {currentUser.isAdmin ? (
       <Link to='/dashboard?tab=posts'
+        class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      >
+      <HiInbox className='text-purple-700 dark:text-indigo-300 mt-1'/>
+        Your Posts
+      </Link>):(
+        <Link to='/projects'
         class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
       <HiInbox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Posts
       </Link>
+      )}
 
       <Link
       onClick={handleSignout}
@@ -95,11 +104,19 @@ function DashSidebar() {
   >
         <HiUser className='text-gray-500 dark:text-indigo-300'/>
   </Link>
+  {/* is admin */}
+  {currentUser.isAdmin ? (
   <Link to='/dashboard?tab=posts'
     className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
         <HiInbox className='text-gray-500 dark:text-indigo-300'/>
-  </Link>
+  </Link>):(
+  <Link to='/projects'
+    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+  >
+        <HiInbox className='text-gray-500 dark:text-indigo-300'/>
+  </Link>)}
+  
   <Link
   onClick={handleSignout}
     className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"

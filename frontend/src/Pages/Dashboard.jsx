@@ -165,7 +165,7 @@ function Dashboard() {
     </div>
 
     <div className="posts">
-      {/* profile */}
+      {/* posts */}
       {tab==='posts' && <DashPosts/>}
     </div>
     </div>

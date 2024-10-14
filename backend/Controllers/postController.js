@@ -28,7 +28,7 @@ export const create = async (req, res, next) => {
     }
   };
   
-  //get posts and search
+  //get posts and search for admins and users
   export const getposts = async (req, res, next) => {
     try {
       const startIndex = parseInt(req.query.startIndex) || 0;
@@ -41,7 +41,7 @@ export const create = async (req, res, next) => {
         ...(req.query.postId && { _id: req.query.postId }),
         ...(req.query.searchTerm && {
           $or: [
-            { title: { $regex: req.query.searchTerm, $options: 'i' } },
+            { title: { $regex: req.query.searchTerm, $options: 'i' } }, // i means lowercase or uppercase is not important
             { content: { $regex: req.query.searchTerm, $options: 'i' } },
           ],
         }),

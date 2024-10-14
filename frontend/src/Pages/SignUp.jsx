@@ -2,16 +2,34 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
 import React, { useState } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import OAuth from '../Components/OAuth';
+import { useDispatch } from 'react-redux';
 
 function SignUp() {
   const [formData, setFormData]= useState({});
+  //const [signinData,setSigninData]=useState({});
   const [errorMessage,setErrorMessage]=useState(null);
   const [loading,setLoading]=useState(false);
+  const dispatch = useDispatch();
   const navigate=useNavigate();
 
 
+
+  
   const handleChange= (e)=>{
     setFormData({...formData, [e.target.id]:e.target.value});
+
+    // take signin data for auto signin
+    // setSigninData({ 
+    //   email: formData.email,
+    //   password: formData.password,
+    // });
+
+    // Save signinData to session storage
+    // setTimeout(function() {
+    //   sessionStorage.setItem('signinData', JSON.stringify(signinData));
+    // }, 1000);
+
+    //console.log(signinData);
   }
 const handleSubmit=async (e)=>{
   e.preventDefault();
@@ -32,7 +50,8 @@ const handleSubmit=async (e)=>{
     }
     setLoading(false)
     if(res.ok){
-      navigate('/sign-in');
+      // redirect
+        navigate('/sign-in');
     }
   }catch(error){
     setErrorMessage(error.message);
@@ -97,7 +116,7 @@ const handleSubmit=async (e)=>{
                 {
                   loading?(
                   <>
-                  <Spinner size='sm'/>
+                  <Spinner size='sm' color="purple" />
                     <span className='pl-3'>Loading...</span>
                   </>
                     

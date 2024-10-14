@@ -1,5 +1,5 @@
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { SignInStart,SignInSuccess,SignInFailure } from '../redux/user/userSlice'
@@ -10,6 +10,43 @@ function SignIn() {
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+//auto signin
+  // useEffect(() => {
+  //   if (sessionStorage.getItem('signinData')) {
+  //           //const signinData = sessionStorage.getItem('signinData')
+  //           console.log(signinData);
+  //           fetchData();
+  //     } else {
+        
+  //     }
+  //   },[]);
+
+    const fetchData = async () => {
+    try {
+      dispatch(SignInStart());
+      const res = await fetch('/blog/auth/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: sessionStorage.getItem('signinData'),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(SignInFailure(data.message));
+      }
+
+      if (res.ok) {
+        dispatch(SignInSuccess(data));
+        sessionStorage.deleteItem('signinData')
+        navigate('/');
+      }
+    } catch (error) {
+      dispatch(SignInFailure(error.message));
+    }
+  };
+
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };

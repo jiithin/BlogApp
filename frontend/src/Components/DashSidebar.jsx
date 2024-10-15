@@ -64,13 +64,13 @@ function DashSidebar() {
       {/* is admin */}
       {currentUser.isAdmin ? (
       <Link to='/dashboard?tab=posts'
-        class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
       <HiInbox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Your Posts
       </Link>):(
         <Link to='/projects'
-        class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
       <HiInbox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Posts
@@ -79,7 +79,7 @@ function DashSidebar() {
 
       <Link
       onClick={handleSignout}
-        class="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-b-lg bg-cover dark:text-red-500 hover:bg-red-500/25 dark:hover:bg-red-600/25   text-red-600 transition-all ease-linear"
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-b-lg bg-cover dark:text-red-500 hover:bg-red-500/25 dark:hover:bg-red-600/25   text-red-600 transition-all ease-linear"
       >
           <PiPowerBold className='text-red-600 dark:text-red-500 mt-1'/>  
         Sign out

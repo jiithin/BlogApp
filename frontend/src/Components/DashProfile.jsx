@@ -28,7 +28,7 @@ function DashProfile() {
     const fileSelector =useRef();
     const dispatch=useDispatch();
 
-    console.log(profileImageUploadProgress,profileImageUploadError);
+    //console.log(profileImageUploadProgress,profileImageUploadError);
 
     const handleImage=(e)=>{
         const file=(e.target.files[0]);
@@ -86,7 +86,7 @@ function DashProfile() {
       const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
       };
-       console.log(formData)
+       //console.log(formData)
 
       //form submission
       const handleSubmit = async (e) => {
@@ -119,6 +119,9 @@ function DashProfile() {
           } else {
             dispatch(updateSuccess(data));
             setUpdateUserSuccess("Profile updated successfully");
+            setTimeout(() => {
+              window.location.reload();
+          }, 3000);
           }
         } catch (error) {
           dispatch(updateFailure(error.message));
@@ -231,6 +234,11 @@ function DashProfile() {
                   <BsFilePost />
                 </button>
                 </Link>
+              )}
+
+              {/* image uplaod message */}
+              {profileImageUploadProgress && (
+                <Alert color="info" icon={HiInformationCircle} className='mb-2'>Click 'Update' button to finish profile update</Alert>
               )}
 
               {/* image upload error */}

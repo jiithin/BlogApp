@@ -11,39 +11,6 @@ function SignIn() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-//auto signin
-  // useEffect(() => {
-  //   if (sessionStorage.getItem('signinData')) {
-  //           //const signinData = sessionStorage.getItem('signinData')
-  //           console.log(signinData);
-  //           fetchData();
-  //     } else {
-        
-  //     }
-  //   },[]);
-
-    const fetchData = async () => {
-    try {
-      dispatch(SignInStart());
-      const res = await fetch('/blog/auth/signin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: sessionStorage.getItem('signinData'),
-      });
-      const data = await res.json();
-      if (data.success === false) {
-        dispatch(SignInFailure(data.message));
-      }
-
-      if (res.ok) {
-        dispatch(SignInSuccess(data));
-        sessionStorage.deleteItem('signinData')
-        navigate('/');
-      }
-    } catch (error) {
-      dispatch(SignInFailure(error.message));
-    }
-  };
 
 
 

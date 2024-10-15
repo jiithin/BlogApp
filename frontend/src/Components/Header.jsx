@@ -150,7 +150,7 @@ function Header() {
         </Dropdown.Item>
     </Dropdown>
     ):(
-          <Link to='/sign-in' className='transition ease-in-out delay-200 hover:scale-105 duration-400 '>
+          <Link to='/sign-in' className=' '>
             <button className='signin bg-transparent dark:bg-inherit py-2'>
             Sign In
             </button>

@@ -119,6 +119,7 @@ function DashProfile() {
           } else {
             dispatch(updateSuccess(data));
             setUpdateUserSuccess("Profile updated successfully");
+            //refresh page 3 seconds after updateing
             setTimeout(() => {
               window.location.reload();
           }, 3000);

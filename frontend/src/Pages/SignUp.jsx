@@ -15,23 +15,24 @@ function SignUp() {
 
 
   
-  const handleChange= (e)=>{
-    setFormData({...formData, [e.target.id]:e.target.value});
-
+  const handleChange= (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+    //console.log(formData);
     // take signin data for auto signin
     // setSigninData({ 
     //   email: formData.email,
     //   password: formData.password,
     // });
 
-    // Save signinData to session storage
+    // //Save signinData to session storage
     // setTimeout(function() {
     //   sessionStorage.setItem('signinData', JSON.stringify(signinData));
     // }, 1000);
 
-    //console.log(signinData);
-  }
-const handleSubmit=async (e)=>{
+    // console.log(signinData);
+  };
+
+const handleSubmit = async (e) => {
   e.preventDefault();
   if(!formData.username || !formData.email || !formData.password){
     return setErrorMessage('Please fill all fields');

@@ -148,7 +148,7 @@ function Header() {
         </Dropdown.Item>
     </Dropdown>
     ):(
-          <Link to='/sign-in' className=' '>
+          <Link to='/sign-in' className='transition ease-in-out delay-200 hover:scale-105 duration-400 '>
             <button className='signin bg-transparent dark:bg-inherit py-2'>
             Sign In
             </button>
@@ -171,16 +171,16 @@ function Header() {
 
   
 </form>
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-100 '>
+  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 '>
     <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base  '>Home</Link>
   </Navbar.Link>
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-100'>
+  <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
     <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base '>Blogs</Link>
   </Navbar.Link>
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-100'>
+  <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
     <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base '>Features</Link>
   </Navbar.Link>
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-100'>
+  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300'>
     <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base '>Contact</Link>
   </Navbar.Link>
   

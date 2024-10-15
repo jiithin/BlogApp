@@ -17,7 +17,6 @@ function SignIn() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
-  console.log(formData);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,7 +90,7 @@ function SignIn() {
                  {
                   loading?(
                   <>
-                  <Spinner size='sm'/>
+                  <Spinner size='sm' color='success'/>
                     <span className='pl-3'>Loading...</span>
                   </>
                     
@@ -104,7 +103,7 @@ function SignIn() {
 
             <div className='flex gap-2 text-sm mt-5 text-gray-500 dark:text-gray-400'>
             <span>Don't have an account?</span>
-            <Link to='/sign-up' className='font-bold text-purple-500 dark:text-purple-400'>
+            <Link to='/sign-up' className='font-bold text-purple-500 dark:text-purple-500'>
               Create an account.
             </Link>
           </div>

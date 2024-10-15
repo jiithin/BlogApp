@@ -2,14 +2,11 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
 import React, { useState } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import OAuth from '../Components/OAuth';
-import { useDispatch } from 'react-redux';
 
 function SignUp() {
   const [formData, setFormData]= useState({});
-  //const [signinData,setSigninData]=useState({});
   const [errorMessage,setErrorMessage]=useState(null);
   const [loading,setLoading]=useState(false);
-  const dispatch = useDispatch();
   const navigate=useNavigate();
 
 
@@ -104,7 +101,7 @@ const handleSubmit = async (e) => {
                 {
                   loading?(
                   <>
-                  <Spinner size='sm' color="purple" />
+                  <Spinner size='sm' color='success' />
                     <span className='pl-3'>Loading...</span>
                   </>
                     
@@ -118,7 +115,7 @@ const handleSubmit = async (e) => {
 
             <div className='flex gap-2 text-sm  mt-5 text-gray-600 dark:text-gray-400'>
             <span>Already have an account?</span>
-            <Link to='/sign-in' className='font-bold text-purple-600 dark:text-purple-400'>
+            <Link to='/sign-in' className='font-bold text-purple-500 dark:text-purple-500'>
               Sign In
             </Link>
           </div>

@@ -11,7 +11,7 @@ import { BiSolidTrashAlt } from "react-icons/bi";
 import { BsFilePost } from "react-icons/bs";
 import { HiInformationCircle } from "react-icons/hi";
 import { FcOk } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function DashProfile() {
     const {currentUser,loading} = useSelector((state) => state.user);
@@ -27,6 +27,7 @@ function DashProfile() {
     const [formData, setFormData] = useState({});
     const fileSelector =useRef();
     const dispatch=useDispatch();
+    const navigate = useNavigate();
 
     //console.log(profileImageUploadProgress,profileImageUploadError);
 
@@ -144,6 +145,7 @@ function DashProfile() {
             dispatch(deleteUserFailure(data.message));
           } else {
             dispatch(deleteUserSuccess(data));
+            navigate('/');
           }
         } catch (error) {
           dispatch(deleteUserFailure(error.message));
@@ -162,6 +164,7 @@ function DashProfile() {
             console.log(data.message);
           } else {
             dispatch(signoutSuccess());
+            navigate('/');
           }
         } catch (error) {
           console.log(error.message);

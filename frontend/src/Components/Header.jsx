@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 
-  import { Link, useLocation } from 'react-router-dom';
+  import { Link, useLocation, useNavigate } from 'react-router-dom';
   import { IoSearchOutline } from "react-icons/io5";
   import { CgDarkMode } from "react-icons/cg";
   
@@ -17,6 +17,7 @@ function Header() {
   const {currentUser} = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
+  const navigate = useNavigate();
 
 //console.log(currentUser.currentUser.username); if not in {}
 
@@ -31,6 +32,7 @@ function Header() {
           console.log(data.message);
         } else {
           dispatch(signoutSuccess());
+          navigate('/');
         }
       } catch (error) {
         console.log(error.message);

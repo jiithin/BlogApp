@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import {  HiChartPie, HiInbox, HiUser } from "react-icons/hi";
 import { PiPowerBold } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoExit  } from "react-icons/io5";
 
 import { signoutSuccess } from '../redux/user/userSlice';
@@ -13,7 +13,7 @@ import { signoutSuccess } from '../redux/user/userSlice';
 function DashSidebar() {
     const {currentUser} = useSelector((state) => state.user);
     const location = useLocation();
-    
+    const navigate = useNavigate();
     const dispatch=useDispatch();
 
 
@@ -28,6 +28,7 @@ function DashSidebar() {
           console.log(data.message);
         } else {
           dispatch(signoutSuccess());
+          navigate('/');
         }
       } catch (error) {
         console.log(error.message);

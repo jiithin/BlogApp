@@ -14,6 +14,7 @@ import PrivateRoute from './Components/PrivateRoute'
 import CreatePost from './Pages/CreatePost'
 import AdminPrivateRoute from './Components/AdminPrivateRoute'
 import PostPage from './Pages/PostPage'
+import UpdatePost from './Pages/UpdatePost'
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
 
       <Route element={<AdminPrivateRoute />}>
       <Route path="/create-post" element={<CreatePost />} />
+      <Route path="/update-post/:postId" element={<UpdatePost />} />
+
       </Route>
       
       <Route path="/projects" element={<Projects />} />

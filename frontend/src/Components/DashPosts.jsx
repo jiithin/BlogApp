@@ -10,8 +10,10 @@ function DashPosts() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
-  console.log(userPosts)
+  //console.log(userPosts)
 
+
+  //get all posts only 9 posts willshow becoz we set a query limiter
   useEffect(()=>{
     const fetchPosts=async()=>{
       try{
@@ -20,7 +22,7 @@ function DashPosts() {
         if(res.ok){
           setUserPosts(data.posts)
         }
-        console.log(data)
+        //console.log(data)
       }catch(error){
         console.log(error.message)
       }
@@ -30,6 +32,7 @@ function DashPosts() {
     }
   }, [currentUser._id]);
 
+  //showmore function
   const handleShowMore = async () => {
     const startIndex = userPosts.length;
     try {
@@ -48,6 +51,7 @@ function DashPosts() {
     }
   };
 
+  //delete post
   const handleDeletePost = async () => {
     setShowModal(false);
     try {
@@ -97,9 +101,9 @@ function DashPosts() {
                 <p className="truncate text-xs text-gray-500 dark:text-gray-400">{new Date(post.updatedAt).toLocaleDateString()}</p>
               </div>
               {/* right */}
-              <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+              <div className="inline-flex items-center text-base font-semibold">
               <Link
-                      className='text-green-400   me-5'
+                      className='text-indigo-500 me-5'
                       to={`/update-post/${post._id}`}
                     >
                       <span>Edit</span>
@@ -140,20 +144,23 @@ function DashPosts() {
         onClose={() => setShowModal(false)}
         popup
         size='md'
+        className="bg-transparent backdrop-blur-sm "
       >
-        <Modal.Header />
-        <Modal.Body>
+        <Modal.Header className="bg-slate-800 rounded-t-md " />
+        <Modal.Body className="bg-slate-800 rounded-b-md " >
           <div className='text-center'>
-            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
+            <HiOutlineExclamationCircle className='h-16 w-16 text-red-600 dark:text-gray-200 mb-4 mx-auto' />
+            <h3 className='mb-5 text-lg text-gray-400 dark:text-gray-100'>
               Are you sure you want to delete this post?
             </h3>
             <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick={handleDeletePost}>
-                Yes, I'm sure
+              <Button color='failure' onClick={handleDeletePost}
+              className="w-full" >
+                Delete
               </Button>
-              <Button color='gray' onClick={() => setShowModal(false)}>
-                No, cancel
+              <Button color='gray' onClick={() => setShowModal(false)}
+                className="w-full" >
+                Cancel
               </Button>
             </div>
           </div>

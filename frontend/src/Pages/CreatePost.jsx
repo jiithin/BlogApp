@@ -157,7 +157,7 @@ const handleUpdloadImage = async () => {
         <ReactQuill
           theme='snow'
           placeholder='Write content here...'
-          className='h-72 mb-14 shadow-xl'
+          className='h-72 mb-12 shadow-xl'
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
@@ -170,7 +170,7 @@ const handleUpdloadImage = async () => {
           <img
             src={formData.image}
             alt='upload'
-            className='w-full h-72 object-cover'
+            className='w-full h-72 object-cover rounded rounded-lg'
           />
         )}
 
@@ -190,6 +190,7 @@ const handleUpdloadImage = async () => {
             <option value='Travel'>Travel</option>
             <option value='Food'>Food</option>
             <option value='Fashion'>Fashion</option>
+            <option value='Fitness'>Sports</option>
             <option value='Fitness'>Fitness</option>
             <option value='Eduction'>Eduction</option>
           </Select>

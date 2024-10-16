@@ -45,7 +45,7 @@ function DashSidebar() {
 
 
 {/* large devices */}
-<div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900  p-5 shadow-md border border-gray-500/25 rounded-2xl">
+<div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900/90  p-5 shadow-md border border-gray-500/25 backdrop-blur-md rounded-2xl">
 
 
       <Link to='/dashboard'

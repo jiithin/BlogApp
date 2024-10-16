@@ -72,15 +72,13 @@ function DashPosts() {
   return (
     <>
     <div className='px-4'>
+    <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl mb-4 '>All Posts</p>
     {currentUser.isAdmin && userPosts.length > 0 ? (
 <Card className="max-w-4xl mx-auto ">
-      <div className="mb-4 flex items-center justify-between">
+      {/* <div className="mb-4 flex items-center justify-between">
         <p className="text-xl  font-bold leading-none text-indigo-700 dark:text-indigo-400">Posts</p>
-        {showMore && (
-        <button onClick={handleShowMore} className="text-sm font-medium text-indigo-600 dark:text-indigo-500">
-          View More
-        </button>)}
-      </div>
+
+      </div> */}
       <div className="flow-root">
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
         {userPosts.map((post) => (
@@ -101,7 +99,7 @@ function DashPosts() {
               {/* right */}
               <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
               <Link
-                      className='text-green-400 transform ease-in-out hover:scale-105 duration-100  me-5'
+                      className='text-green-400   me-5'
                       to={`/update-post/${post._id}`}
                     >
                       <span>Edit</span>
@@ -112,7 +110,7 @@ function DashPosts() {
                         setShowModal(true);
                         setPostIdToDelete(post._id);
                       }}
-                      className='font-medium text-red-500 transform ease-in-out hover:scale-105 duration-100  cursor-pointer'
+                      className='font-medium text-red-500   cursor-pointer'
                     >
                       Delete
                     </span></div>
@@ -125,6 +123,14 @@ function DashPosts() {
     ) : (
         <p>No Posts Yet.</p>
       )}
+                {showMore && (
+            <button
+              onClick={handleShowMore}
+              className='w-full font-semibold text-indigo-600 dark:text-indigo-500 self-center text-sm py-7'
+            >
+              Show more
+            </button>
+          )}
       </div>
 
 

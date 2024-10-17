@@ -66,11 +66,11 @@ function DashUsers() {
   
     return (
         <>
-        <div className='px-4'>
+        <div className='px-4 mb-11'>
         {currentUser.isAdmin && users.length > 0 ? (
-        <Card className="max-w-3xl mx-auto bg-gray-200/50 dark:bg-slate-800/50">
+        <Card className="max-w-3xl mx-auto bg-gray-200/50 dark:bg-slate-800/50 shadow-lg mt-5">
       <div className="mb-4 flex items-center justify-between">
-        <h5 className="text-xl font-bold leading-none text-indigo-500 dark:text-indigo-500">Users</h5>
+        <h5 className="text-xl font-bold leading-none text-indigo-800 dark:text-indigo-500">Users</h5>
         {showMore && (
         <button onClick={handleShowMore} className="text-sm font-medium text-indigo-600 dark:text-indigo-500">
           View all
@@ -105,7 +105,7 @@ function DashUsers() {
                           setShowModal(true);
                           setUserIdToDelete(user._id);
                         }}
-                        className='font-medium text-red-500 cursor-pointer'
+                        className='font-medium text-red-500 cursor-pointer mr-2'
                       >
                         Remove
                       </span>
@@ -141,8 +141,8 @@ function DashUsers() {
           <Modal.Body className="bg-slate-800 rounded-b-md " >
             <div className='text-center'>
               <PiShieldWarningBold  className='h-16 w-16 text-red-700 dark:text-red-700 mb-4 mx-auto' />
-              <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-                Are you sure you want to delete this user?
+              <h3 className='mb-5 text-lg text-gray-300 dark:text-gray-400'>
+                Are you sure you want to <span className='text-red-500 font-semibold'>Remove</span> this User?
               </h3>
               <div className='flex justify-center gap-4'>
                 <Button color='failure' onClick={handleDeleteUser} 

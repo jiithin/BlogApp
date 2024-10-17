@@ -78,7 +78,7 @@ function DashPosts() {
     <div className='px-4'>
     <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl mb-4 '>All Posts</p>
     {currentUser.isAdmin && userPosts.length > 0 ? (
-<Card className="max-w-4xl mx-auto bg-gray-200/50 dark:bg-slate-800/50">
+<Card className="max-w-4xl mx-auto bg-gray-200/50 dark:bg-slate-800/50 shadow-lg">
       {/* <div className="mb-4 flex items-center justify-between">
         <p className="text-xl  font-bold leading-none text-indigo-700 dark:text-indigo-400">Posts</p>
 
@@ -151,7 +151,7 @@ function DashPosts() {
           <div className='text-center'>
             <PiWarningBold  className='h-16 w-16 text-red-700 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-400 dark:text-gray-100'>
-              Are you sure you want to delete this post?
+              Are you sure you want to <span className='text-red-500 font-semibold'>delete</span> this post?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeletePost}

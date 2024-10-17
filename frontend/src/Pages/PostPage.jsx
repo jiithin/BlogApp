@@ -3,8 +3,10 @@ import React from 'react'
 import { Button, Spinner } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function PostPage() {
+
   const { postSlug } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -25,6 +27,7 @@ function PostPage() {
         }
         if (res.ok) {
           setPost(data.posts[0]);
+
           setLoading(false);
           setError(false);
         }
@@ -35,6 +38,7 @@ function PostPage() {
     };
     fetchPost();
   }, [postSlug]);
+
 
   //fetch recent posts
   useEffect(() => {
@@ -110,10 +114,10 @@ function PostPage() {
 
 
       <div className="flex mb-5 mt-5">
-            <img src="https://randomuser.me/api/portraits/men/97.jpg"
+            <img src={post.userProfile}
               className="h-10 w-10 rounded-full mr-2 object-cover" />
             <div className='flex-col'>
-              <p className="font-semibold text-slate-950 dark:text-gray-200  text-sm"> Mike Sullivan </p>
+              <p className="font-semibold text-slate-950 dark:text-gray-200  text-sm">{post.username}</p>
               <p className=" text-slate-950 dark:text-gray-200 text-xs"> {post && new Date(post.createdAt).toLocaleDateString()} </p>
               
             </div>

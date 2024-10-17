@@ -16,8 +16,10 @@ import { HiInformationCircle } from "react-icons/hi";
 
 
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function CreatePost() {
+  const { currentUser } = useSelector((state) => state.user);
     const [file, setFile] = useState(null);
     const [imageUploadProgress, setImageUploadProgress] = useState(null);
     const [imageUploadError, setImageUploadError] = useState(null);
@@ -26,7 +28,7 @@ function CreatePost() {
   
     const navigate = useNavigate();
 
-    console.log(formData);
+    //console.log(formData);
 //  can tput handle image inside handle submit bcoz handle submit async functn , try another way or set if file exist in handle submit
 const handleUpdloadImage = async () => {
     try {
@@ -54,7 +56,7 @@ const handleUpdloadImage = async () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setImageUploadProgress(null);
             setImageUploadError(null);
-            setFormData({ ...formData, image: downloadURL });
+            setFormData({ ...formData, image: downloadURL, username: currentUser.username, userProfile: currentUser.profilePicture, });
           });
         }
       );

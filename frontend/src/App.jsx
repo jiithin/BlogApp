@@ -41,7 +41,7 @@ function App() {
       </Route>
       
       <Route path="/projects" element={<Projects />} />
-      <Route path="/post" element={<PostPage />} />
+      <Route path="/post/:postSlug" element={<PostPage />} />
       
      </Routes>
      <Footer/>

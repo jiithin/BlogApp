@@ -3,7 +3,6 @@ import { Modal, Table, Button, Card } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { PiShieldWarningBold } from "react-icons/pi";
-import { FaCheck, FaTimes } from 'react-icons/fa';
 
 function DashUsers() {
     const { currentUser } = useSelector((state) => state.user);
@@ -91,7 +90,7 @@ function DashUsers() {
               </div>
               <div className="min-w-0 flex-1">
                 <p className="truncate text-md font-medium text-gray-900 dark:text-white">{user.username} {user.isAdmin && (
-                <span className='text-green-500 font-semibold text-sm ml-2' >Admin</span>
+                <span className='text-green-500 font-bold text-xs ml-2' >Admin</span>
                       )}</p>
                 <p className="truncate text-sm text-gray-500 dark:text-gray-400">{user.email}</p>
 

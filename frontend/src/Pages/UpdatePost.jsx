@@ -214,6 +214,7 @@ const handleUpdloadImage = async () => {
             type='file'
             accept='image/*'
             className='bg-transparent'
+            value={file}
             onChange={(e) => setFile(e.target.files[0])}
           />
           <Button

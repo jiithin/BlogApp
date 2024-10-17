@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
-import {  HiChartPie, HiInbox, HiUser } from "react-icons/hi";
+import {  HiChartPie, HiUser } from "react-icons/hi";
+import { FaUsers } from "react-icons/fa";
+import { IoMdListBox } from "react-icons/io";
 import { PiPowerBold } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -62,21 +64,30 @@ function DashSidebar() {
         Profile
       </Link>
 
-      {/* is admin */}
+      {/* is admin posts */}
       {currentUser.isAdmin ? (
       <Link to='/dashboard?tab=posts'
       className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
-      <HiInbox className='text-purple-700 dark:text-indigo-300 mt-1'/>
+      <IoMdListBox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Your Posts
       </Link>):(
         <Link to='/projects'
         className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
-      <HiInbox className='text-purple-700 dark:text-indigo-300 mt-1'/>
+      <IoMdListBox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Posts
       </Link>
       )}
+
+            {/* is admin users */}
+            {currentUser.isAdmin && (
+      <Link to='/dashboard?tab=users'
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      >
+      <FaUsers className='text-purple-700 dark:text-indigo-300 mt-1'/>
+        Users
+      </Link>)}
 
       <Link
       onClick={handleSignout}
@@ -105,18 +116,29 @@ function DashSidebar() {
   >
         <HiUser className='text-gray-500 dark:text-indigo-300'/>
   </Link>
-  {/* is admin */}
+  {/* is admin posts */}
   {currentUser.isAdmin ? (
   <Link to='/dashboard?tab=posts'
     className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-        <HiInbox className='text-gray-500 dark:text-indigo-300'/>
+        <IoMdListBox className='text-gray-500 dark:text-indigo-300'/>
   </Link>):(
   <Link to='/projects'
     className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-        <HiInbox className='text-gray-500 dark:text-indigo-300'/>
+        <IoMdListBox className='text-gray-500 dark:text-indigo-300'/>
   </Link>)}
+
+
+    {/* is admin users */}
+    {currentUser.isAdmin && (
+  <Link to='/dashboard?tab=users'
+    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+  >
+        <FaUsers className='text-gray-500 dark:text-indigo-300'/>
+  </Link>)}
+
+
   
   <Link
   onClick={handleSignout}

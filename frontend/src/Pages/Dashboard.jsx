@@ -9,6 +9,7 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 import { TbUser, TbUserUp } from "react-icons/tb";
 import { LiaCommentSolid } from "react-icons/lia";
 import { MdPostAdd } from "react-icons/md";
+import DashUsers from '../Components/DashUsers';
 
 function Dashboard() {
   //to get each tab copmonent from click
@@ -167,6 +168,11 @@ function Dashboard() {
     <div className="posts">
       {/* posts */}
       {tab==='posts' && <DashPosts/>}
+    </div>
+
+    <div className="users">
+      {/* posts */}
+      {tab==='users' && <DashUsers/>}
     </div>
     </div>
 

@@ -6,7 +6,7 @@ import { Alert, Button, Modal, Tooltip } from 'flowbite-react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import {updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice.js'
-import { BsExclamationTriangle } from "react-icons/bs";
+import { PiWarningBold } from "react-icons/pi";
 import { BiSolidTrashAlt } from "react-icons/bi";
 import { BsFilePost } from "react-icons/bs";
 import { HiInformationCircle } from "react-icons/hi";
@@ -376,7 +376,7 @@ function DashProfile() {
         <Modal.Header className="bg-slate-800 rounded-t-md " />
         <Modal.Body className="bg-slate-800 rounded-b-md">
           <div className="text-center bg-transparent">
-            <BsExclamationTriangle className="mx-auto mb-4 h-14 w-14 text-red-600" />
+            <PiWarningBold className="mx-auto mb-4 h-16 w-16 text-red-700" />
             <h3 className="mb-5 text-lg font-normal text-gray-400 dark:text-gary-100">
               Are you sure you want to delete this Account?
             </h3>

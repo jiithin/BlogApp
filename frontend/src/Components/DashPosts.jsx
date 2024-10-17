@@ -1,6 +1,6 @@
 import { Button, Card, Modal, Table } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
-import { HiOutlineExclamationCircle } from 'react-icons/hi'
+import { PiWarningBold } from "react-icons/pi";
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -149,7 +149,7 @@ function DashPosts() {
         <Modal.Header className="bg-slate-800 rounded-t-md " />
         <Modal.Body className="bg-slate-800 rounded-b-md " >
           <div className='text-center'>
-            <HiOutlineExclamationCircle className='h-16 w-16 text-red-600 dark:text-gray-200 mb-4 mx-auto' />
+            <PiWarningBold  className='h-16 w-16 text-red-700 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-400 dark:text-gray-100'>
               Are you sure you want to delete this post?
             </h3>
@@ -158,7 +158,7 @@ function DashPosts() {
               className="w-full" >
                 Delete
               </Button>
-              <Button color='gray' onClick={() => setShowModal(false)}
+              <Button color='dark' onClick={() => setShowModal(false)}
                 className="w-full" >
                 Cancel
               </Button>

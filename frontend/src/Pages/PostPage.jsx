@@ -11,6 +11,7 @@ function PostPage() {
   const [post, setPost] = useState(null);
   const [recentPosts, setRecentPosts] = useState(null);
 
+  //fetch post
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -35,6 +36,7 @@ function PostPage() {
     fetchPost();
   }, [postSlug]);
 
+  //fetch recent posts
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
@@ -117,7 +119,7 @@ function PostPage() {
             </div>
             
           </div>
-        <p className="pb-6" dangerouslySetInnerHTML={{ __html: post && post.content }}></p>
+        <p className="pb-6 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content }}></p>
 
         
 

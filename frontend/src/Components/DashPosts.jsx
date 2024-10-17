@@ -2,7 +2,7 @@ import { Button, Card, Modal, Table } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
 import { PiWarningBold } from "react-icons/pi";
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function DashPosts() {
   const {currentUser}=useSelector((state)=>state.user)
@@ -10,6 +10,7 @@ function DashPosts() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
+  const navigate = useNavigate();
   //console.log(userPosts)
 
 
@@ -73,6 +74,9 @@ function DashPosts() {
       console.log(error.message);
     }
   };
+
+
+
   return (
     <>
     <div className='px-4'>
@@ -86,17 +90,20 @@ function DashPosts() {
       <div className="flow-root">
         <ul className="divide-y divide-gray-300 dark:divide-gray-700">
         {userPosts.map((post) => (
-          <li className="py-3 sm:py-4">
+          <li className="py-3 sm:py-4" >
             <div className="flex items-center space-x-4">
-              <div className="shrink-0">
+              <div className="shrink-0" >
                 <img
                   src={post.image}
                   alt={post.title}
                   className="rounded-md w-32"
+                  
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-lg font-medium text-purple-900 dark:text-purple-300">{post.title}</p>
+                <p onClick={() => {
+                    navigate(`post/${post.slug}`);
+                  }} className="truncate text-lg font-medium text-purple-900 dark:text-purple-300">{post.title}</p>
                 <p className="truncate text-sm text-gray-500 dark:text-gray-400 mb-1">{post.category}</p>
                 <p className="truncate text-xs text-gray-500 dark:text-gray-400">{new Date(post.updatedAt).toLocaleDateString()}</p>
               </div>

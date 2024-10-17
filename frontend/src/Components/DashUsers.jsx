@@ -14,7 +14,7 @@ function DashUsers() {
     useEffect(() => {
       const fetchUsers = async () => {
         try {
-          const res = await fetch(`/api/user/getusers`);
+          const res = await fetch(`/blog/user/getusers`);
           const data = await res.json();
           if (res.ok) {
             setUsers(data.users);
@@ -124,7 +124,7 @@ function DashUsers() {
             )}
           </>
         ) : (
-          <p>You have no users yet!</p>
+          <p className='text-center py-12 text-indigo-600'>No users to find.</p>
         )}
         <Modal
           show={showModal}

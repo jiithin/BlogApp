@@ -78,13 +78,13 @@ function DashPosts() {
     <div className='px-4'>
     <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl mb-4 '>All Posts</p>
     {currentUser.isAdmin && userPosts.length > 0 ? (
-<Card className="max-w-4xl mx-auto ">
+<Card className="max-w-4xl mx-auto bg-gray-200/50 dark:bg-slate-800/50">
       {/* <div className="mb-4 flex items-center justify-between">
         <p className="text-xl  font-bold leading-none text-indigo-700 dark:text-indigo-400">Posts</p>
 
       </div> */}
       <div className="flow-root">
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        <ul className="divide-y divide-gray-300 dark:divide-gray-700">
         {userPosts.map((post) => (
           <li className="py-3 sm:py-4">
             <div className="flex items-center space-x-4">
@@ -125,7 +125,7 @@ function DashPosts() {
       </div>
     </Card>
     ) : (
-        <p>No Posts Yet.</p>
+        <p className='text-center py-12 text-indigo-600'>No Posts Yet.</p>
       )}
                 {showMore && (
             <button

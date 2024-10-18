@@ -3,7 +3,7 @@ import React from 'react'
 function Projects() {
   return (
     <>
-        <div><p id='head'>Blogs</p></div>
+        <div><p id='head' className='text-4xl font-poppins poppins-medium py-5'>Blogs</p></div>
 
         {/* sample */}
         <div className="flex flex-col h-auto bg-transparent items-center mt-5">

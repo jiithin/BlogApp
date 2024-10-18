@@ -61,8 +61,8 @@ function Home() {
       </div>
     </div>
       
-    <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 bg-gradient-to-t from-gray-800/10 via-gray-800/30 to-gray-800/10 backdrop-blur-sm">
-        {post.title.slice(0,60)}...
+    <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 bg-gradient-to-t from-gray-800/10 via-gray-800/40 to-gray-800/10 backdrop-blur-sm">
+        {post.title.slice(0,80)}...
       </p>
       {/* <p className="text-sm text-gray-200">
         {post.username}
@@ -77,7 +77,7 @@ function Home() {
     </div> */}
   </div>
   <p
-    className=" block px-2 text-sm lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-100 "
+    className=" block px-3 text-sm text-pretty lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-100 "
     dangerouslySetInnerHTML={{ __html: post && post.content }} >
     
   </p>

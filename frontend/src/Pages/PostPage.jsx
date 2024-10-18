@@ -119,7 +119,7 @@ function PostPage() {
 
       <div className="flex mb-5 mt-5">
             <img src={post.userProfile}
-              className="h-10 w-10 rounded-full mr-2 object-cover" />
+              className="h-10 w-10 rounded-full mr-2 object-cover shadow-md" />
             <div className='flex-col'>
               <p className="font-semibold text-slate-950 dark:text-gray-200  text-sm">{post.username}</p>
               <p className=" text-slate-950 dark:text-gray-200 text-xs"> {post && new Date(post.createdAt).toLocaleDateString()} </p>

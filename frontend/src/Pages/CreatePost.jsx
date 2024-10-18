@@ -95,7 +95,7 @@ const handleUpdloadImage = async () => {
   return (
     <>
     <div className='p-3 max-w-6xl mx-auto min-h-screen'>
-      <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl my-7 '>Create a post</p>
+      <p className='divulge text-center lg:text-3xl text-xl font-poppins poppins-medium my-7 '>Create a post</p>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
 
         {/*image upload error alerts */}
@@ -192,7 +192,7 @@ const handleUpdloadImage = async () => {
             <option value='Travel'>Travel</option>
             <option value='Food'>Food</option>
             <option value='Fashion'>Fashion</option>
-            <option value='Fitness'>Sports</option>
+            <option value='Sports'>Sports</option>
             <option value='Fitness'>Fitness</option>
             <option value='Eduction'>Eduction</option>
           </Select>

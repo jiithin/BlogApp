@@ -204,7 +204,7 @@ const handleUpdloadImage = async () => {
             <option value='Travel'>Travel</option>
             <option value='Food'>Food</option>
             <option value='Fashion'>Fashion</option>
-            <option value='Fitness'>Sports</option>
+            <option value='Sports'>Sports</option>
             <option value='Fitness'>Fitness</option>
             <option value='Eduction'>Eduction</option>
           </Select>

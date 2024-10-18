@@ -74,15 +74,17 @@ function PostPage() {
 
       <div className="mb-4 md:mb-0 w-full max-w-screen-lg mx-auto relative" >
         <div className="absolute left-0 bottom-0 w-full h-full z-10 bg-gradient-to-t from-gray-950/75 via-purple-500/0 to-gray-500/0 rounded-b-lg"></div>
-        <img src={post && post.image} alt={post && post.title} className="w-full rounded-lg" />
-        
-        <div className="p-4 absolute bottom-0 left-0 z-20 ">
-          <Link to={`/search?category=${post && post.category}`}
-            className="px-3 py-1 font-semibold text-sm bg-gray-200 text-slate-950 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
-            <span className='hidden lg:inline absolute right-5 text-xs text-white font-semibold shadow-lg'>
+        <img src={post && post.image} alt={post && post.title} className="w-full rounded-lg " />
+        <span className=' absolute mt-14 right-0 text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span>
-          <h2 className="lg:text-4xl md:text-2xl text-xl font-semibold text-gray-100 leading-tight">
+        <div className="p-4 absolute bottom-0 left-0 z-20 ">
+          <Link to={`/search?category=${post && post.category}`}
+            className="px-3 py-1 font-poppins poppins-semibold text-sm bg-gray-200 text-slate-950 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
+            {/* <span className='hidden lg:inline absolute right-0 text-xs text-white font-semibold shadow-lg'>
+          {post && (post.content.length / 1000).toFixed(0)} mins read
+        </span> */}
+          <h2 className="lg:text-4xl md:text-2xl text-xl font-semibold text-gray-100 leading-tight font-poppins poppins-semibold">
             {post && post.title}
           </h2>
           {/* <div className=" flex  mt-3">
@@ -106,9 +108,9 @@ function PostPage() {
       <div className="px-4 lg:px-0 mt-10 text-gray-700 dark:text-gray-400 max-w-screen-lg mx-auto text-lg leading-relaxed">
 
  
-            <span className='lg:hidden text-xs text-gray-500 font-semibold absolute right-8'>
+            {/* <span className='lg:hidden text-xs text-gray-500 font-semibold absolute right-8'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
-        </span>
+        </span> */}
 
 
 
@@ -126,7 +128,7 @@ function PostPage() {
             </div>
             
           </div>
-        <p className="post-content pb-6 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content }}></p>
+        <p className="post-content text-slate-950 dark:text-gray-400 pb-6 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content }}></p>
 
         
 

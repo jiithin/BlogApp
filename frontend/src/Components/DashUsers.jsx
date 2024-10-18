@@ -116,7 +116,7 @@ function DashUsers() {
       </div>
     </Card>
         ) : (
-          <p className='text-center py-12 text-indigo-600'>No users to find.</p>
+          <p className='divulge text-center py-12 lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No users to find.</p>
         )}
 
          {showMore && (

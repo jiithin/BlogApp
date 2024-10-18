@@ -91,10 +91,10 @@ function Header() {
 <Navbar className='bg-transparent dark:bg-inherit backdrop-blur-0 p-5 '>
 <Link
   to='/'
-  className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white flex'
+  className='self-center whitespace-nowrap text-sm sm:text-xl  flex'
 >
     <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo"/>
-    <span className="divulge self-center whitespace-nowrap lg:text-2xl md:text-xl sm:text-xl">Divulge.</span>
+    <span className="divulge self-center whitespace-nowrap lg:text-2xl text-lg font-poppins poppins-semibold">Divulge.</span>
 </Link>
 
 
@@ -151,7 +151,7 @@ function Header() {
     </Dropdown>
     ):(
           <Link to='/sign-in' className=' '>
-            <button className='signin bg-transparent dark:bg-inherit py-2'>
+            <button className='divulge bg-transparent dark:bg-inherit py-2 font-poppins poppins-medium'>
             Sign In
             </button>
         </Link>
@@ -174,16 +174,16 @@ function Header() {
   
 </form>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 '>
-    <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base  '>Home</Link>
+    <Link to='/' className='text-purple-500 dark:text-purple-400 lg:text-base  font-poppins poppins-medium'>Home</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
-    <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base '>Blogs</Link>
+    <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Blogs</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base '>Features</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Features</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base '>Contact</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Contact</Link>
   </Navbar.Link>
   
 </Navbar.Collapse>

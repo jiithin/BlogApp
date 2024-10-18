@@ -215,7 +215,7 @@ function DashProfile() {
                 </div>
               </Tooltip>
               <div className="flex items-center space-x-2 mt-2">
-                <p className="divulge font-bold text-2xl text-center py-2 lg:block ">
+                <p className="divulge font-poppins poppins-medium text-2xl text-center py-2 lg:block font">
                   {currentUser.username}
                 </p>
 

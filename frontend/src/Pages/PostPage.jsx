@@ -109,6 +109,9 @@ function PostPage() {
             <span className='lg:hidden text-xs text-gray-500 font-semibold absolute right-8'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span>
+
+
+
       
 
 
@@ -123,7 +126,7 @@ function PostPage() {
             </div>
             
           </div>
-        <p className="pb-6 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content }}></p>
+        <p className="post-content pb-6 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content }}></p>
 
         
 

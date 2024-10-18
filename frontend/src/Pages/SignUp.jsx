@@ -52,8 +52,8 @@ const handleSubmit = async (e) => {
 
         {/* left */}
         <div className='flex-1 '>
-          <Link to='/sign-up' className='font-bold dark:text-white text-4xl'>
-          <p id='auth'>SignUp</p>
+          <Link to='/sign-up'>
+          <p id='auth' className=' text-7xl font-poppins poppins-medium py-3' >Sign Up</p>
             
           </Link>
           <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-80'>Create a Free Account</p>
@@ -115,7 +115,7 @@ const handleSubmit = async (e) => {
 
             <div className='flex gap-2 text-sm  mt-5 text-gray-600 dark:text-gray-400'>
             <span>Already have an account?</span>
-            <Link to='/sign-in' className='font-bold text-purple-500 dark:text-purple-500'>
+            <Link to='/sign-in' className='font-bold text-purple-400 dark:text-purple-400 font-poppins poppins-bold'>
               Sign In
             </Link>
           </div>

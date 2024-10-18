@@ -80,7 +80,7 @@ function DashPosts() {
   return (
     <>
     <div className='px-4'>
-    <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl mb-4 '>All Posts</p>
+    <p className=' text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>All Posts</p>
     {currentUser.isAdmin && userPosts.length > 0 ? (
 <Card className="max-w-4xl mx-auto bg-gray-200/50 dark:bg-slate-800/50 shadow-lg">
       {/* <div className="mb-4 flex items-center justify-between">
@@ -132,7 +132,7 @@ function DashPosts() {
       </div>
     </Card>
     ) : (
-        <p className='text-center py-12 text-indigo-600'>No Posts Yet.</p>
+        <p className='divulge py-12 text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No Posts Yet.</p>
       )}
                 {showMore && (
             <button

@@ -46,6 +46,7 @@ function UpdatePost() {
                 setPublishError(null);
                 setFormData(data.posts[0]);
               }
+              console.log(formData)
             };
             fetchPost();
         }catch (error){
@@ -120,7 +121,7 @@ const handleUpdloadImage = async () => {
   return (
     <>
     <div className='p-3 max-w-6xl mx-auto min-h-screen'>
-      <p className='divulge text-center lg:text-3xl md:text-xl sm:text-xl my-7 '>Update Post</p>
+      <p className=' text-center lg:text-3xl md:text-xl sm:text-xl my-7 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600  font-poppins poppins-medium'>Update Post</p>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
 
         {/*image upload error alerts */}
@@ -145,10 +146,11 @@ const handleUpdloadImage = async () => {
             required
             id='title'
             className='flex-1  peer w-full appearance-none border-0 bg-transparent py-1 px-2 text-sm focus:outline-none focus:ring-0 font-bold dark:text-gray-100'
+            value={formData.title}
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
-            value={formData.title}
+            
           />
           
           

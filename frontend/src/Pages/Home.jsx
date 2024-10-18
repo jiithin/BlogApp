@@ -1,8 +1,30 @@
 import { Card } from 'flowbite-react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 
 
 function Home() {
+  const {currentUser}=useSelector((state)=>state.user)
+  const [userPosts,setUserPosts]=useState([])
+
+  //get all posts only 9 posts willshow becoz we set a query limiter
+  useEffect(()=>{
+    const fetchPosts=async()=>{
+      try{
+        const res=await fetch(`blog/post/getposts`)
+        const data=await res.json()
+        if(res.ok){
+          setUserPosts(data.posts)
+        }
+        //console.log(data)
+      }catch(error){
+        console.log(error.message)
+      }
+    };
+    if(currentUser){
+      fetchPosts()
+    }
+  });
   return (
     
     
@@ -17,86 +39,51 @@ function Home() {
 </div>
 </div>
 
+<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-4 p-4">
 
-
-
-<div className="grid grid-cols-3 md:grid-cols-2 gap-4 lg:gap-6 p-5">
-
-    <div className="grid gap-4">
-        
-
-
-
+  {/* card */}
+{userPosts.map((post) => (
 <div
-  className="card shadow-md h-[25em] max-w-full group gap-[0.5em] rounded-xl relative flex justify-end flex-col p-6 z-10 overflow-hidden  bg-[url(https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg)] bg-cover">
-  <div className="absolute align-middle top-0 left-0 h-full w-full group-hover:backdrop-blur-sm "></div>
+  className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden ">
+    <img src={ post.image} alt={ post.title} className="absolute align-middle top-0 left-0 w-full h-full rounded-lg object-cover" />
+  <div className="absolute align-middle top-0 left-0 h-full w-full group-hover:backdrop-blur-sm group-hover:bg-slate-800/35"></div>
 
 
   <div
-    className="container text-black z-10 relative font-nunito flex flex-col gap-2"
+    className="container text-white z-10  font-poppins flex flex-col gap-1"
   >
+    
     <div className="h-fit w-full">
-    <h1 className="card_heading text-xl font-bold">
-        STEEL BALL RUN
-      </h1>
-      <p className="text-lg">
-        By Hirohiko Araki
-      </p>
-    </div>
-
-    <div className="flex justify-left items-center h-fit w-full gap-2">
-      <div className="w-fit h-fit text-gray-800  text-md font-light">
-        <p>Article</p>
-      </div>
-    </div>
-
+      {/* category tag */}
     <div className="flex justify-center items-center h-fit w-fit gap-1">
-      <div
-        className="border-2 border-slate-700 rounded-md text-black  text-[1em] font-normal px-[0.5em] py-[0.05em] hover:bg-slate-800 hover:text-white duration-300 cursor-pointer"
-      >
-        <p>Drama</p>
-      </div>
-      <div
-        className="border-2 border-slate-700 rounded-md text-black  text-[1em] font-normal px-[0.5em] py-[0.05em] hover:bg-slate-800 hover:text-white duration-300 cursor-pointer"
-      >
-        <p>Action</p>
-      </div>
-      <div
-        className="border-2 border-slate-700 rounded-md text-black  text-[1em] font-normal px-[0.5em] py-[0.05em] hover:bg-slate-800 hover:text-white duration-300 cursor-pointer"
-      >
-        <p>Balls</p>
+      <div className="  text-black poppins-medium text-sm font-normal px-1 bg-gray-100 duration-300 cursor-pointer">
+        <p>{post.category}</p>
       </div>
     </div>
+      
+    <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 bg-gradient-to-t from-gray-800/10 via-gray-800/30 to-gray-800/10 backdrop-blur-sm">
+        {post.title.slice(0,60)}...
+      </p>
+      {/* <p className="text-sm text-gray-200">
+        {post.username}
+      </p> */}
+    </div>
+
+    {/* <div className="flex justify-left items-center h-fit w-full gap-2">
+      <div className="w-fit h-fit text-gray-300  text-xs font-light">
+        <p>{post && new Date(post.createdAt).toLocaleDateString()}</p>
+        
+      </div>
+    </div> */}
   </div>
   <p
-    className=" block text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-800"
-  >
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet officiis,
-    dolorem ab animi magnam culpa fugit error voluptates adipisci, debitis ut
-    fuga at nisi laborum suscipit a eos similique unde.
+    className=" block px-2 text-sm lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-100 "
+    dangerouslySetInnerHTML={{ __html: post && post.content }} >
+    
   </p>
+</div>))}
 </div>
 
-<Card
-      className="max-w-sm bg-cover"
-      imgAlt="Meaningful alt text for an image that is not purely decorative"
-      imgSrc="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-      
-    >
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white bg-transparent">
-        Noteworthy technology acquisitions 2021
-      </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-      </p>
-    </Card>
-
-
-
-
-  
-    </div>
-</div>
 
 </>
   )

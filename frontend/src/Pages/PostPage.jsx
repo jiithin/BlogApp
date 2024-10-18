@@ -72,10 +72,14 @@ function PostPage() {
 
     <main className="mt-10 px-5">
 
+    <p className=" lg:hidden md:hidden text-pretty text-xl mb-3 font-semibold text-purple-950 dark:text-purple-200 leading-tight font-poppins poppins-semibold">
+            {post && post.title}
+          </p>
+
       <div className="mb-4 md:mb-0 w-full max-w-screen-lg mx-auto relative" >
         <div className="absolute left-0 bottom-0 w-full h-full z-10 bg-gradient-to-t from-gray-950/75 via-purple-500/0 to-gray-500/0 rounded-b-lg"></div>
         <img src={post && post.image} alt={post && post.title} className="w-full rounded-lg " />
-        <span className=' absolute mt-14 right-0 text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
+        <span className=' absolute mt-14 right-3 text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span>
         <div className="p-4 absolute bottom-0 left-0 z-20 ">
@@ -84,9 +88,9 @@ function PostPage() {
             {/* <span className='hidden lg:inline absolute right-0 text-xs text-white font-semibold shadow-lg'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span> */}
-          <h2 className="lg:text-4xl md:text-2xl text-xl font-semibold text-gray-100 leading-tight font-poppins poppins-semibold">
+          <p className="hidden lg:block md:block lg:text-4xl md:text-2xl font-semibold text-gray-100 leading-tight font-poppins poppins-semibold">
             {post && post.title}
-          </h2>
+          </p>
           {/* <div className=" flex  mt-3">
             <img src="https://randomuser.me/api/portraits/men/97.jpg"
               className="h-10 w-10 rounded-full mr-2 object-cover" />
@@ -111,11 +115,6 @@ function PostPage() {
             {/* <span className='lg:hidden text-xs text-gray-500 font-semibold absolute right-8'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span> */}
-
-
-
-      
-
 
 
       <div className="flex mb-5 mt-5">

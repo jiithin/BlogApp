@@ -1,11 +1,13 @@
 import { Card } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
   const {currentUser}=useSelector((state)=>state.user)
   const [userPosts,setUserPosts]=useState([])
+  const navigate = useNavigate();
 
   //get all posts only 9 posts willshow becoz we set a query limiter
   useEffect(()=>{
@@ -44,7 +46,7 @@ function Home() {
   {/* card */}
 {userPosts.map((post) => (
 <div
-  className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden ">
+  className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden " onClick={(e) =>  navigate(`/post/${post.slug}`)}>
     <img src={ post.image} alt={ post.title} className="absolute align-middle top-0 left-0 w-full h-full rounded-lg object-cover" />
   <div className="absolute align-middle top-0 left-0 h-full w-full group-hover:backdrop-blur-sm group-hover:bg-slate-800/35"></div>
 

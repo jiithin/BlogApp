@@ -1,11 +1,11 @@
 import { Card } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-  const {currentUser}=useSelector((state)=>state.user)
+  //const {currentUser}=useSelector((state)=>state.user)
   const [userPosts,setUserPosts]=useState([])
   const navigate = useNavigate();
 
@@ -23,9 +23,8 @@ function Home() {
         console.log(error.message)
       }
     };
-    if(currentUser){
+
       fetchPosts()
-    }
   });
   return (
     

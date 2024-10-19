@@ -112,9 +112,9 @@ function PostPage() {
       <div className="px-4 lg:px-0 mt-10 text-gray-700 dark:text-gray-400 max-w-screen-lg mx-auto text-lg leading-relaxed">
 
  
-            <span className='lg:hidden text-xs text-gray-500 font-semibold absolute right-8'>
+            {/* <span className='lg:hidden text-xs text-gray-500 font-semibold absolute right-8'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
-        </span>
+        </span> */}
 
 
       <div className="flex mb-5 mt-5">

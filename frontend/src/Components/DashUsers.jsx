@@ -1,8 +1,8 @@
 import React from 'react'
-import { Modal, Table, Button, Card } from 'flowbite-react';
+import { Modal, Button, Card } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { PiShieldWarningBold } from "react-icons/pi";
+import { FaUserAltSlash } from "react-icons/fa";
 
 function DashUsers() {
     const { currentUser } = useSelector((state) => state.user);
@@ -68,8 +68,8 @@ function DashUsers() {
         <div className='px-4 mb-11'>
         {currentUser.isAdmin && users.length > 0 ? (
         <Card className="max-w-3xl mx-auto bg-gray-200/50 dark:bg-slate-800/50 shadow-lg mt-5">
-      <div className="mb-4 flex items-center justify-between">
-        <h5 className="text-xl font-bold leading-none text-indigo-800 dark:text-indigo-500">Users</h5>
+      <div className=" flex items-center justify-between">
+        <h5 className="text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">All Users</h5>
         {showMore && (
         <button onClick={handleShowMore} className="text-sm font-medium text-indigo-600 dark:text-indigo-500">
           View all
@@ -139,7 +139,7 @@ function DashUsers() {
           <Modal.Header className="bg-slate-800 rounded-t-md " />
           <Modal.Body className="bg-slate-800 rounded-b-md " >
             <div className='text-center'>
-              <PiShieldWarningBold  className='h-16 w-16 text-red-700 dark:text-red-700 mb-4 mx-auto' />
+              <FaUserAltSlash  className='h-16 w-16 text-red-700 dark:text-red-700 mb-4 mx-auto' />
               <h3 className='mb-5 text-lg text-gray-300 dark:text-gray-400'>
                 Are you sure you want to <span className='text-red-500 font-semibold'>Remove</span> this User?
               </h3>

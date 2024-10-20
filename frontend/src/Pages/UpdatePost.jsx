@@ -46,7 +46,7 @@ function UpdatePost() {
                 setPublishError(null);
                 setFormData(data.posts[0]);
               }
-              console.log(formData)
+              //console.log(formData)
             };
             fetchPost();
         }catch (error){

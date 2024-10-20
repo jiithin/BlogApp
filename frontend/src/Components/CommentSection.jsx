@@ -1,11 +1,12 @@
-import { Alert, Button, Modal, Textarea } from 'flowbite-react';
+import { Alert, Button, Modal } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { PiShieldWarningBold } from 'react-icons/pi';
+import { BsChatLeftTextFill } from "react-icons/bs";
 import { IoSendSharp } from "react-icons/io5";
+import Comments from './Comments';
 
-export default function CommentSection({ postId }) {
+  function CommentSection({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
   const [comment, setComment] = useState('');
   const [commentError, setCommentError] = useState(null);
@@ -52,6 +53,7 @@ export default function CommentSection({ postId }) {
           const data = await res.json();
           setComments(data);
         }
+        //console.log(comments)
       } catch (error) {
         console.log(error.message);
       }
@@ -177,14 +179,9 @@ export default function CommentSection({ postId }) {
         <p className='text-md my-5 text-center'>No comments yet!</p>
       ) : (
         <>
-          <div className='text-sm my-5 flex items-center gap-1'>
-            <p>Comments</p>
-            <div className='border border-gray-400 py-1 px-2 rounded-sm'>
-              <p>{comments.length}</p>
-            </div>
-          </div>
+
           {comments.map((comment) => (
-            <Comment
+            <Comments
               key={comment._id}
               comment={comment}
               onLike={handleLike}
@@ -207,12 +204,12 @@ export default function CommentSection({ postId }) {
           <Modal.Header className="bg-slate-800 rounded-t-md " />
           <Modal.Body className="bg-slate-800 rounded-b-md " >
             <div className='text-center'>
-              <PiShieldWarningBold  className='h-16 w-16 text-red-700 dark:text-red-700 mb-4 mx-auto' />
+              <BsChatLeftTextFill  className='h-16 w-16 text-red-600 dark:text-red-700 mb-4 mx-auto' />
               <h3 className='mb-5 text-lg text-gray-300 dark:text-gray-400'>
-                Are you sure you want to <span className='text-red-500 font-semibold'>Remove</span> this comment?
+                You want to <span className='text-red-500 font-semibold'>Remove</span> this comment?
               </h3>
               <div className='flex justify-center gap-4'>
-                <Button color='failure' onClick={commentToDelete} 
+                <Button color='failure' onClick={() => handleDelete(commentToDelete)}
                 className='w-full' >
                   Delete
                 </Button>
@@ -227,3 +224,6 @@ export default function CommentSection({ postId }) {
     </div>
   );
 }
+
+
+export default CommentSection

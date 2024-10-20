@@ -26,7 +26,7 @@ function Dashboard() {
   return (
     <div className='min-h-screen mt-10'>
        {/* statistcs */}
-       {!(tab==='profile' || tab==='posts') &&
+       {!(tab==='profile') &&
        <div className="flex-1 bg-transparent rounded-lg mt-4 p-8 ">
                     {/* <h4 className="text-xl text-purple-800/75 dark:text-purple-300 font-mono font-bold ">Dashboard</h4> */}
                     

@@ -1,6 +1,6 @@
 import { Button, Card, Modal, Table } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
-import { PiWarningBold } from "react-icons/pi";
+import { TbFileShredder } from "react-icons/tb";
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -79,14 +79,14 @@ function DashPosts() {
 
   return (
     <>
-    <div className='px-4'>
-    <p className=' text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>All Posts</p>
+    <div className='px-4 mt-4'>
+    {/* <p className=' text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>All Posts</p> */}
     {currentUser.isAdmin && userPosts.length > 0 ? (
 <Card className="max-w-4xl mx-auto bg-gray-200/50 dark:bg-slate-800/50 shadow-lg">
-      {/* <div className="mb-4 flex items-center justify-between">
-        <p className="text-xl  font-bold leading-none text-indigo-700 dark:text-indigo-400">Posts</p>
+      <div className=" flex items-center justify-between">
+        <p className="text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Your Posts</p>
 
-      </div> */}
+      </div>
       <div className="flow-root">
         <ul className="divide-y divide-gray-300 dark:divide-gray-700">
         {userPosts.map((post) => (
@@ -156,7 +156,7 @@ function DashPosts() {
         <Modal.Header className="bg-slate-800 rounded-t-md " />
         <Modal.Body className="bg-slate-800 rounded-b-md " >
           <div className='text-center'>
-            <PiWarningBold  className='h-16 w-16 text-red-700 dark:text-gray-200 mb-4 mx-auto' />
+            <TbFileShredder  className='h-16 w-16 text-red-700 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-400 dark:text-gray-100'>
               Are you sure you want to <span className='text-red-500 font-semibold'>delete</span> this post?
             </h3>

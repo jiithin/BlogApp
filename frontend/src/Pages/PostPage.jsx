@@ -86,7 +86,7 @@ function PostPage() {
         </span>
         <div className="p-4 absolute bottom-0 left-0 ">
           <Link to={`/search?category=${post && post.category}`}
-            className="px-3 py-1 font-poppins poppins-semibold text-sm bg-gray-200 text-slate-950 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
+            className="px-3 py-1 font-poppins poppins-semibold text-sm bg-gray-200  text-slate-950 dark:bg-slate-950 dark:text-gray-200 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
             {/* <span className='hidden lg:inline absolute right-0 text-xs text-white font-semibold shadow-lg'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span> */}

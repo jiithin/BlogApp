@@ -47,7 +47,7 @@ function Home() {
 <div
   className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden " onClick={(e) =>  navigate(`/post/${post.slug}`)}>
     <img src={ post.image} alt={ post.title} className="absolute align-middle top-0 left-0 w-full h-full rounded-lg object-cover" />
-  <div className="absolute align-middle top-0 left-0 h-full w-full group-hover:backdrop-blur-sm group-hover:bg-slate-800/35"></div>
+  <div className="absolute align-middle top-0 left-0 h-full w-full group-hover:backdrop-blur-sm group-hover:bg-slate-800/40"></div>
 
 
   <div
@@ -57,7 +57,7 @@ function Home() {
     <div className="h-fit w-full">
       {/* category tag */}
     <div className="flex justify-center items-center h-fit w-fit gap-1">
-      <div className="  text-black poppins-medium text-sm font-normal px-1 bg-gray-100 duration-300 cursor-pointer">
+      <div className="  text-black poppins-medium text-sm font-normal p-1 bg-gray-100 dark:bg-slate-950 dark:text-gray-200 duration-300 cursor-pointer">
         <p>{post.category}</p>
       </div>
     </div>
@@ -78,13 +78,14 @@ function Home() {
     </div> */}
   </div>
   <p
-    className=" block px-3 text-sm text-pretty lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-100 "
+    className=" block px-3 text-sm text-pretty lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-200 "
     dangerouslySetInnerHTML={{ __html: post && post.content }} >
     
   </p>
-</div>))):(
+</div>
+))):(
   <>
-
+{/* loading card */}
   <div className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden p-4 bg-gray-200 dark:bg-gray-500">
         <div className="animate-pulse rounded-lg bg-gray-400 h-full w-full"></div>
   <div className="animate-pulse flex space-x-4">

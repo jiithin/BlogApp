@@ -43,7 +43,7 @@ function Home() {
 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-4 p-4">
 
   {/* card */}
-{userPosts.map((post) => (
+{userPosts && userPosts.length > 0 ? ( userPosts.map((post) => (
 <div
   className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden " onClick={(e) =>  navigate(`/post/${post.slug}`)}>
     <img src={ post.image} alt={ post.title} className="absolute align-middle top-0 left-0 w-full h-full rounded-lg object-cover" />
@@ -82,7 +82,64 @@ function Home() {
     dangerouslySetInnerHTML={{ __html: post && post.content }} >
     
   </p>
-</div>))}
+</div>))):(
+  <>
+
+  <div className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden p-4 bg-gray-200 dark:bg-gray-500">
+        <div className="animate-pulse rounded-lg bg-gray-400 h-full w-full"></div>
+  <div className="animate-pulse flex space-x-4">
+
+    <div className="flex-1 space-y-6 py-1">
+      <div className="h-2 bg-gray-400 rounded"></div>
+      <div className="space-y-3">
+        <div className="grid grid-cols-3 gap-4">
+          <div className="h-2 bg-gray-400 rounded col-span-1"></div>
+          <div className="h-2 bg-gray-400 rounded col-span-2"></div>
+        </div>
+        <div className="h-2 bg-gray-400 rounded"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden p-4 bg-gray-200 dark:bg-gray-500">
+<div className="animate-pulse rounded-lg bg-gray-400 h-full w-full"></div>
+<div className="animate-pulse flex space-x-4">
+
+<div className="flex-1 space-y-6 py-1">
+<div className="h-2 bg-gray-400 rounded"></div>
+<div className="space-y-3">
+<div className="grid grid-cols-3 gap-4">
+  <div className="h-2 bg-gray-400 rounded col-span-1"></div>
+  <div className="h-2 bg-gray-400 rounded col-span-2"></div>
+</div>
+<div className="h-2 bg-gray-400 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+
+<div className="card shadow-lg lg:h-[20em] h-[15em] max-w-screen-2xl group gap-[0.5em] rounded-xl relative flex justify-end flex-col z-10 overflow-hidden p-4 bg-gray-200 dark:bg-gray-500">
+<div className="animate-pulse rounded-lg bg-gray-400 h-full w-full"></div>
+<div className="animate-pulse flex space-x-4">
+
+<div className="flex-1 space-y-6 py-1">
+<div className="h-2 bg-gray-400 rounded"></div>
+<div className="space-y-3">
+<div className="grid grid-cols-3 gap-4">
+  <div className="h-2 bg-gray-400 rounded col-span-1"></div>
+  <div className="h-2 bg-gray-400 rounded col-span-2"></div>
+</div>
+<div className="h-2 bg-gray-400 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+
+</>
+
+
+)}
 </div>
 
 

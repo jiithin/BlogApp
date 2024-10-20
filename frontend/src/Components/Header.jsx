@@ -151,7 +151,7 @@ function Header() {
     </Dropdown>
     ):(
           <Link to='/sign-in' className=' '>
-            <button className='divulge bg-transparent dark:bg-inherit py-2 font-poppins poppins-medium'>
+            <button className='divulge bg-transparent dark:bg-inherit py-2 font-poppins poppins-semibold'>
             Sign In
             </button>
         </Link>

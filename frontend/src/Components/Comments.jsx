@@ -58,7 +58,7 @@ import { BiSolidLike } from "react-icons/bi";
     <div className='flex p-4 border-b dark:border-gray-600 text-sm'>
       <div className='flex-shrink-0 mr-3'>
         <img
-          className='w-10 h-10 rounded-full bg-gray-200'
+          className='w-10 h-10 rounded-full bg-gray-200 shadow-md'
           src={user.profilePicture}
           alt={user.username}
         />

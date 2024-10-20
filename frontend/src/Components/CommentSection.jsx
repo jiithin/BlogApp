@@ -143,15 +143,15 @@ import Comments from './Comments';
            {currentUser ? (
         <div className='flex items-center gap-1 my-5 text-gray-500 text-sm'>
           <img
-            className='h-8 w-8 object-cover rounded-full'
+            className='h-8 w-8 object-cover rounded-full shadow-md'
             src={currentUser.profilePicture}
             alt=''
           />
           <Link
             to={'/dashboard?tab=profile'}
-            className='text-s, text-gray-700 dark:text-gray-300  hover:font-semibold'
+            className='text-md ml-1 text-gray-700 dark:text-gray-300  hover:font-semibold'
           >
-            @{currentUser.username}
+            {currentUser.username}
           </Link>
         </div>
       ) : (

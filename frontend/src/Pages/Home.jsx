@@ -26,18 +26,55 @@ function Home() {
 
       fetchPosts()
   });
+
+  
   return (
     
     
 <>
 {/* <div><p id='head'>DIVULGE</p></div> */}
-
-<div className="grid grid-flow-col grid-cols-8">
-<div className='h-[15em] max-w-screen-2xl text-end col-span-5'>
-  <img src="" alt="" />
+{userPosts && userPosts.length > 0 ? ( 
+<div className="grid grid-flow-col grid-cols-8 px-20 max-h-full">
+<div className=' text-end col-span-5 '>
+  <img src={userPosts[0].image} alt="" className='w-full  object-cover' />
 </div>
+<div className=' text-start col-span-3 '>
+<div class="min-h-screen">
+            <div class="p-6">
+                <p
+                    class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                    {userPosts[0].category}
+                </p>
+                <p class="block mb-2 font-poppins poppins-semibold text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                {userPosts[0].title}
+                </p>
+                <p class="block mb-8 font-monte text-base antialiased font-normal leading-relaxed overflow-hidden text-gray-700" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0,500)}}>
+                
+                </p>
+
+              {/* user */}
+            <div className="flex mb-5 mt-5">
+            <img src={userPosts[0].userProfile}
+              className="h-10 w-10 rounded-full mr-2 object-cover shadow-md" />
+            <div className='flex-col'>
+              <p className="font-semibold text-slate-950 dark:text-gray-200  text-sm">{userPosts[0].username}</p>
+              <p className=" text-slate-950 dark:text-gray-200 text-xs">{userPosts && new Date(userPosts[0].createdAt).toLocaleDateString()} . <span className=' text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
+          {userPosts[0] && (userPosts[0].content.length / 1000).toFixed(0)} mins read
+        </span></p>
+            </div>
+          </div>
+    
+            </div>
+        </div>
     </div>
 
+
+    </div>):(
+      <div className="grid grid-flow-col grid-cols-8"></div>
+    )}
+
+
+{/* cards */}
 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-4 p-4">
 
   {/* card */}

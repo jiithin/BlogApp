@@ -48,7 +48,7 @@ function PostPage() {
         const res = await fetch(`/blog/post/getposts?limit=3`);
         const data = await res.json();
         if (res.ok) {
-          setRecentPosts(data.posts);
+          setRecentPosts(data);
         }
       };
       fetchRecentPosts();

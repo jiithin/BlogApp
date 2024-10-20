@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { Button, Spinner } from 'flowbite-react';
+
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import CommentSection from '../Components/CommentSection';
 import PostCard from '../Components/PostCard';
 
@@ -42,7 +41,7 @@ function PostPage() {
   }, [postSlug]);
 
 
-  //fetch recent posts
+  //fetch recent posts for post card
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
@@ -61,7 +60,20 @@ function PostPage() {
   if (loading)
     return (
       <div className='flex justify-center items-center min-h-screen'>
-        <Spinner size='xl' />
+
+{/* loader custom */}
+<div className="w-full gap-x-2 flex justify-center items-center">
+  <div
+    className="w-5 bg-[#d991c2] h-5 rounded-full animate-bounce "
+  ></div>
+  <div
+    className="w-5  h-5 bg-[#9869b8] rounded-full animate-bounce"
+  ></div>
+  <div
+    className="w-5 h-5  bg-[#6756cc] rounded-full animate-bounce "
+  ></div>
+</div>
+
       </div>
     );
   return (

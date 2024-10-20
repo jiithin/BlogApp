@@ -65,7 +65,7 @@ import Comments from './Comments';
   const handleLike = async (commentId) => {
     try {
       if (!currentUser) {
-        navigate('/sign-in');
+        alert('Sign In to like the comments.')
         return;
       }
       const res = await fetch(`/blog/comment/likeComment/${commentId}`, {
@@ -176,7 +176,7 @@ import Comments from './Comments';
       )}
 
       {comments.length === 0 ? (
-        <p className='text-md my-5 text-center'>No comments yet!</p>
+        <p className='text-md my-5 text-center text-gray-400 dark:text-gray-600'>Wow so empty.</p>
       ) : (
         <>
 

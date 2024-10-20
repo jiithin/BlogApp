@@ -28,12 +28,7 @@ className="card shadow-lg lg:h-[15em] h-[15em] max-w-screen-xl group gap-[0.5em]
   <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 bg-gradient-to-t from-gray-800/10 via-gray-800/40 to-gray-800/10 backdrop-blur-sm">
       {post.title.slice(0,80)}...
     </p>
-    <div 
-    className=" block px-4  relative h-[0em] group-hover:h-10 leading-[1.2em] duration-500 overflow-hidden backdrop-blur-sm " >
-      <p className='text-end mt-3 font-poppins poppins-medium text-gray-200 animate-pulse'>View More...</p>
-      
-    
-  </div>
+
   </div>
 
 

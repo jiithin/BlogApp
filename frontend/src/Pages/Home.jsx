@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 //import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Home() {
@@ -34,21 +34,22 @@ function Home() {
 <>
 {/* <div><p id='head'>DIVULGE</p></div> */}
 {userPosts && userPosts.length > 0 ? ( 
-<div className="grid grid-flow-col grid-cols-8 px-20 max-h-full">
-<div className=' text-end col-span-5 '>
-  <img src={userPosts[0].image} alt="" className='w-full  object-cover' />
+  <div className="container flex justify-center my-10">
+<div className="flex max-w-6xl items-center">
+<div className=''>
+  <img src={userPosts[0].image} alt="" className='max-w-3xl  object-cover' />
 </div>
-<div className=' text-start col-span-3 '>
-<div class="min-h-screen">
+<div className=' text-start '>
+<div class="min-h-auto">
             <div class="p-6">
                 <p
-                    class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                    class=" px-3 py-1 mb-2 w-fit font-poppins poppins-semibold text-sm  text-slate-950 bg-gray-200 dark:bg-slate-950 dark:text-gray-200 uppercase">
                     {userPosts[0].category}
                 </p>
                 <p class="block mb-2 font-poppins poppins-semibold text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                 {userPosts[0].title}
                 </p>
-                <p class="block mb-8 font-monte text-base antialiased font-normal leading-relaxed overflow-hidden text-gray-700" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0,500)}}>
+                <p class="block mb-8 font-monte text-base antialiased font-normal leading-relaxed overflow-hidden text-gray-700 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0, userPosts[0].content.indexOf('.'))}}>
                 
                 </p>
 
@@ -57,8 +58,8 @@ function Home() {
             <img src={userPosts[0].userProfile}
               className="h-10 w-10 rounded-full mr-2 object-cover shadow-md" />
             <div className='flex-col'>
-              <p className="font-semibold text-slate-950 dark:text-gray-200  text-sm">{userPosts[0].username}</p>
-              <p className=" text-slate-950 dark:text-gray-200 text-xs">{userPosts && new Date(userPosts[0].createdAt).toLocaleDateString()} . <span className=' text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
+              <p className="font-semibold text-slate-950 dark:text-gray-300  text-sm">{userPosts[0].username}</p>
+              <p className=" text-slate-950 dark:text-gray-300 text-xs">{userPosts[0].category} . <span className=' text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
           {userPosts[0] && (userPosts[0].content.length / 1000).toFixed(0)} mins read
         </span></p>
             </div>
@@ -68,8 +69,45 @@ function Home() {
         </div>
     </div>
 
-
+    </div>
     </div>):(
+      <div className="grid grid-flow-col grid-cols-8"></div>
+    )}
+
+{userPosts && userPosts.length > 0 ? ( 
+<div className="container mx-auto my-5">
+<Link to={`/post/${userPosts[1].slug}`}>
+    <div className="relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl md:h-72 mx-2">
+        
+        <div className="z-0 order-1 md:order-2 relative w-full md:w-2/5 h-80 md:h-full overflow-hidden rounded-lg md:rounded-none md:rounded-r-lg">
+            <div className="absolute inset-0 w-full h-full object-fill object-center bg-blue-400 bg-opacity-30 bg-cover bg-bottom">
+            <img
+                  src={userPosts[1].image}
+                  alt={userPosts[1].title}
+                  className="rounded-sm" />
+            </div>
+            <div className="md:hidden absolute inset-0 h-full p-6 pb-6 flex flex-col-reverse justify-start items-start bg-gradient-to-b from-transparent via-transparent to-gray-900">
+                <p className="w-full font-bold text-2xl text-white leading-tight mb-2">{userPosts[1].title}</p>
+                <p className="w-full text-xl text-gray-100 leading-tight">{userPosts[1].category}</p>
+            </div>
+
+        </div>
+
+        <div className="z-10 order-2 md:order-1 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0">
+            <div className="p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
+                <h4 className="hidden md:block text-xl text-gray-400">{userPosts[1].category}</h4>
+                <h3 className="hidden md:block font-bold text-2xl text-gray-700">{userPosts[1].title}</h3>
+                <p className="text-gray-600 text-justify" dangerouslySetInnerHTML={{ __html: userPosts[1] && userPosts[1].content.slice(0, userPosts[1].content.indexOf('.')) }}></p>
+                <a className="flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900" href="">
+                    <span>View More</span>
+                    <span className="text-xs ml-1">&#x279c;</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    </Link>
+</div>):(
       <div className="grid grid-flow-col grid-cols-8"></div>
     )}
 

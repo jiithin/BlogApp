@@ -48,8 +48,9 @@ function PostPage() {
         const res = await fetch(`/blog/post/getposts?limit=3`);
         const data = await res.json();
         if (res.ok) {
-          setRecentPosts(data);
+          setRecentPosts(data.posts);
         }
+        console.log(recentPosts)
       };
       fetchRecentPosts();
     } catch (error) {
@@ -160,7 +161,7 @@ function PostPage() {
 
       <div className='flex flex-col justify-center items-center mb-2 mt-8'>
       <p className="text-xl font-poppins poppins-medium text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Recent Posts</p>
-        <div className=' mt-5 justify-center grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1  gap-4 p-4'>
+        <div className=' mt-5 justify-center grid grid-cols-1  gap-4 p-4'>
           {recentPosts &&
             recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
         </div>

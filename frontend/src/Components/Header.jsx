@@ -179,9 +179,9 @@ function Header() {
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
     <Link to='/projects' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Blogs</Link>
   </Navbar.Link>
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
+  {/* <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
     <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Features</Link>
-  </Navbar.Link>
+  </Navbar.Link> */}
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300'>
     <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Contact</Link>
   </Navbar.Link>

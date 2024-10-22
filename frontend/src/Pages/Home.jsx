@@ -43,7 +43,7 @@ function Home() {
 <div class="min-h-auto">
             <div class="p-6">
                 <p
-                    class=" px-3 py-1 mb-2 w-fit font-poppins poppins-semibold text-sm  text-slate-950 bg-gray-200 dark:bg-slate-950 dark:text-gray-200 uppercase">
+                    class=" px-3 py-1 mb-2 w-fit font-poppins poppins-semibold text-sm  text-slate-950 bg-gray-100 dark:bg-slate-950 dark:text-gray-200 uppercase">
                     {userPosts[0].category}
                 </p>
                 <p class="block mb-2 font-poppins poppins-semibold text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
@@ -135,8 +135,8 @@ function Home() {
       </div>
     </div>
       
-    <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100">
-        {post.title.slice(0,80)}...
+    <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 line-clamp-2">
+        {post.title}
       </p>
       {/* <p className="text-sm text-gray-200">
         {post.username}

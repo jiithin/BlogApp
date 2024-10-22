@@ -7,6 +7,7 @@ import { PiPowerBold } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoExit  } from "react-icons/io5";
+import { BiSolidCommentError } from "react-icons/bi";
 
 import { signoutSuccess } from '../redux/user/userSlice';
 
@@ -82,12 +83,23 @@ function DashSidebar() {
 
             {/* is admin users */}
             {currentUser.isMod && (
-      <Link to='/dashboard?tab=users'
+              <>
+                   <Link to='/dashboard?tab=users'
       className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
       <FaUsers className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Users
-      </Link>)}
+      </Link>
+      <Link to='/dashboard?tab=comments'
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      >
+      <BiSolidCommentError className='text-purple-700 dark:text-indigo-300 mt-1'/>
+        Comments
+      </Link>
+              </>
+ 
+
+    )}
 
       <Link
       onClick={handleSignout}
@@ -132,11 +144,19 @@ function DashSidebar() {
 
     {/* is admin users */}
     {currentUser.isMod && (
+      <>
   <Link to='/dashboard?tab=users'
     className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
         <FaUsers className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
-  </Link>)}
+  </Link>
+    <Link to='/dashboard?tab=comments'
+    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+  >
+        <BiSolidCommentError className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
+  </Link>
+</>
+)}
 
 
   

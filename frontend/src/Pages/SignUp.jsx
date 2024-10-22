@@ -115,7 +115,7 @@ const handleSubmit = async (e) => {
 
             <div className='flex gap-2 text-sm  mt-5 text-gray-600 dark:text-gray-400'>
             <span>Already have an account?</span>
-            <Link to='/sign-in' className='font-bold text-purple-400 dark:text-purple-400 font-poppins poppins-bold'>
+            <Link to='/sign-in' className='font-bold text-purple-400 dark:text-purple-400 font-poppins poppins-semibold'>
               Sign In
             </Link>
           </div>

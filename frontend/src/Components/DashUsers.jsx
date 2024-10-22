@@ -80,7 +80,7 @@ function DashUsers() {
       <div className="flow-root">
         <ul className="divide-y divide-gray-300 dark:divide-gray-700">
         {users.map((user) => (
-          <li className="py-3 sm:py-4">
+          <li className="py-3 sm:py-4" key={user._id}>
             <div className="flex items-center space-x-4">
               <div className="shrink-0">
                 <img

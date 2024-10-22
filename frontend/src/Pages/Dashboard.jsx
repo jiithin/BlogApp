@@ -10,6 +10,7 @@ import { TbUser, TbUserUp } from "react-icons/tb";
 import { LiaCommentSolid } from "react-icons/lia";
 import { MdPostAdd } from "react-icons/md";
 import DashUsers from '../Components/DashUsers';
+import DashComments from '../Components/DashComments';
 
 function Dashboard() {
   //to get each tab copmonent from click
@@ -173,6 +174,12 @@ function Dashboard() {
     <div className="users">
       {/* posts */}
       {tab==='users' && <DashUsers/>}
+    </div>
+
+    
+    <div className="comments">
+      {/* posts */}
+      {tab==='comments' && <DashComments/>}
     </div>
     </div>
 

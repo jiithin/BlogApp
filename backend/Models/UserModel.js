@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
       },
-      isMod: {
+    isMod: {
         type: Boolean,
         default: false,
       },

@@ -81,7 +81,7 @@ function DashSidebar() {
       )}
 
             {/* is admin users */}
-            {currentUser.isAdmin && (
+            {currentUser.isMode && (
       <Link to='/dashboard?tab=users'
       className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
@@ -107,44 +107,44 @@ function DashSidebar() {
   className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-slate-800/75 backdrop-blur-md rounded-full px-6 py-3 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
 >
   <Link to='/dashboard'
-    className="text-red-500 hover:text-red-600 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+    className="text-red-500 hover:text-red-600 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-     <HiChartPie className='text-gray-500 dark:text-indigo-300'/>
+     <HiChartPie className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
   </Link>
   <Link to='/dashboard?tab=profile'
-    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-        <HiUser className='text-gray-500 dark:text-indigo-300'/>
+        <HiUser className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
   </Link>
   {/* is admin posts */}
   {currentUser.isAdmin ? (
   <Link to='/dashboard?tab=posts'
-    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-        <IoMdListBox className='text-gray-500 dark:text-indigo-300'/>
+        <IoMdListBox className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
   </Link>):(
   <Link to='/projects'
-    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-        <IoMdListBox className='text-gray-500 dark:text-indigo-300'/>
+        <IoMdListBox className='h-7 w-7 text-gray-500 dark:text-indigo-300'/>
   </Link>)}
 
 
     {/* is admin users */}
-    {currentUser.isAdmin && (
+    {currentUser.isMod && (
   <Link to='/dashboard?tab=users'
-    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
-        <FaUsers className='text-gray-500 dark:text-indigo-300'/>
+        <FaUsers className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
   </Link>)}
 
 
   
   <Link
   onClick={handleSignout}
-    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
+    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
   >
-          <IoExit  className='text-red-500 '/>
+          <IoExit  className='h-6 w-6 text-red-500 '/>
   </Link>
  </div>
 </div>

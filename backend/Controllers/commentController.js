@@ -66,7 +66,7 @@ export const createComment = async (req, res, next) => {
       if (!comment) {
         return next(errorHandler(404, 'Comment not found'));
       }
-      if (comment.userId !== req.user.id && !req.user.isAdmin) {
+      if (comment.userId !== req.user.id && !req.user.isMod) {
         return next(
           errorHandler(403, 'You are not allowed to edit this comment')
         );
@@ -92,7 +92,7 @@ export const createComment = async (req, res, next) => {
       if (!comment) {
         return next(errorHandler(404, 'Comment not found'));
       }
-      if (comment.userId !== req.user.id && !req.user.isAdmin) {
+      if (comment.userId !== req.user.id && !req.user.isMod) {
         return next(
           errorHandler(403, 'You are not allowed to delete this comment')
         );

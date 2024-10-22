@@ -58,7 +58,7 @@ export const updateUser = async (req, res, next) => {
 
 //   delete user
   export const deleteUser = async (req, res, next) => {
-    if (!req.user.isAdmin && req.user.id !== req.params.userId) {
+    if (!req.user.isMod && req.user.id !== req.params.userId) {
       return next(errorHandler(403, 'You are not allowed to delete this user'));
     }
     try {
@@ -83,7 +83,7 @@ export const updateUser = async (req, res, next) => {
   
   //getusers
   export const getUsers = async (req, res, next) => {
-    if (!req.user.isAdmin) {
+    if (!req.user.isMod) {
       return next(errorHandler(403, 'You are not allowed to see all users'));
     }
     try {

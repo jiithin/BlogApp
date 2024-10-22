@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 function DashPosts() {
   const {currentUser}=useSelector((state)=>state.user)
+  const [posts, setPosts] = useState([]);
   const [userPosts,setUserPosts]=useState([])
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +17,7 @@ function DashPosts() {
 
   //get all posts only 9 posts willshow becoz we set a query limiter
   useEffect(()=>{
-    const fetchPosts=async()=>{
+    const fetchUserPosts=async()=>{
       try{
         const res=await fetch(`blog/post/getposts?userId=${currentUser._id}`)
         const data=await res.json()
@@ -28,10 +29,25 @@ function DashPosts() {
         console.log(error.message)
       }
     };
+      //fetch all posts
+  const fetchPosts = async () => {
+        try {
+      const res = await fetch('/blog/post/getposts');
+    const data = await res.json();
+    if (res.ok) {
+       setPosts(data.posts);
+
+          }
+      } catch (error) {
+     console.log(error.message);
+      }
+    };
     if(currentUser.isAdmin){
       fetchPosts()
+      fetchUserPosts()
     }
   }, [currentUser._id]);
+
 
   //showmore function
   const handleShowMore = async () => {
@@ -133,8 +149,61 @@ function DashPosts() {
         </ul>
       </div>
     </Card>
+    
     ) : (
         <p className='divulge py-12 text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No Posts Yet.</p>
+      )}
+
+{/* all posts */}
+{currentUser.isMod && posts.length > 0 ? (
+<Card className="max-w-4xl mx-auto bg-gray-100/75 dark:bg-slate-800/50 shadow-lg mt-5">
+      <div className=" flex items-center justify-between">
+        <p className="text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">All Posts</p>
+
+      </div>
+      <div className="flow-root">
+        <ul className="divide-y divide-gray-300 dark:divide-gray-700">
+        {posts.map((post) => (
+          <li className="py-3 sm:py-4" >
+            <div className="flex items-center space-x-4">
+            <Link to={`/post/${post.slug}`}>
+              <div className="shrink-0" >
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="rounded-md w-32"
+                  
+                />
+              </div>
+              </Link>
+              <div className="min-w-0 flex-1">
+              <Link to={`/post/${post.slug}`}>
+                <p  className="truncate text-lg font-medium text-purple-900 dark:text-purple-300">{post.title}</p>
+                </Link>
+                <p className="truncate text-sm text-gray-500 dark:text-gray-400 mb-1">{post.category}</p>
+                <p className="truncate text-xs text-gray-500 dark:text-gray-400">{new Date(post.updatedAt).toLocaleDateString()}</p>
+              </div>
+              {/* right */}
+              <div className="inline-flex items-center text-base font-semibold">
+                
+                <span
+                      onClick={() => {
+                        setShowModal(true);
+                        setPostIdToDelete(post._id);
+                      }}
+                      className='font-medium text-red-500   cursor-pointer'
+                    >
+                      Delete
+                    </span></div>
+            </div>
+          </li>))}
+          
+        </ul>
+      </div>
+    </Card>
+    
+    ) : (
+        <p className='divulge py-12 text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '> </p>
       )}
                 {showMore && (
             <button

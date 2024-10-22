@@ -106,7 +106,7 @@ function Header() {
     //     </Dropdown.Item>
     // </Dropdown>
     <>
-    <Link to={'/dashboard'} className='hidden lg:inline md:inline'>
+    <Link to={'/dashboard?tab=stats'} className='hidden lg:inline md:inline'>
     <Avatar img={currentUser.profilePicture} >
     <div className="space-y-1 font-medium dark:text-white">
       <div><span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}
@@ -116,7 +116,7 @@ function Header() {
   </Avatar>
   </Link>
 
-<Link to={'/dashboard'} className='lg:hidden md:hidden'>
+<Link to={'/dashboard?tab=stats'} className='lg:hidden md:hidden'>
 <Avatar img={currentUser.profilePicture} >
 </Avatar>
 </Link>

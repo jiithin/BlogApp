@@ -33,7 +33,7 @@ function DashOverall() {
           }
         };
 
-        //fetch posts
+        //fetch all posts
         const fetchPosts = async () => {
           try {
             const res = await fetch('/blog/post/getposts?limit=5');

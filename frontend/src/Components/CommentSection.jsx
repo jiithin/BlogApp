@@ -2,7 +2,6 @@ import { Alert, Button, Modal } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { BsChatLeftTextFill } from "react-icons/bs";
 import { IoSendSharp } from "react-icons/io5";
 import Comments from './Comments';
 
@@ -201,12 +200,12 @@ import Comments from './Comments';
           size='md'
           className="bg-transparent backdrop-blur-sm "
         >
-          <Modal.Header className="bg-slate-800 rounded-t-md " />
-          <Modal.Body className="bg-slate-800 rounded-b-md " >
+          <Modal.Header className="bg-slate-500 rounded-t-md " />
+          <Modal.Body className="bg-slate-500 rounded-b-md " >
             <div className='text-center'>
-              <BsChatLeftTextFill  className='h-16 w-16 text-red-600 dark:text-red-700 mb-4 mx-auto' />
-              <h3 className='mb-5 text-lg text-gray-300 dark:text-gray-400'>
-                You want to <span className='text-red-500 font-semibold'>Remove</span> this comment?
+ 
+              <h3 className='mb-5 text-lg text-gray-100 dark:text-gray-400'>
+                You want to <span className='text-red-400 font-semibold'>Remove</span> this comment?
               </h3>
               <div className='flex justify-center gap-4'>
                 <Button color='failure' onClick={() => handleDelete(commentToDelete)}

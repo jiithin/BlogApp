@@ -2,7 +2,8 @@ import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { IoSendSharp } from "react-icons/io5";
-import { BiSolidLike } from "react-icons/bi";
+import { BiSolidCommentX, BiSolidLike } from "react-icons/bi";
+import { BiSolidCommentEdit } from "react-icons/bi";
 
   function Comments({ comment, onLike, onEdit, onDelete }) {
   const [user, setUser] = useState({});
@@ -113,7 +114,7 @@ import { BiSolidLike } from "react-icons/bi";
                 className={`text-gray-400 hover:text-blue-600 ${
                   currentUser &&
                   comment.likes.includes(currentUser._id) &&
-                  '!text-blue-500'
+                  '!text-blue-600'
                 }`}
               >
                 <BiSolidLike className='text-sm' />
@@ -133,16 +134,16 @@ import { BiSolidLike } from "react-icons/bi";
                     <button
                       type='button'
                       onClick={handleEdit}
-                      className='text-gray-400 font-semibold hover:font-bold hover:text-purple-600'
+                      className='text-gray-400  hover:text-purple-600 px-1'
                     >
-                      Edit
+                      <BiSolidCommentEdit className='text-sm'/>
                     </button>
                     <button
                       type='button'
                       onClick={() => onDelete(comment._id)}
-                      className='text-gray-400 font-semibold hover:font-bold hover:text-red-700'
+                      className='text-gray-400  hover:text-red-700 px-1'
                     >
-                      Delete
+                      <BiSolidCommentX className='text-sm'/>
                     </button>
                   </>
                 )}

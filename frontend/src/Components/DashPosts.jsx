@@ -92,6 +92,7 @@ function DashPosts() {
         {userPosts.map((post) => (
           <li className="py-3 sm:py-4" >
             <div className="flex items-center space-x-4">
+            <Link to={`/post/${post.slug}`}>
               <div className="shrink-0" >
                 <img
                   src={post.image}
@@ -100,10 +101,11 @@ function DashPosts() {
                   
                 />
               </div>
+              </Link>
               <div className="min-w-0 flex-1">
-                <p onClick={() => {
-                    navigate(`post/${post.slug}`);
-                  }} className="truncate text-lg font-medium text-purple-900 dark:text-purple-300">{post.title}</p>
+              <Link to={`/post/${post.slug}`}>
+                <p  className="truncate text-lg font-medium text-purple-900 dark:text-purple-300">{post.title}</p>
+                </Link>
                 <p className="truncate text-sm text-gray-500 dark:text-gray-400 mb-1">{post.category}</p>
                 <p className="truncate text-xs text-gray-500 dark:text-gray-400">{new Date(post.updatedAt).toLocaleDateString()}</p>
               </div>

@@ -92,14 +92,14 @@ function PostPage() {
           </p>
 
       <div className="mb-4 md:mb-0 w-full max-w-screen-lg mx-auto relative" >
-        <div className="absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-gray-950/75 via-purple-500/0 to-gray-500/0 rounded-b-lg"></div>
-        <img src={post && post.image} alt={post && post.title} className="w-full rounded-lg " />
+        <div className="absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-gray-950/75 via-transparent to-transparent rounded-b-lg"></div>
+        <img src={post && post.image} alt={post && post.title} className="w-full rounded-lg" />
         <span className=' absolute mt-14 right-3 text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span>
         <div className="p-4 absolute bottom-0 left-0 ">
           <Link to={`/search?category=${post && post.category}`}
-            className="px-3 py-1 font-poppins poppins-semibold text-sm bg-gray-200  text-slate-950 dark:bg-slate-950 dark:text-gray-200 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
+            className="px-3 py-1 font-poppins poppins-semibold text-sm bg-gray-200  text-slate-950 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
             {/* <span className='hidden lg:inline absolute right-0 text-xs text-white font-semibold shadow-lg'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span> */}

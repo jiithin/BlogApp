@@ -153,12 +153,12 @@ function DashPosts() {
         size='md'
         className="bg-transparent backdrop-blur-sm "
       >
-        <Modal.Header className="bg-slate-800 rounded-t-md " />
-        <Modal.Body className="bg-slate-800 rounded-b-md " >
+        <Modal.Header className="bg-slate-500 rounded-t-md " />
+        <Modal.Body className="bg-slate-500 rounded-b-md " >
           <div className='text-center'>
-            <TbFileShredder  className='h-16 w-16 text-red-700 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-400 dark:text-gray-100'>
-              Are you sure you want to <span className='text-red-500 font-semibold'>delete</span> this post?
+            <TbFileShredder  className='h-16 w-16 text-red-500 dark:text-gray-200 mb-4 mx-auto' />
+            <h3 className='mb-5 text-lg text-gray-100 dark:text-gray-100'>
+              Are you sure you want to <span className='text-red-500 font-bold'>delete</span> this post?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeletePost}

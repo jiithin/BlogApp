@@ -204,9 +204,9 @@ import Comments from './Comments';
           <Modal.Body className="bg-slate-500 rounded-b-md " >
             <div className='text-center'>
  
-              <h3 className='mb-5 text-lg text-gray-100 dark:text-gray-400'>
+              <p className='mb-5 text-lg text-gray-100 dark:text-gray-400'>
                 You want to <span className='text-red-400 font-semibold'>Remove</span> this comment?
-              </h3>
+              </p>
               <div className='flex justify-center gap-4'>
                 <Button color='failure' onClick={() => handleDelete(commentToDelete)}
                 className='w-full' >

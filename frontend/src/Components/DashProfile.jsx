@@ -373,13 +373,13 @@ function DashProfile() {
         popup
         className="bg-transparent backdrop-blur-sm "
       >
-        <Modal.Header className="bg-slate-800 rounded-t-md " />
-        <Modal.Body className="bg-slate-800 rounded-b-md">
+        <Modal.Header className="bg-slate-500 rounded-t-md " />
+        <Modal.Body className="bg-slate-500 rounded-b-md">
           <div className="text-center bg-transparent">
-            <FaUserShield className="mx-auto mb-4 h-16 w-16 text-red-600" />
-            <h3 className="mb-5 text-lg font-normal text-gray-400 dark:text-gary-100">
-              Are you sure you want to <span className='font-semibold text-red-500'>delete</span> your Account?
-            </h3>
+            <FaUserShield className="mx-auto mb-4 h-16 w-16 text-red-500" />
+            <p className="mb-5 text-lg font-normal text-gray-100 dark:text-gary-100">
+              Are you sure you want to <span className='font-bold text-red-500'>delete</span> your Account?
+            </p>
             <div className="flex justify-center gap-4">
               <Button
                 color="failure"

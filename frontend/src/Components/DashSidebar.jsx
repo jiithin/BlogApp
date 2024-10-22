@@ -51,7 +51,7 @@ function DashSidebar() {
 <div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900/40  p-5 shadow-md border border-gray-500/25 backdrop-blur-xl rounded-2xl">
 
 
-      <Link to='/dashboard'
+      <Link to='/dashboard?tab=stats'
         className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-t-lg bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
         >
      <HiChartPie className='text-purple-700 dark:text-indigo-300 mt-1'/>
@@ -118,7 +118,7 @@ function DashSidebar() {
 <div
   className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-gray-900/40 backdrop-blur-xl rounded-full px-2 py-2 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
 >
-  <Link to='/dashboard'
+  <Link to='/dashboard?tab=stats'
     className="text-red-500 hover:text-red-600 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
      <HiChartPie className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>

@@ -104,7 +104,7 @@ function DashSidebar() {
 {/* small devices */}
 <div className="flex justify-center w-full">
 <div
-  className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-slate-800/75 backdrop-blur-md rounded-full px-6 py-3 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
+  className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-slate-800/75 backdrop-blur-md rounded-full px-2 py-3 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
 >
   <Link to='/dashboard'
     className="text-red-500 hover:text-red-600 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"

@@ -50,7 +50,7 @@ className="card shadow-lg lg:h-[15em] h-[15em] max-w-screen-xl group gap-[0.5em]
             <div className="min-w-0 flex-1">
                 <p className="truncate text-lg font-medium text-purple-900 dark:text-purple-300">{post.title}</p>
                 <p className="post-content hidden lg:inline md:inline text-slate-950 dark:text-gray-400 pb-2 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content.slice(0, post.content.indexOf('.')) }}></p>
-                <p className="post-content lg:hidden md:hidden text-slate-950 dark:text-gray-400 pb-2 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content.slice(0, 100) }}></p>
+                <p className="post-content lg:hidden md:hidden text-slate-950 dark:text-gray-400 pb-2 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content.slice(0, 70) }}></p>
                 <div className="shrink-0 flex">
                 <img
                   alt={post.username}

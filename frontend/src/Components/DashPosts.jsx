@@ -82,7 +82,7 @@ function DashPosts() {
     <div className='px-4 mt-4'>
     {/* <p className=' text-center lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>All Posts</p> */}
     {currentUser.isAdmin && userPosts.length > 0 ? (
-<Card className="max-w-4xl mx-auto bg-gray-100/75 dark:bg-gray-950/10 shadow-lg">
+<Card className="max-w-4xl mx-auto bg-gray-100/75 dark:bg-slate-800/50 shadow-lg">
       <div className=" flex items-center justify-between">
         <p className="text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Your Posts</p>
 

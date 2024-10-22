@@ -151,7 +151,7 @@ function Home() {
     </div> */}
   </div>
   <p
-    className=" block px-3 text-sm text-pretty lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-200 "
+    className=" block px-3 text-sm text-pretty lg:text-base text-blackfont-light relative h-[0em] group-hover:h-24 leading-[1.2em] duration-500 overflow-hidden text-gray-300 "
     dangerouslySetInnerHTML={{ __html: post && post.content }} >
     
   </p>

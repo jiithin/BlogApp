@@ -107,7 +107,7 @@ function Header() {
     // </Dropdown>
     <>
     <Link to={'/dashboard'} className='hidden lg:inline md:inline'>
-    <Avatar img={currentUser.profilePicture} rounded>
+    <Avatar img={currentUser.profilePicture} >
     <div className="space-y-1 font-medium dark:text-white">
       <div><span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}
         </span>
@@ -117,7 +117,7 @@ function Header() {
   </Link>
 
 <Link to={'/dashboard'} className='lg:hidden md:hidden'>
-<Avatar img={currentUser.profilePicture} rounded>
+<Avatar img={currentUser.profilePicture} >
 </Avatar>
 </Link>
 </>

@@ -10,6 +10,7 @@ function DashUsers() {
     const [showMore, setShowMore] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [userIdToDelete, setUserIdToDelete] = useState('');
+
     useEffect(() => {
       const fetchUsers = async () => {
         try {
@@ -25,7 +26,7 @@ function DashUsers() {
           console.log(error.message);
         }
       };
-      if (currentUser.isAdmin) {
+      if (currentUser.isMod) {
         fetchUsers();
       }
     }, [currentUser._id]);
@@ -67,7 +68,7 @@ function DashUsers() {
         <>
         <div className='px-4 mb-11'>
         {currentUser.isAdmin && users.length > 0 ? (
-        <Card className="max-w-3xl mx-auto bg-gray-200/50 dark:bg-slate-800/50 shadow-lg mt-5">
+        <Card className="max-w-3xl mx-auto bg-gray-100/75 dark:bg-slate-800/50 shadow-lg mt-5">
       <div className=" flex items-center justify-between">
         <h5 className="text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">All Users</h5>
         {showMore && (
@@ -89,7 +90,7 @@ function DashUsers() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-md font-medium text-gray-900 dark:text-white">{user.username} {user.isAdmin && (
+                <p className="truncate text-md font-medium text-gray-900 dark:text-white">{user.username} {user.isMod && (
                 <span className='text-green-500 font-bold text-xs ml-2' >Admin</span>
                       )}</p>
                 <p className="truncate text-sm text-gray-500 dark:text-gray-400">{user.email}</p>
@@ -122,7 +123,7 @@ function DashUsers() {
          {showMore && (
               <button
                 onClick={handleShowMore}
-                className='w-full text-teal-500 self-center text-sm py-7'
+                className='w-full text-purple-500 self-center text-sm py-7'
               >
                 Show more
               </button>

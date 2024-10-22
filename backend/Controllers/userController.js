@@ -83,7 +83,7 @@ export const updateUser = async (req, res, next) => {
   
   //getusers
   export const getUsers = async (req, res, next) => {
-    if (!req.user.isMod) {
+    if (!req.user.isAdmin) {
       return next(errorHandler(403, 'You are not allowed to see all users'));
     }
     try {

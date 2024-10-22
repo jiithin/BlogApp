@@ -174,7 +174,7 @@ function DashProfile() {
   return (
     <>
       <div className="h-full bg-transparent p-8  ">
-        <div className="bg-transparent dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-500/25 pb-8">
+        <div className="bg-transparent dark:bg-slate-950/10 rounded-2xl shadow-xl border border-gray-500/25 pb-8">
           <form className="flex flex-col" onSubmit={handleSubmit}>
             {/* bg gif */}
             <div className="giff w-full h-[150px] rounded-t-2xl "></div>

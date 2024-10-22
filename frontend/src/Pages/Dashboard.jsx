@@ -32,7 +32,7 @@ function Dashboard() {
                     
                     <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-8 mt-4">
                       {/* total users */}
-                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/25 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
+                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
                             <div className="flex items-center justify-between">
                                 <span className="font-bold text-sm text-indigo-600">Total Users</span>
                                 <span className="text-xs bg-gray-200 hover:bg-gray-500 text-gray-500 hover:text-gray-200 px-2 py-1 rounded-lg transition duration-200 cursor-default"><TbUser/></span>
@@ -52,7 +52,7 @@ function Dashboard() {
                         </div>
 
                         {/* total comments */}
-                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/25 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
+                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
                             <div className="flex items-center justify-between">
                                 <span className="font-bold text-sm text-blue-600">Total Comments</span>
                                 <span className="text-xs bg-gray-200 hover:bg-gray-500 text-gray-500 hover:text-gray-200 px-2 py-1 rounded-lg transition duration-200 cursor-default"><LiaCommentSolid /></span>
@@ -72,7 +72,7 @@ function Dashboard() {
                         </div>
 
                         {/* total posts */}
-                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/25 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
+                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
                             <div className="flex items-center justify-between">
                                 <span className="font-bold text-sm text-purple-600">Total Posts</span>
                                 <span className="text-xs bg-gray-200 hover:bg-gray-500 text-gray-500 hover:text-gray-200 px-2 py-1 rounded-lg transition duration-200 cursor-default"><MdPostAdd/></span>
@@ -92,7 +92,7 @@ function Dashboard() {
                         </div>
 
                         {/* recent users */}
-                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/25 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
+                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
                             <div className="flex items-center justify-between">
                                 <span className="font-bold text-sm text-indigo-500">Recent Users</span>
                                 <span className="text-xs bg-gray-200 hover:bg-gray-500 text-gray-500 hover:text-gray-200 px-2 py-1 rounded-lg transition duration-200 cursor-default"><TbUserUp /></span>
@@ -112,7 +112,7 @@ function Dashboard() {
                         </div>
 
                         {/* recent comments */}
-                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/25 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
+                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
                             <div className="flex items-center justify-between">
                                 <span className="font-bold text-sm text-blue-500">Recent Comments</span>
                                 <span className="text-xs bg-gray-200 hover:bg-gray-500 text-gray-500 hover:text-gray-200 px-2 py-1 rounded-lg transition duration-200 cursor-default"><LiaCommentSolid /></span>
@@ -131,7 +131,7 @@ function Dashboard() {
                             </div>
                         </div>
                         {/* recent posts */}
-                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/25 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
+                        <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">
                             <div className="flex items-center justify-between">
                                 <span className="font-bold text-sm text-purple-500">Recent Posts</span>
                                 <span className="text-xs bg-gray-200 hover:bg-gray-500 text-gray-500 hover:text-gray-200 px-2 py-1 rounded-lg transition duration-200 cursor-default"><MdPostAdd/></span>

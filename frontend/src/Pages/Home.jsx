@@ -35,9 +35,9 @@ function Home() {
 {/* <div><p id='head'>DIVULGE</p></div> */}
 {userPosts && userPosts.length > 0 ? ( 
   <div className="container justify-center my-10 hidden lg:flex md:flex">
-<div className="flex max-w-6xl items-center">
+<div className="flex px-40 items-center">
 <div className=''>
-  <img src={userPosts[0].image} alt="" className='max-w-3xl px-20  object-cover' />
+  <img src={userPosts[0].image} alt="" className='w-[42rem]  object-cover' />
 </div>
 <div className=' text-start '>
 <div class="min-h-auto">

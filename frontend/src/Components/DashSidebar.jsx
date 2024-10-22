@@ -47,7 +47,7 @@ function DashSidebar() {
 
 
 {/* large devices */}
-<div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900/90  p-5 shadow-md border border-gray-500/25 backdrop-blur-md rounded-2xl">
+<div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900/80  p-5 shadow-md border border-gray-500/25 backdrop-blur-md rounded-2xl">
 
 
       <Link to='/dashboard'
@@ -81,7 +81,7 @@ function DashSidebar() {
       )}
 
             {/* is admin users */}
-            {currentUser.isMode && (
+            {currentUser.isMod && (
       <Link to='/dashboard?tab=users'
       className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
       >
@@ -104,10 +104,10 @@ function DashSidebar() {
 {/* small devices */}
 <div className="flex justify-center w-full">
 <div
-  className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-slate-800/75 backdrop-blur-md rounded-full px-2 py-3 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
+  className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-gray-900/75 backdrop-blur-md rounded-full px-2 py-2 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
 >
   <Link to='/dashboard'
-    className="text-red-500 hover:text-red-600 mx-3 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
+    className="text-red-500 hover:text-red-600 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"
   >
      <HiChartPie className='h-6 w-6 text-gray-500 dark:text-indigo-300'/>
   </Link>
@@ -142,7 +142,7 @@ function DashSidebar() {
   
   <Link
   onClick={handleSignout}
-    className="text-gray-600 hover:text-gray-800 mx-3 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
+    className="text-gray-600 hover:text-gray-800 mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
   >
           <IoExit  className='h-6 w-6 text-red-500 '/>
   </Link>

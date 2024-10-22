@@ -129,7 +129,7 @@ import { BiSolidCommentEdit } from "react-icons/bi";
 
 
               {currentUser &&
-                (currentUser._id === comment.userId || currentUser.isAdmin) && (
+                (currentUser._id === comment.userId || currentUser.isMod) && (
                   <>
                     <button
                       type='button'

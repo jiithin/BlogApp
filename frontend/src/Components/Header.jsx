@@ -21,7 +21,7 @@ function Header() {
 
 //console.log(currentUser.currentUser.username); if not in {}
 
-     // signout
+     //signout
      const handleSignout = async () => {
       try {
         const res = await fetch('/blog/user/signout', {
@@ -80,31 +80,47 @@ function Header() {
 
     
     {currentUser ? (
-      <Dropdown
-      label={<Avatar alt="User settings" img={currentUser.profilePicture} size='sm' />}
-      arrowIcon={false}
-      inline
-      className='rounded-2xl'
-    >
-      <Dropdown.Header>
-        <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}</span>
-        <span className="block truncate text-sm text-center font-medium">{currentUser.email}</span>
-      </Dropdown.Header>
+    //   <Dropdown
+    //   label={<Avatar alt="User settings" img={currentUser.profilePicture} size='sm' />}
+    //   arrowIcon={false}
+    //   inline
+    //   className='rounded-2xl'
+    // >
+    //   <Dropdown.Header>
+    //     <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}</span>
+    //     <span className="block truncate text-sm text-center font-medium">{currentUser.email}</span>
+    //   </Dropdown.Header>
 
-      <Link to={'/dashboard'} >
-      <Dropdown.Item >Dashboard</Dropdown.Item>
-      </Link>
+    //   <Link to={'/dashboard'} >
+    //   <Dropdown.Item >Dashboard</Dropdown.Item>
+    //   </Link>
 
-      <Link to={'/dashboard?tab=profile'}>
-      <Dropdown.Item>Profile</Dropdown.Item>
-      </Link>
+    //   <Link to={'/dashboard?tab=profile'}>
+    //   <Dropdown.Item>Profile</Dropdown.Item>
+    //   </Link>
       
-      <Dropdown.Divider />
-      <Dropdown.Item className=' text-red-400 dark:text-inherrit rounded-b-2xl' 
-      onClick={handleSignout}>
-        Sign out
-        </Dropdown.Item>
-    </Dropdown>
+    //   <Dropdown.Divider />
+    //   <Dropdown.Item className=' text-red-400 dark:text-inherrit rounded-b-2xl' 
+    //   onClick={handleSignout}>
+    //     Sign out
+    //     </Dropdown.Item>
+    // </Dropdown>
+    <>
+    <Link to={'/dashboard'} className='hidden lg:inline md:inline'>
+    <Avatar img={currentUser.profilePicture} rounded>
+    <div className="space-y-1 font-medium dark:text-white">
+      <div><span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}
+        </span>
+      </div>
+    </div>
+  </Avatar>
+  </Link>
+
+<Link to={'/dashboard'} className='lg:hidden md:hidden'>
+<Avatar img={currentUser.profilePicture} rounded>
+</Avatar>
+</Link>
+</>
     ):(
           <Link to='/sign-in' className=' '>
             <button className='divulge bg-transparent dark:bg-inherit py-2 font-poppins poppins-semibold'>
@@ -141,6 +157,11 @@ function Header() {
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
     <Link to={'/about'} className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Contact</Link>
   </Navbar.Link>
+  
+  {currentUser ? (
+  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-end lg:hidden md:hidden'>
+    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-poppins poppins-medium'>SignOut</Link>
+  </Navbar.Link>):(<></>)}
   
 </Navbar.Collapse>
 

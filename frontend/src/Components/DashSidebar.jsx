@@ -47,7 +47,7 @@ function DashSidebar() {
 
 
 {/* large devices */}
-<div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900/80  p-5 shadow-md border border-gray-500/25 backdrop-blur-md rounded-2xl">
+<div className="fixed top-56 right-5 h-auto z-20  lg:block md:block hidden card w-auto bg-gray-200 dark:bg-gray-900/40  p-5 shadow-md border border-gray-500/25 backdrop-blur-xl rounded-2xl">
 
 
       <Link to='/dashboard'
@@ -94,7 +94,7 @@ function DashSidebar() {
       className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-b-lg bg-cover dark:text-red-500 hover:bg-red-500/25 dark:hover:bg-red-600/25   text-red-600 transition-all ease-linear"
       >
           <PiPowerBold className='text-red-600 dark:text-red-500 mt-1'/>  
-        Sign out
+        Sign Out
       </Link>
 
 </div>
@@ -104,7 +104,7 @@ function DashSidebar() {
 {/* small devices */}
 <div className="flex justify-center w-full">
 <div
-  className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-gray-900/75 backdrop-blur-md rounded-full px-2 py-2 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
+  className="flex items-center justify-between fixed bottom-9   h-auto w-auto z-20 lg:hidden md:hidden bg-gray-200/75 dark:bg-gray-900/40 backdrop-blur-xl rounded-full px-2 py-2 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 border border-gray-400/25"
 >
   <Link to='/dashboard'
     className="text-red-500 hover:text-red-600 mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full"

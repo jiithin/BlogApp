@@ -11,6 +11,7 @@ function DashPosts() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
+  const [postuserIdToDelete, setPostuserIdToDelete] = useState('');
   const navigate = useNavigate();
   //console.log(userPosts)
 
@@ -68,7 +69,7 @@ function DashPosts() {
     }
   };
 
-  //delete post
+  //delete user post
   const handleDeletePost = async () => {
     setShowModal(false);
     try {
@@ -90,6 +91,31 @@ function DashPosts() {
       console.log(error.message);
     }
   };
+
+
+
+    //admin delete post
+    const handleDeleteUserPost = async () => {
+      setShowModal(false);
+      try {
+        const res = await fetch(
+          `/blog/post/deletepost/${postIdToDelete}/${postuserIdToDelete}`,
+          {
+            method: 'DELETE',
+          }
+        );
+        const data = await res.json();
+        if (!res.ok) {
+          console.log(data.message);
+        } else {
+          setUserPosts((prev) =>
+            prev.filter((post) => post._id !== postIdToDelete)
+          );
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
 
 
 
@@ -138,6 +164,7 @@ function DashPosts() {
                       onClick={() => {
                         setShowModal(true);
                         setPostIdToDelete(post._id);
+                        setPostuserIdToDelete(post.userId);
                       }}
                       className='font-medium text-red-500   cursor-pointer'
                     >
@@ -228,9 +255,9 @@ function DashPosts() {
         <Modal.Body className="bg-slate-500 rounded-b-md " >
           <div className='text-center'>
             <TbFileShredder  className='h-16 w-16 text-red-500 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-100 dark:text-gray-100'>
+            <p className='mb-5 text-lg text-gray-100 dark:text-gray-100'>
               Are you sure you want to <span className='text-red-500 font-bold'>delete</span> this post?
-            </h3>
+            </p>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeletePost}
               className="w-full" >
@@ -241,6 +268,9 @@ function DashPosts() {
                 Cancel
               </Button>
             </div>
+            {/* {currentUser.isMod && (
+                <Button color='success' className='w-full mt-3' onClick={handlyeDeleteUserPost}>Delete this users post</Button>
+              )} */}
           </div>
         </Modal.Body>
       </Modal>

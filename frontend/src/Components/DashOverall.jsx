@@ -6,6 +6,7 @@ import { MdPostAdd } from "react-icons/md";
 import { useSelector } from 'react-redux';
 import { Button, Table } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import { BsFilePost } from 'react-icons/bs';
 function DashOverall() {
     const [users, setUsers] = useState([]);
     const [comments, setComments] = useState([]);
@@ -72,7 +73,20 @@ function DashOverall() {
      {/* statistcs */}
        <div className="flex-1 bg-transparent rounded-lg mt-2 p-8 ">
                     {/* <h4 className="text-xl text-purple-800/75 dark:text-purple-300 font-mono font-bold ">Dashboard</h4> */}
-                    
+    <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8 mb-5">
+            {/* create post button */}
+              {currentUser.isAdmin && (
+                <Link to={'/create-post'}>
+                <button
+                  className="sigh mt-2 mb-2 w-44 h-11 font-poppins flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
+                >
+                  <span>Create a Post</span>
+                  <BsFilePost />
+                </button>
+                </Link>
+              )}
+              </div>
+              
                     <div className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-8 mt-4">
                       {/* total users */}
                         <div className="px-6 py-6 bg-gray-100 dark:bg-blue-950/15 border border-gray-400/25 rounded-xl shadow-xl hover:-translate-y-2 delay-50 duration-300">

@@ -27,11 +27,67 @@ function Home() {
       fetchPosts()
   });
 
+
+
+// Given date
+const dateString = userPosts[0].createdAt;
+
+// Parse the date string into a Date object
+const date = new Date(dateString);
+
+// Extract the month, day, and time
+const options = { 
+    month: 'long', 
+    day: 'numeric', 
+    hour: 'numeric', 
+    minute: 'numeric', 
+    hour12: true 
+};
+const formattedDate = date.toLocaleString('en-US', options);
+
+// Output the results
+const [monthDay, time] = formattedDate.split(', ');
+
+// Further split monthDay to separate month and day
+const [month, day] = monthDay.split(' ');
+
+// Output the results
+console.log(`Month: ${month}`);
+console.log(`Day: ${day}`);
   
   return (
     
     
 <>
+{userPosts && userPosts.length > 0 ? ( 
+<div className="mx-auto h-auto flex items-center justify-center lg:px-36 px-5 mt-10">
+  <div className="flex flex-col w-full bg-white rounded shadow-lg ">
+    <div className="w-full h-64 bg-top bg-cover rounded-t">
+    <img src={userPosts[0].image} alt={userPosts[0].title} className='h-full w-full object-cover' />
+    </div>
+    <div className="flex flex-col w-full md:flex-row bg-white">
+        <div className="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+            <div className="md:text-3xl">{month}</div>
+            <div className="md:text-6xl">{day}</div>
+        </div>
+        <div className="p-4 font-normal text-gray-800 md:w-3/4">
+            <h1 className="mb-4 text-4xl font-poppins poppins-semibold leading-none tracking-tight text-gray-800 line-clamp-2">{userPosts[0].title}</h1>
+            <p className="leading-normal" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0, userPosts[0].content.indexOf('.'))}}></p>
+            <div className="flex flex-row items-center mt-4 text-gray-700">
+                <div className="w-auto bg-slate-900 text-white font-poppins p-1">
+                {userPosts[0].category}
+                </div>
+                <div className="w-full flex justify-end text-gray-400">
+                {userPosts[0] && (userPosts[0].content.length / 1000).toFixed(0)} mins read
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>):(
+      <div className="grid grid-flow-col grid-cols-8"></div>
+    )}
+
 {/* <div><p id='head'>DIVULGE</p></div> */}
 {userPosts && userPosts.length > 0 ? ( 
   <div className="container justify-center my-10 hidden lg:flex md:flex">

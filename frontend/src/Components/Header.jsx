@@ -117,7 +117,7 @@ function Header() {
   <Navbar.Toggle className=' text-purple-400 dark:text-purple-400'/>
 </div>
 
-<Navbar.Collapse className='lg:text-center bg-transparent lg:hidden md:hidden'>
+<Navbar.Collapse className='lg:text-center bg-transparent lg:hidden'>
 <form onSubmit={handleSubmit}>
   <TextInput
     type='text'
@@ -131,18 +131,15 @@ function Header() {
 
   
 </form>
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
+  {/* <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
     <Link to={'/'} className='text-purple-500 dark:text-purple-400 lg:text-base  font-Montserrat font-semibold'>Home</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300 text-center'>
     <Link to={'/blogs'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat font-semibold'>Blogs</Link>
   </Navbar.Link>
-  {/* <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat font-semibold'>Features</Link>
-  </Navbar.Link> */}
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
     <Link to={'/about'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat font-semibold'>Contact</Link>
-  </Navbar.Link>
+  </Navbar.Link> */}
   
   {currentUser ? (
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-end lg:hidden md:hidden'>

@@ -106,12 +106,12 @@ function Search() {
       <div className='mb-32'>
         <div className='flex '>
         <p className='text-3xl font-semibold text-slate-600 dark:text-slate-300 p-3 mt-5 '>
-          Search results for "<span className='text-purple-500 dark:text-blue-400'>
+          Search results for "<span className='text-blue-500 dark:text-blue-400'>
           {sidebarData.searchTerm}</span>"
         </p>
         </div>
         
-        <form className=' gap-8 border-b border-gray-400' onSubmit={handleSubmit}>
+        <form className=' gap-8 border-b border-gray-300 dark:border-gray-600' onSubmit={handleSubmit}>
         <div className='flex p-3 items-center gap-2'>
             <label className='font-semibold'>Category:</label>
             <Select
@@ -128,7 +128,7 @@ function Search() {
               <option value='Fitness'>Fitness</option>
               <option value='Eduction'>Eduction</option>
             </Select>
-            <button type='submit' className='font-Montserrat font-semibold px-3 text-purple-600 hover:-translate-y-1 hover:scale-105 transition duration-300'>
+            <button type='submit' className='font-Montserrat font-semibold px-3 text-purple-400 hover:-translate-y-1 hover:scale-105 transition duration-300'>
             Apply
           </button>
           </div>

@@ -1,9 +1,12 @@
+import { TextInput } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { IoSearchOutline } from "react-icons/io5";
 
 function Projects() {
-
-    const [userPosts,setUserPosts]=useState([])
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [userPosts,setUserPosts]=useState([])
 
     //get all posts only 9 posts willshow becoz we set a query limiter
     useEffect(()=>{
@@ -22,9 +25,42 @@ function Projects() {
   
         fetchPosts()
     });
+
+        // search
+        useEffect(() => {
+          const urlParams = new URLSearchParams(location.search);
+          const searchTermFromUrl = urlParams.get('searchTerm');
+          if (searchTermFromUrl) {
+            setSearchTerm(searchTermFromUrl);
+          }
+        }, [location.search]);
+    
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          const urlParams = new URLSearchParams(location.search);
+          urlParams.set('searchTerm', searchTerm);
+          const searchQuery = urlParams.toString();
+          navigate(`/search?${searchQuery}`);
+        };
   return (
     <>
-        <div><p id='head' className='text-4xl font-Montserrat font-semibold py-5 text-center justify-center ml-16'>Latest Blogs</p></div>
+        <div><p id='head' className='text-4xl font-Montserrat font-semibold py-5 text-center justify-center '>Latest Blogs</p></div>
+
+<div class="flex flex-wrap place-items-center font-Montserrat mt-3">
+  <section class="relative mx-auto">
+        <form onSubmit={handleSubmit} className='w-72'>
+  <TextInput
+    type='text'
+    placeholder='Search...'
+    rightIcon={IoSearchOutline}
+    className=''
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  </form>
+  </section>
+</div>
+
 
         {/* sample */}
 <div className="flex flex-col h-auto bg-transparent items-center mt-5 font-Montserrat">

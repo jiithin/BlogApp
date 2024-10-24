@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { IoTrashBin } from "react-icons/io5";
+import { FaUserTimes } from "react-icons/fa";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { Alert, Button, Modal, Tooltip } from 'flowbite-react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
@@ -172,7 +172,7 @@ function DashProfile() {
 
   return (
     <>
-      <div className="h-full bg-transparent p-8  ">
+      <div className="h-full bg-transparent p-8  font-Montserrat">
         <div className="bg-gray-100/75 dark:bg-slate-800/50 rounded-2xl shadow-xl border border-gray-500/25 pb-8">
           <form className="flex flex-col" onSubmit={handleSubmit}>
             {/* bg gif */}
@@ -214,7 +214,7 @@ function DashProfile() {
                 </div>
               </Tooltip>
               <div className="flex items-center space-x-2 mt-2">
-                <p className="divulge font-Montserrat Montserrat-medium text-2xl text-center py-2 lg:block font">
+                <p className="divulge font-ElsieSwash font-semibold text-2xl text-center py-2 lg:block font uppercase">
                   {currentUser.username}
                 </p>
 
@@ -254,13 +254,13 @@ function DashProfile() {
 
             {/* personal info */}
             <div className="flex-1 bg-inherit rounded-lg p-8">
-              <h4 className="text-xl text-gray-900 font-bold dark:text-purple-300">
+              <p className="text-xl text-purple-900 font-bold dark:text-purple-300">
                 Personal Info
-              </h4>
+              </p>
 
               <ul className="mt-2 text-gray-700">
                 <li className="flex border-y py-2 dark:border-gray-800">
-                  <span className="font-bold w-24 dark:text-gray-400">
+                  <span className="font-semibold w-24 dark:text-gray-400">
                     User name:
                   </span>
                   <div className="relative z-0">
@@ -277,7 +277,7 @@ function DashProfile() {
                 </li>
 
                 <li className="flex border-b py-2 dark:border-gray-800">
-                  <span className="font-bold w-24 dark:text-gray-400">
+                  <span className="font-semibold w-24 dark:text-gray-400">
                     Email:
                   </span>
                   <div className="relative z-0">
@@ -294,7 +294,7 @@ function DashProfile() {
                 </li>
 
                 <li className="flex border-b py-2 dark:border-gray-800">
-                  <span className="font-bold w-24 dark:text-gray-400">
+                  <span className="font-semibold w-24 dark:text-gray-400">
                     Password:
                   </span>
                   <div className="relative z-0">
@@ -310,7 +310,7 @@ function DashProfile() {
                 </li>
 
                 <li className="flex border-b py-2 dark:border-gray-800">
-                  <span className="font-bold w-24 dark:text-gray-400">
+                  <span className="font-semibold w-24 dark:text-gray-400 me-2">
                     Languages:
                   </span>
                   <span className="text-gray-700 dark:text-gray-200">
@@ -333,7 +333,7 @@ function DashProfile() {
                   onClick={() => setShowModal(true)}
                 >
                   <span>Delete Account</span>
-                  <IoTrashBin />
+                  <FaUserTimes />
                 </button>
               </div>
           </form>

@@ -99,7 +99,7 @@ function PostPage() {
         </span>
         <div className="p-4 absolute bottom-0 left-0 ">
           <Link to={`/search?category=${post && post.category}`}
-            className="px-3 py-1 Montserrat-semibold text-sm bg-gray-200  text-slate-950 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
+            className="px-3 py-1 font-Montserrat font-semibold text-sm bg-gray-200  text-slate-950 inline-flex items-center justify-center mb-2">{post && post.category}</Link>
             {/* <span className='hidden lg:inline absolute right-0 text-xs text-white font-semibold shadow-lg'>
           {post && (post.content.length / 1000).toFixed(0)} mins read
         </span> */}
@@ -160,7 +160,7 @@ function PostPage() {
       <CommentSection postId={post._id} />
 
       <div className='flex flex-col justify-center items-center mb-2 mt-8'>
-      <p className="text-xl Montserrat-medium text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Recent Posts</p>
+      <p className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Recent Posts</p>
         <div className=' mt-5 justify-center grid grid-cols-1  gap-4 p-4'>
           {recentPosts &&
             recentPosts.map((post) => <PostCard key={post._id} post={post} />)}

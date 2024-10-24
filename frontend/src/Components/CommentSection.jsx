@@ -117,7 +117,7 @@ import Comments from './Comments';
     }
   };
   return (
-    <div className='max-w-5xl mx-auto w-full p-3'>
+    <div className='max-w-5xl mx-auto w-full p-3 font-Montserrat'>
                   <div className='flex justify-between items-center mt-5'>
             <p className='text-gray-800 dark:text-gray-200 text-lg font-semibold p-4'>
               Comments <span className='bg-purple-500 text-white px-2 w-auto rounded-full ml-2 '>{comments.length} </span>

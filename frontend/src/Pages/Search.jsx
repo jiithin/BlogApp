@@ -101,12 +101,12 @@ function Search() {
         }
       };
   return (
-    <div className='flex flex-col max-h-screen items-center justify-center font-Montserrat'>
+    <div className='flex flex-col max-h-screen  items-center justify-center font-Montserrat'>
 
       <div className='mb-32'>
         <div className='flex '>
-        <p className='text-3xl font-semibold  p-3 mt-5 '>
-          Search results for "<span className='text-blue-500 dark:text-blue-400'>
+        <p className='text-3xl font-semibold text-slate-600 dark:text-slate-300 p-3 mt-5 '>
+          Search results for "<span className='text-purple-500 dark:text-blue-400'>
           {sidebarData.searchTerm}</span>"
         </p>
         </div>
@@ -137,7 +137,7 @@ function Search() {
 
         <div className=' mt-5 justify-center grid grid-cols-1  gap-4 p-4'>
           {!loading && posts.length === 0 && (
-            <p className='text-xl text-gray-500 text-center'>No posts found.</p>
+            <p className='text-xl text-gray-500 font-Montserrat text-center'>No posts found.</p>
           )}
           {loading && <p className='text-xl text-gray-500 text-center'>Loading...</p>}
           {!loading &&

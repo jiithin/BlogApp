@@ -54,23 +54,18 @@ function Home() {
     
 <>
 {/* second nav */}
+<div className="hidden lg:block md:block">
 <div class="flex flex-wrap place-items-center font-Montserrat">
   <section class="relative mx-auto">
 
     <div class="flex justify-between bg-transparent text-white w-screen">
       <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-        <p class="text-3xl font-medium  text-slate-700">
-          <span className=' font-semibold text-transparent bg-clip-text bg-gradient-to-l to-blue-300 from-purple-500'>Divulge.</span> Blog
+        <p class="text-xl font-medium  text-slate-700">
+          <span className='text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-l to-blue-300 from-purple-500'>Divulge.</span> Blog
         </p>
+        </div>
 
-        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-          <li><a class="hover:text-gray-500" href="#">Home</a></li>
-          <li><a class="hover:text-gray-500" href="#">Catagory</a></li>
-          <li><a class="hover:text-gray-500" href="#">Collections</a></li>
-          <li><a class="hover:text-gray-500" href="#">Contact Us</a></li>
-        </ul>
-
-        <div class=" space-x-5 items-center">
+        <div class="justify-center items-center mr-20">
         <form onSubmit={handleSubmit}>
   <TextInput
     type='text'
@@ -81,11 +76,12 @@ function Home() {
     onChange={(e) => setSearchTerm(e.target.value)}
   />
   </form>
-        </div>
+
       </div>
     </div>
     
   </section>
+</div>
 </div>
 
 
@@ -157,7 +153,23 @@ function Home() {
     </div>
     </Link>
 </div>):(
-  <p className='divulge text-center py-12 lg:text-3xl text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No posts to find.</p>
+
+<div className='flex justify-center items-center min-h-screen'>
+
+{/* loader custom */}
+<div className="w-full gap-x-2 flex justify-center items-center">
+  <div
+    className="w-5 bg-[#d991c2] h-5 rounded-full animate-bounce "
+  ></div>
+  <div
+    className="w-5  h-5 bg-[#9869b8] rounded-full animate-bounce"
+  ></div>
+  <div
+    className="w-5 h-5  bg-[#6756cc] rounded-full animate-bounce "
+  ></div>
+</div>
+
+      </div>
     )}
 
 
@@ -179,12 +191,12 @@ function Home() {
     <div className="h-fit w-full">
       {/* category tag */}
     <div className="flex justify-center items-center h-fit w-fit gap-1">
-      <div className="  text-black Montserrat-medium text-sm font-normal p-1 bg-gray-100 duration-300 cursor-pointer">
+      <div className="  text-black font-semibold text-sm p-1 bg-gray-100 duration-300 cursor-pointer">
         <p>{post.category}</p>
       </div>
     </div>
       
-    <p className="card_heading lg:text-xl px-1 Montserrat-medium text-md text-gray-100 line-clamp-2">
+    <p className="card_heading lg:text-xl px-1 font-semibold text-md text-gray-100 line-clamp-2">
         {post.title}
       </p>
       {/* <p className="text-sm text-gray-200">

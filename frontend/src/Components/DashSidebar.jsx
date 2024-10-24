@@ -52,14 +52,14 @@ function DashSidebar() {
 
 
       <Link to='/dashboard?tab=stats'
-        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-t-lg bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-t-lg bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-600 transition-all ease-linear"
         >
      <HiChartPie className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Dashboard
       </Link>
 
       <Link to='/dashboard?tab=profile'
-        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25  text-gray-700 transition-all ease-linear"
+        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25  text-gray-600 transition-all ease-linear"
       >
       <HiUser className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Profile
@@ -68,13 +68,13 @@ function DashSidebar() {
       {/* is admin posts */}
       {currentUser.isAdmin ? (
       <Link to='/dashboard?tab=posts'
-      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-600 transition-all ease-linear"
       >
       <IoMdListBox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Your Posts
       </Link>):(
         <Link to='/projects'
-        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+        className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-600 transition-all ease-linear"
       >
       <IoMdListBox className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Posts
@@ -85,13 +85,13 @@ function DashSidebar() {
             {currentUser.isMod && (
               <>
                    <Link to='/dashboard?tab=users'
-      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-600 transition-all ease-linear"
       >
       <FaUsers className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Users
       </Link>
       <Link to='/dashboard?tab=comments'
-      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-700 transition-all ease-linear"
+      className="p-16-semibold flex size-full gap-4 p-4 group font-semibold rounded-sm bg-cover dark:text-purple-300 hover:bg-gray-100 dark:hover:bg-gray-600/25   text-gray-600 transition-all ease-linear"
       >
       <BiSolidCommentError className='text-purple-700 dark:text-indigo-300 mt-1'/>
         Comments

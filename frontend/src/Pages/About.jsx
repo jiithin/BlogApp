@@ -4,12 +4,12 @@ import logo from '../assets/divulge.png'
 function About() {
   return (
     <>
-    <div><p id='head' className='text-4xl font-Montserrat font-semibold py-3'>About Us</p></div>
+    <div><p id='head' className='text-4xl font-Montserrat font-semibold p-3 text-center justify-center lg:ml-16'>About Us</p></div>
     
     
 
     {/* sample */}
-    <div className="bg-transparent relative   flex items-center  n justify-center overflow-hidden z-50 ">
+    <div className="bg-transparent relative   flex items-center font-Montserrat  justify-center overflow-hidden z-50 ">
      
     <div className="relative mx-auto h-full px-4  pb-20   md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
         <div className="flex flex-col items-center justify-between lg:flex-row py-16">

@@ -6,7 +6,7 @@ import { MdPostAdd } from "react-icons/md";
 import { useSelector } from 'react-redux';
 import { Button, Table } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import { BsFilePost } from 'react-icons/bs';
+import { PiFilePlusFill } from "react-icons/pi";
 function DashOverall() {
     const [users, setUsers] = useState([]);
     const [comments, setComments] = useState([]);
@@ -78,10 +78,10 @@ function DashOverall() {
               {currentUser.isAdmin && (
                 <Link to={'/create-post'}>
                 <button
-                  className="sigh mt-2 mb-2 w-44 h-11 font-Montserrat flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
+                  className="sigh mt-2 mb-2 w-44 h-11  flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
                 >
                   <span>Create a Post</span>
-                  <BsFilePost />
+                  <PiFilePlusFill className='h-6 w-6' />
                 </button>
                 </Link>
               )}

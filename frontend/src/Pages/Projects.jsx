@@ -24,10 +24,7 @@ function Projects() {
     });
   return (
     <>
-        <div><p id='head' className='text-4xl font-Montserrat Montserrat-semi
-        
-        
-        bold py-5'>Blogs</p></div>
+        <div><p id='head' className='text-4xl font-Montserrat font-semibold py-5 text-center justify-center ml-16'>Latest Blogs</p></div>
 
         {/* sample */}
 <div className="flex flex-col h-auto bg-transparent items-center mt-5 font-Montserrat">
@@ -52,7 +49,7 @@ function Projects() {
           <div className="flex items-center">
             <div className="relative">
               <p className="line-clamp-1 text-base  font-semibold text-gray-800 dark:text-gray-200 md:text-lg" title="New York">{post.title}</p>
-              <p className="mt-1 line-clamp-1 text-sm text-gray-500 dark:text-gray-300"><span className=' Montserrat-medium'>{post.username}</span>	·  {post && (post.content.length / 1000).toFixed(0)} mins read</p>
+              <p className="mt-1 line-clamp-1 text-sm text-gray-500 dark:text-gray-300"><span className=' font-semibold'>{post.username}</span>	·  {post && (post.content.length / 1000).toFixed(0)} mins read</p>
               <p className=" text-gray-400 dark:text-gray-500 text-xs">{post && new Date(post.createdAt).toLocaleDateString()} </p>
             </div>
           </div>
@@ -71,9 +68,23 @@ function Projects() {
     </div>
   </Link>
 </div>))):(
-  <div className="text-center">
-  <p className=' py-12 lg:text-3xl text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No posts to find.</p>
-  </div> )}
+      <div className='flex justify-center items-center min-h-screen'>
+
+      {/* loader custom */}
+      <div className="w-full gap-x-2 flex justify-center items-center">
+        <div
+          className="w-5 bg-[#d991c2] h-5 rounded-full animate-bounce "
+        ></div>
+        <div
+          className="w-5  h-5 bg-[#9869b8] rounded-full animate-bounce"
+        ></div>
+        <div
+          className="w-5 h-5  bg-[#6756cc] rounded-full animate-bounce "
+        ></div>
+      </div>
+      
+            </div>
+)}
 
   </div>
 </div>

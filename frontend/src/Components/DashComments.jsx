@@ -75,17 +75,22 @@ function DashComments() {
   };
 
   return (
-    <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 max-w-[60rem] px-5'>
+    
+    <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 max-w-[60rem] px-5 font-Montserrat'>
+            <div className=" flex items-center justify-between">
+        <p className="text-xl font-Montserrat font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">All Comments</p>
+
+      </div>
     {currentUser.isAdmin && comments.length > 0 ? (
       <>
         <Table hoverable className='shadow-md'>
           <Table.Head>
-            <Table.HeadCell className='font-Montserrat'>Added</Table.HeadCell>
-            <Table.HeadCell className='font-Montserrat'>Comment</Table.HeadCell>
-            <Table.HeadCell className='font-Montserrat'>Likes</Table.HeadCell>
-            <Table.HeadCell className='font-Montserrat'>PostId</Table.HeadCell>
-            <Table.HeadCell className='font-Montserrat'>UserId</Table.HeadCell>
-            <Table.HeadCell className='font-Montserrat'>Action</Table.HeadCell>
+            <Table.HeadCell >Added</Table.HeadCell>
+            <Table.HeadCell >Comment</Table.HeadCell>
+            <Table.HeadCell >Likes</Table.HeadCell>
+            <Table.HeadCell >PostId</Table.HeadCell>
+            <Table.HeadCell >UserId</Table.HeadCell>
+            <Table.HeadCell >Action</Table.HeadCell>
           </Table.Head>
           {comments.map((comment) => (
             <Table.Body className='divide-y' key={comment._id}>
@@ -101,7 +106,7 @@ function DashComments() {
                       setShowModal(true);
                       setCommentIdToDelete(comment._id);
                     }}
-                    className='font-medium text-red-500 hover:underline cursor-pointer'
+                    className='font-semibold text-red-500 hover:underline cursor-pointer'
                   >
                     Delete
                   </span>
@@ -113,7 +118,7 @@ function DashComments() {
         {showMore && (
           <button
             onClick={handleShowMore}
-            className='w-full text-purple-500 font-Montserrat Montserrat-medium self-center text-sm py-7'
+            className='w-full text-purple-500  self-center text-sm py-7'
           >
             Show more
           </button>
@@ -121,7 +126,7 @@ function DashComments() {
 </>
          
         ) : (
-          <p className='divulge text-center py-12 lg:text-3xl text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No comments to find.</p>
+          <p className='divulge text-center py-12 lg:text-3xl text-xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No comments to find.</p>
         )}
 
       

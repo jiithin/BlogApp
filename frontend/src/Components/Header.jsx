@@ -68,7 +68,7 @@ function Header() {
   className='self-center whitespace-nowrap text-sm sm:text-xl  flex'
 >
     <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo"/>
-    <span className="divulge self-center whitespace-nowrap lg:text-2xl text-lg font-ElsieSwash font-bold ">Divulge.</span>
+    <span className="divulge self-center whitespace-nowrap lg:text-3xl text-xl font-ElsieSwash font-bold ">Divulge.</span>
 </Link>
 
 
@@ -79,22 +79,11 @@ function Header() {
   <IoSearchOutline />
 </Button> */}
 
-<form onSubmit={handleSubmit}>
-  <TextInput
-    type='text'
-    placeholder='Search...'
-    rightIcon={IoSearchOutline}
-    className='hidden lg:inline '
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-
-  />
-</form>
 {/* darkmode button */}
 
   <button type="button" className="w-12 h-10 hidden sm:inline  bg-transparent   rounded-lg text-sm px-3 text-center items-center  dark:bg-inherit" 
   onClick={() => dispatch(toggleTheme())}>
-  {theme === 'light' ?(<CgDarkMode className='w-5 h-5 text-purple-600'/>):(<CgDarkMode className='w-5 h-5 text-indigo-300'/>)}
+  {theme === 'light' ?(<CgDarkMode className='w-6 h-6 text-purple-500'/>):(<CgDarkMode className='w-6 h-6 text-blue-300'/>)}
 </button>
 
 
@@ -128,8 +117,8 @@ function Header() {
     <>
     <Link to={'/dashboard?tab=stats'} className='hidden lg:inline md:inline'>
     <Avatar img={currentUser.profilePicture} >
-    <div className="space-y-1 font-medium dark:text-white">
-      <div><span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}
+    <div className="space-y-1 font-Montserrat dark:text-white">
+      <div><span className="block text-sm font-ElsieSwash font-semibold text-center text-purple-500 dark:text-purple-400">{currentUser.username}
         </span>
       </div>
     </div>
@@ -143,7 +132,7 @@ function Header() {
 </>
     ):(
           <Link to='/sign-in' className=' '>
-            <button className='divulge bg-transparent dark:bg-inherit py-2 font-Montserrat Montserrat-semibold'>
+            <button className='divulge bg-transparent dark:bg-inherit py-2 font-ElsieSwash font-semibold'>
             Sign In
             </button>
         </Link>
@@ -168,21 +157,21 @@ function Header() {
   
 </form>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
-    <Link to={'/'} className='text-purple-500 dark:text-purple-400 lg:text-base  font-Montserrat Montserrat-medium'>Home</Link>
+    <Link to={'/'} className='text-purple-500 dark:text-purple-400 lg:text-base  font-Montserrat font-semibold'>Home</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300 text-center'>
-    <Link to={'/blogs'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat Montserrat-medium'>Blogs</Link>
+    <Link to={'/blogs'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat font-semibold'>Blogs</Link>
   </Navbar.Link>
   {/* <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat Montserrat-medium'>Features</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat font-semibold'>Features</Link>
   </Navbar.Link> */}
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
-    <Link to={'/about'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat Montserrat-medium'>Contact</Link>
+    <Link to={'/about'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat font-semibold'>Contact</Link>
   </Navbar.Link>
   
   {currentUser ? (
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-end lg:hidden md:hidden'>
-    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-Montserrat Montserrat-medium'>SignOut</Link>
+    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-ElsieSwash font-semibold'>SignOut</Link>
   </Navbar.Link>):(<></>)}
   
 </Navbar.Collapse>

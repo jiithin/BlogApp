@@ -29,46 +29,22 @@ function Home() {
 
 
 
-// Given date
-const dateString = userPosts[0].createdAt;
 
-// Parse the date string into a Date object
-const date = new Date(dateString);
-
-// Extract the month, day, and time
-const options = { 
-    month: 'long', 
-    day: 'numeric', 
-    hour: 'numeric', 
-    minute: 'numeric', 
-    hour12: true 
-};
-const formattedDate = date.toLocaleString('en-US', options);
-
-// Output the results
-const [monthDay, time] = formattedDate.split(', ');
-
-// Further split monthDay to separate month and day
-const [month, day] = monthDay.split(' ');
-
-// Output the results
-console.log(`Month: ${month}`);
-console.log(`Day: ${day}`);
   
   return (
     
     
 <>
 {userPosts && userPosts.length > 0 ? ( 
-<div className="mx-auto h-auto flex items-center justify-center lg:px-36 px-5 mt-10">
+<div className="mx-auto h-auto flex items-center justify-center lg:px-36 px-5 my-16 " onClick={(e) =>  navigate(`/post/${userPosts[0].slug}`)}>
   <div className="flex flex-col w-full bg-white rounded shadow-lg ">
     <div className="w-full h-64 bg-top bg-cover rounded-t">
     <img src={userPosts[0].image} alt={userPosts[0].title} className='h-full w-full object-cover' />
     </div>
     <div className="flex flex-col w-full md:flex-row bg-white">
         <div className="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
-            <div className="md:text-3xl">{month}</div>
-            <div className="md:text-6xl">{day}</div>
+            <div className="md:text-xl">Latest</div>
+            <div className="md:text-3xl">{new Date(userPosts[0].createdAt).toLocaleDateString()}  </div>
         </div>
         <div className="p-4 font-normal text-gray-800 md:w-3/4">
             <h1 className="mb-4 text-4xl font-poppins poppins-semibold leading-none tracking-tight text-gray-800 line-clamp-2">{userPosts[0].title}</h1>
@@ -89,46 +65,7 @@ console.log(`Day: ${day}`);
     )}
 
 {/* <div><p id='head'>DIVULGE</p></div> */}
-{userPosts && userPosts.length > 0 ? ( 
-  <div className="container justify-center my-10 hidden lg:flex md:flex">
-<div className="flex px-40 items-center">
-<div className=''>
-  <img src={userPosts[0].image} alt="" className='w-[42rem]  object-cover' />
-</div>
-<div className=' text-start '>
-<div class="min-h-auto">
-            <div class="p-6">
-                <p
-                    class=" px-3 py-1 mb-2 w-fit font-poppins poppins-semibold text-sm  text-slate-950 bg-gray-100 dark:bg-slate-950 dark:text-gray-200 uppercase">
-                    {userPosts[0].category}
-                </p>
-                <p class="block mb-2 font-poppins poppins-semibold text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                {userPosts[0].title}
-                </p>
-                <p class="block mb-8 font-monte text-base antialiased font-normal leading-relaxed overflow-hidden text-gray-700 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0, userPosts[0].content.indexOf('.'))}}>
-                
-                </p>
 
-              {/* user */}
-            <div className="flex mb-5 mt-5">
-            <img src={userPosts[0].userProfile}
-              className="h-10 w-10 rounded-full mr-2 object-cover shadow-md" />
-            <div className='flex-col'>
-              <p className="font-semibold text-slate-950 dark:text-gray-300  text-sm">{userPosts[0].username}</p>
-              <p className=" text-slate-950 dark:text-gray-300 text-xs">{userPosts[0].category} . <span className=' text-gray-600 dark:text-gray-400 text-xs poppins-regular '>
-          {userPosts[0] && (userPosts[0].content.length / 1000).toFixed(0)} mins read
-        </span></p>
-            </div>
-          </div>
-    
-            </div>
-        </div>
-    </div>
-
-    </div>
-    </div>):(
-      <div className="grid grid-flow-col grid-cols-8"></div>
-    )}
 
 {userPosts && userPosts.length > 0 ? ( 
 <div className="container mx-auto my-5 lg:hidden md:hidden">
@@ -164,7 +101,7 @@ console.log(`Day: ${day}`);
     </div>
     </Link>
 </div>):(
-      <div className="grid grid-flow-col grid-cols-8"></div>
+  <p className='divulge text-center py-12 lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No posts to find.</p>
     )}
 
 

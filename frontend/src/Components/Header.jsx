@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 
   import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -18,6 +18,7 @@ function Header() {
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
 //console.log(currentUser.currentUser.username); if not in {}
 
@@ -37,6 +38,23 @@ function Header() {
       } catch (error) {
         console.log(error.message);
       }
+    };
+
+    // search
+    useEffect(() => {
+      const urlParams = new URLSearchParams(location.search);
+      const searchTermFromUrl = urlParams.get('searchTerm');
+      if (searchTermFromUrl) {
+        setSearchTerm(searchTermFromUrl);
+      }
+    }, [location.search]);
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const urlParams = new URLSearchParams(location.search);
+      urlParams.set('searchTerm', searchTerm);
+      const searchQuery = urlParams.toString();
+      navigate(`/search?${searchQuery}`);
     };
 
   return (
@@ -61,12 +79,14 @@ function Header() {
   <IoSearchOutline />
 </Button> */}
 
-<form >
+<form onSubmit={handleSubmit}>
   <TextInput
     type='text'
     placeholder='Search...'
     rightIcon={IoSearchOutline}
     className='hidden lg:inline '
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
 
   />
 </form>

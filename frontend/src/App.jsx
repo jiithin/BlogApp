@@ -15,6 +15,7 @@ import CreatePost from './Pages/CreatePost'
 import AdminPrivateRoute from './Components/AdminPrivateRoute'
 import PostPage from './Pages/PostPage'
 import UpdatePost from './Pages/UpdatePost'
+import Search from './Pages/Search'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/processing" element={<Limbo />} />
+      <Route path='/search' element={<Search />} />
 
       <Route element={<PrivateRoute />}>
       <Route path="/dashboard" element={<Dashboard />} />

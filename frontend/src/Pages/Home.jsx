@@ -54,18 +54,33 @@ function Home() {
     
 <>
 {/* second nav */}
-<div className="hidden lg:block md:block">
-<div class="flex flex-wrap place-items-center font-Montserrat">
+<div className="">
+<div class="flex flex-wrap place-items-center font-Montserrat ">
   <section class="relative mx-auto">
 
-    <div class="flex justify-between bg-transparent text-white w-screen">
-      <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-        <p class="text-xl font-medium  text-slate-700">
-          <span className='text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-l to-blue-300 from-purple-500'>Divulge.</span> Blog
+    <div class="flex justify-between bg-transparent ">
+      <div class=" py-6 flex items-center">
+        <p class="flex text-xl lg:text-3xl font-medium mr-3 text-slate-600 dark:text-slate-300">Welcome to
+          <span className='text-2xl lg:text-3xl px-2 font-ElsieSwash font-semibold text-transparent bg-clip-text bg-gradient-to-l to-blue-300 from-purple-500'>Divulge.</span> Blog
         </p>
+          <div className='hidden lg:inline '>
+          <Link to={'/blogs'} className='px-3'>
+            Latest Blogs
+            </Link>
+          <Link to={'/about'} className='px-5'>
+            Product News
+            </Link>
+            <span className='text-2xl'>|</span>
+            <Link  className='px-3'>
+            Contact 
+            </Link>
+        </div>
         </div>
 
-        <div class="justify-center items-center mr-20">
+
+
+
+        <div class="justify-center items-center py-6 hidden lg:inline">
         <form onSubmit={handleSubmit}>
   <TextInput
     type='text'
@@ -79,7 +94,28 @@ function Home() {
 
       </div>
     </div>
-    
+    <div className='flex items-center lg:hidden'>
+          <Link to={'/about'} className='px-5'>
+            Product News
+            </Link>
+            <Link to={'/blogs'} className='px-3'>
+            Latest Blogs
+            </Link>
+            <span className='text-2xl'>|</span>
+            <Link  className='px-3'>
+            Contact 
+            </Link>
+            <form onSubmit={handleSubmit} className='hidden md:inline'>
+  <TextInput
+    type='text'
+    placeholder='Search...'
+    rightIcon={IoSearchOutline}
+    className=''
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  </form>
+        </div>
   </section>
 </div>
 </div>
@@ -88,18 +124,18 @@ function Home() {
 
 
 {userPosts && userPosts.length > 0 ? ( 
-<div className="mx-auto h-auto flex items-center justify-center lg:px-36 px-5 my-16 " onClick={(e) =>  navigate(`/post/${userPosts[0].slug}`)}>
-  <div className="flex flex-col w-full bg-white rounded shadow-lg ">
+<div className="mx-auto h-auto flex items-center justify-center lg:px-36 px-5 my-8 " onClick={(e) =>  navigate(`/post/${userPosts[0].slug}`)}>
+  <div className="flex flex-col w-full rounded shadow-lg ">
     <div className="w-full h-64 bg-top bg-cover rounded-t">
     <img src={userPosts[0].image} alt={userPosts[0].title} className='h-full w-full object-cover' />
     </div>
-    <div className="flex flex-col w-full md:flex-row bg-white">
-        <div className="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+    <div className="flex flex-col w-full md:flex-row dark:bg-gray-300">
+        <div className="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400/30 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
             <div className="md:text-xl">Latest</div>
             <div className="md:text-3xl">{new Date(userPosts[0].createdAt).toLocaleDateString()}  </div>
         </div>
         <div className="p-4 font-normal text-gray-800 md:w-3/4">
-            <h1 className="mb-4 text-4xl font-Montserrat Montserrat-semibold leading-none tracking-tight text-gray-800 line-clamp-2">{userPosts[0].title}</h1>
+            <p className="py-1 text-4xl font-Montserrat font-semibold leading-none tracking-tight text-gray-800 line-clamp-2">{userPosts[0].title}</p>
             <p className="leading-normal" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0, userPosts[0].content.indexOf('.'))}}></p>
             <div className="flex flex-row items-center mt-4 text-gray-700">
                 <div className="w-auto bg-slate-900 text-white font-Montserrat p-1">
@@ -174,7 +210,7 @@ function Home() {
 
 
 {/* cards */}
-<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-4 p-4">
+<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-4 p-4 lg:px-36">
 
   {/* card */}
 {userPosts && userPosts.length > 0 ? ( userPosts.map((post) => (

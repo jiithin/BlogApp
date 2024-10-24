@@ -89,31 +89,6 @@ function Header() {
 
     
     {currentUser ? (
-    //   <Dropdown
-    //   label={<Avatar alt="User settings" img={currentUser.profilePicture} size='sm' />}
-    //   arrowIcon={false}
-    //   inline
-    //   className='rounded-2xl'
-    // >
-    //   <Dropdown.Header>
-    //     <span className="block text-sm font-bold text-center text-purple-500 dark:text-purple-400">{currentUser.username}</span>
-    //     <span className="block truncate text-sm text-center font-medium">{currentUser.email}</span>
-    //   </Dropdown.Header>
-
-    //   <Link to={'/dashboard'} >
-    //   <Dropdown.Item >Dashboard</Dropdown.Item>
-    //   </Link>
-
-    //   <Link to={'/dashboard?tab=profile'}>
-    //   <Dropdown.Item>Profile</Dropdown.Item>
-    //   </Link>
-      
-    //   <Dropdown.Divider />
-    //   <Dropdown.Item className=' text-red-400 dark:text-inherrit rounded-b-2xl' 
-    //   onClick={handleSignout}>
-    //     Sign out
-    //     </Dropdown.Item>
-    // </Dropdown>
     <>
     <Link to={'/dashboard?tab=stats'} className='hidden lg:inline md:inline'>
     <Avatar img={currentUser.profilePicture} >
@@ -142,7 +117,7 @@ function Header() {
   <Navbar.Toggle className=' text-purple-400 dark:text-purple-400'/>
 </div>
 
-<Navbar.Collapse className='lg:text-center bg-transparent '>
+<Navbar.Collapse className='lg:text-center bg-transparent lg:hidden md:hidden'>
 <form onSubmit={handleSubmit}>
   <TextInput
     type='text'

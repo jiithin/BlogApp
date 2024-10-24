@@ -45,7 +45,6 @@ function Projects() {
   return (
     <>
         <div><p id='head' className='text-4xl font-Montserrat font-semibold py-5 text-center justify-center '>Latest Blogs</p></div>
-
 <div class="flex flex-wrap place-items-center font-Montserrat mt-3">
   <section class="relative mx-auto">
         <form onSubmit={handleSubmit} className='w-72'>
@@ -64,7 +63,7 @@ function Projects() {
 
         {/* sample */}
 <div className="flex flex-col h-auto bg-transparent items-center mt-5 font-Montserrat">
-  <div className="grid gap-8 px-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+  <div className="grid gap-4 lg:px-16 px-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
 
     {/* cards */}
   {userPosts && userPosts.length > 0 ? (userPosts.map((post) => (

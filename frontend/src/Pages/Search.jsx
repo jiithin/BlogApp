@@ -3,6 +3,7 @@ import { Button, Select, TextInput } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PostCard from '../Components/PostCard';
+import { IoSearchOutline } from "react-icons/io5";
 
 function Search() {
     const [sidebarData, setSidebarData] = useState({
@@ -15,7 +16,7 @@ function Search() {
       const [posts, setPosts] = useState([]);
       const [loading, setLoading] = useState(false);
       const [showMore, setShowMore] = useState(false);
-    
+      const [searchTerm, setSearchTerm] = useState('');
       const location = useLocation();
     
       const navigate = useNavigate();
@@ -100,12 +101,45 @@ function Search() {
           }
         }
       };
+              // search
+              useEffect(() => {
+                const urlParams = new URLSearchParams(location.search);
+                const searchTermFromUrl = urlParams.get('searchTerm');
+                if (searchTermFromUrl) {
+                  setSearchTerm(searchTermFromUrl);
+                }
+              }, [location.search]);
+          
+              const handleSearch = (e) => {
+                e.preventDefault();
+                const urlParams = new URLSearchParams(location.search);
+                urlParams.set('searchTerm', searchTerm);
+                const searchQuery = urlParams.toString();
+                navigate(`/search?${searchQuery}`);
+              };
   return (
-    <div className='flex flex-col max-h-screen  items-center justify-center font-Montserrat'>
+    <div className='flex flex-col h-auto  items-center justify-center font-Montserrat'>
 
       <div className='mb-32'>
         <div className='flex '>
-        <p className='text-3xl font-semibold text-slate-600 dark:text-slate-300 p-3 mt-5 '>
+
+        <div className="hidden lg:inline md:inline py-3">
+<div class="flex flex-wrap place-items-center font-Montserrat mt-4">
+  <section class="relative mx-auto">
+        <form onSubmit={handleSearch} className='w-72'>
+  <TextInput
+    type='text'
+    placeholder='Search...'
+    rightIcon={IoSearchOutline}
+    className=''
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  </form>
+  </section>
+</div>
+</div>
+        <p className='text-2xl font-semibold text-slate-600 dark:text-slate-300 p-3 mt-5 '>
           Search results for "<span className='text-blue-500 dark:text-blue-400'>
           {sidebarData.searchTerm}</span>"
         </p>

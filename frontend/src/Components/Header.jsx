@@ -142,8 +142,8 @@ function Header() {
   </Navbar.Link> */}
   
   {currentUser ? (
-  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-end lg:hidden md:hidden'>
-    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-ElsieSwash font-semibold'>SignOut</Link>
+  <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-end lg:hidden md:hidden p-4'>
+    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-Montserrat font-bold'>SignOut</Link>
   </Navbar.Link>):(<></>)}
   
 </Navbar.Collapse>

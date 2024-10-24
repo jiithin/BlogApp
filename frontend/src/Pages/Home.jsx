@@ -1,13 +1,15 @@
 
+import { TextInput } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 //import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { IoSearchOutline } from "react-icons/io5";
 
 function Home() {
   //const {currentUser}=useSelector((state)=>state.user)
   const [userPosts,setUserPosts]=useState([])
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
   //get all posts only 9 posts willshow becoz we set a query limiter
   useEffect(()=>{
@@ -28,6 +30,22 @@ function Home() {
   });
 
 
+    // search
+    useEffect(() => {
+      const urlParams = new URLSearchParams(location.search);
+      const searchTermFromUrl = urlParams.get('searchTerm');
+      if (searchTermFromUrl) {
+        setSearchTerm(searchTermFromUrl);
+      }
+    }, [location.search]);
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const urlParams = new URLSearchParams(location.search);
+      urlParams.set('searchTerm', searchTerm);
+      const searchQuery = urlParams.toString();
+      navigate(`/search?${searchQuery}`);
+    };
 
 
   
@@ -35,6 +53,44 @@ function Home() {
     
     
 <>
+{/* second nav */}
+<div class="flex flex-wrap place-items-center font-Montserrat">
+  <section class="relative mx-auto">
+
+    <div class="flex justify-between bg-transparent text-white w-screen">
+      <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+        <p class="text-3xl font-medium  text-slate-700">
+          <span className=' font-semibold text-transparent bg-clip-text bg-gradient-to-l to-blue-300 from-purple-500'>Divulge.</span> Blog
+        </p>
+
+        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+          <li><a class="hover:text-gray-500" href="#">Home</a></li>
+          <li><a class="hover:text-gray-500" href="#">Catagory</a></li>
+          <li><a class="hover:text-gray-500" href="#">Collections</a></li>
+          <li><a class="hover:text-gray-500" href="#">Contact Us</a></li>
+        </ul>
+
+        <div class=" space-x-5 items-center">
+        <form onSubmit={handleSubmit}>
+  <TextInput
+    type='text'
+    placeholder='Search...'
+    rightIcon={IoSearchOutline}
+    className=''
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</div>
+
+
+
+
 {userPosts && userPosts.length > 0 ? ( 
 <div className="mx-auto h-auto flex items-center justify-center lg:px-36 px-5 my-16 " onClick={(e) =>  navigate(`/post/${userPosts[0].slug}`)}>
   <div className="flex flex-col w-full bg-white rounded shadow-lg ">
@@ -47,10 +103,10 @@ function Home() {
             <div className="md:text-3xl">{new Date(userPosts[0].createdAt).toLocaleDateString()}  </div>
         </div>
         <div className="p-4 font-normal text-gray-800 md:w-3/4">
-            <h1 className="mb-4 text-4xl font-poppins poppins-semibold leading-none tracking-tight text-gray-800 line-clamp-2">{userPosts[0].title}</h1>
+            <h1 className="mb-4 text-4xl font-Montserrat Montserrat-semibold leading-none tracking-tight text-gray-800 line-clamp-2">{userPosts[0].title}</h1>
             <p className="leading-normal" dangerouslySetInnerHTML={{ __html: userPosts && userPosts[0].content.slice(0, userPosts[0].content.indexOf('.'))}}></p>
             <div className="flex flex-row items-center mt-4 text-gray-700">
-                <div className="w-auto bg-slate-900 text-white font-poppins p-1">
+                <div className="w-auto bg-slate-900 text-white font-Montserrat p-1">
                 {userPosts[0].category}
                 </div>
                 <div className="w-full flex justify-end text-gray-400">
@@ -101,7 +157,7 @@ function Home() {
     </div>
     </Link>
 </div>):(
-  <p className='divulge text-center py-12 lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No posts to find.</p>
+  <p className='divulge text-center py-12 lg:text-3xl text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No posts to find.</p>
     )}
 
 
@@ -117,18 +173,18 @@ function Home() {
 
 
   <div
-    className="container text-white z-10  font-poppins flex flex-col gap-1"
+    className="container text-white z-10  font-Montserrat flex flex-col gap-1"
   >
     
     <div className="h-fit w-full">
       {/* category tag */}
     <div className="flex justify-center items-center h-fit w-fit gap-1">
-      <div className="  text-black poppins-medium text-sm font-normal p-1 bg-gray-100 duration-300 cursor-pointer">
+      <div className="  text-black Montserrat-medium text-sm font-normal p-1 bg-gray-100 duration-300 cursor-pointer">
         <p>{post.category}</p>
       </div>
     </div>
       
-    <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 line-clamp-2">
+    <p className="card_heading lg:text-xl px-1 Montserrat-medium text-md text-gray-100 line-clamp-2">
         {post.title}
       </p>
       {/* <p className="text-sm text-gray-200">

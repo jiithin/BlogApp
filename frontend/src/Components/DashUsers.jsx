@@ -70,7 +70,7 @@ function DashUsers() {
         {currentUser.isAdmin && users.length > 0 ? (
         <Card className="max-w-3xl mx-auto bg-gray-100/75 dark:bg-slate-800/50 shadow-lg mt-5">
       <div className=" flex items-center justify-between">
-        <h5 className="text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">All Users</h5>
+        <h5 className="text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">All Users</h5>
         {showMore && (
         <button onClick={handleShowMore} className="text-sm font-medium text-indigo-600 dark:text-indigo-500">
           View all
@@ -117,7 +117,7 @@ function DashUsers() {
       </div>
     </Card>
         ) : (
-          <p className='divulge text-center py-12 lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No users to find.</p>
+          <p className='divulge text-center py-12 lg:text-3xl text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No users to find.</p>
         )}
 
          {showMore && (

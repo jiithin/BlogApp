@@ -8,10 +8,9 @@ import { app } from '../firebase';
 import {updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice.js'
 import { FaUserShield } from "react-icons/fa";
 import { BiSolidTrashAlt } from "react-icons/bi";
-import { BsFilePost } from "react-icons/bs";
 import { HiInformationCircle } from "react-icons/hi";
 import { FcOk } from "react-icons/fc";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function DashProfile() {
     const {currentUser,loading} = useSelector((state) => state.user);
@@ -215,7 +214,7 @@ function DashProfile() {
                 </div>
               </Tooltip>
               <div className="flex items-center space-x-2 mt-2">
-                <p className="divulge font-poppins poppins-medium text-2xl text-center py-2 lg:block font">
+                <p className="divulge font-Montserrat Montserrat-medium text-2xl text-center py-2 lg:block font">
                   {currentUser.username}
                 </p>
 
@@ -229,16 +228,7 @@ function DashProfile() {
             <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8">
               
               {/* create post button */}
-              {currentUser.isAdmin && (
-                <Link to={'/create-post'}>
-                <button
-                  className="sigh mt-2 mb-2 w-44 flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
-                >
-                  <span>Create a Post</span>
-                  <BsFilePost />
-                </button>
-                </Link>
-              )}
+
 
               {/* image uplaod message */}
               {profileImageUploadProgress && (

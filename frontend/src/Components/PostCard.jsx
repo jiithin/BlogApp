@@ -15,18 +15,18 @@ className="card shadow-lg lg:h-[15em] h-[15em] max-w-screen-xl group gap-[0.5em]
 
 
 <div
-  className="container text-white z-10  font-poppins flex flex-col gap-1"
+  className="container text-white z-10  font-Montserrat flex flex-col gap-1"
 >
   
   <div className="h-fit w-full"> */}
     {/* category tag */}
   {/* <div className="flex justify-center items-center h-fit w-fit gap-1">
-    <div className="  text-black poppins-medium text-sm font-normal p-1 bg-gray-100 duration-300 cursor-pointer">
+    <div className="  text-black Montserrat-medium text-sm font-normal p-1 bg-gray-100 duration-300 cursor-pointer">
       <p>{post.category}</p>
     </div>
   </div>
     
-  <p className="card_heading lg:text-xl px-1 poppins-medium text-md text-gray-100 bg-gradient-to-t from-gray-800/10 via-gray-800/40 to-gray-800/10 backdrop-blur-sm">
+  <p className="card_heading lg:text-xl px-1 Montserrat-medium text-md text-gray-100 bg-gradient-to-t from-gray-800/10 via-gray-800/40 to-gray-800/10 backdrop-blur-sm">
       {post.title.slice(0,80)}...
     </p>
 
@@ -48,7 +48,7 @@ className="card shadow-lg lg:h-[15em] h-[15em] max-w-screen-xl group gap-[0.5em]
 
            {/* text */}
             <div className="min-w-0 flex-1">
-                <p className="truncate text-lg font-medium text-purple-900 dark:text-purple-300 line-clamp-2">{post.title}</p>
+                <p className="truncate text-lg font-semibold text-purple-900 dark:text-purple-300 line-clamp-2">{post.title}</p>
                 <p className="post-content hidden lg:inline md:inline text-slate-950 dark:text-gray-400 pb-2 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content.slice(0, post.content.indexOf('.')) }}></p>
                 <p className="post-content lg:hidden md:hidden text-slate-950 dark:text-gray-400 pb-2 text-pretty" dangerouslySetInnerHTML={{ __html: post && post.content.slice(0, 70) }}></p>
                 <div className="shrink-0 flex">

@@ -4,7 +4,7 @@ import logo from '../assets/divulge.png'
 function About() {
   return (
     <>
-    <div><p id='head' className='text-4xl font-poppins poppins-bold py-3'>About Us</p></div>
+    <div><p id='head' className='text-4xl font-Montserrat font-semibold py-3'>About Us</p></div>
     
     
 

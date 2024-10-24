@@ -20,7 +20,7 @@ function Footer() {
         <div className="flex items-center justify-between">
             <a href='/' className="flex items-center  space-x-3 rtl:space-x-reverse">
                 <img src={logo} className="h-5" alt="Flowbite Logo" />
-                <span className="self-center text-xl font-semibold whitespace-nowrap font-poppins poppins-medium text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Divulge.</span>
+                <span className="self-center text-xl font-semibold whitespace-nowrap font-ElsieSwash text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600">Divulge.</span>
             </a>
 
             {/* darkmode button footer */}

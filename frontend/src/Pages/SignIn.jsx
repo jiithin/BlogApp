@@ -52,7 +52,7 @@ function SignIn() {
         {/* left */}
         <div className='flex-1'>
           <Link to='/sign-in'>
-          <p id='auth' className=' text-7xl font-poppins poppins-medium py-3'>Sign In</p>
+          <p id='auth' className=' text-7xl font-Montserrat Montserrat-medium py-3'>Sign In</p>
             
           </Link>
           <p className='font-semibold text-center text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-300 from-purple-400 opacity-80'>Sign In with your existing email.</p>
@@ -103,7 +103,7 @@ function SignIn() {
 
             <div className='flex gap-2 text-sm mt-5 text-gray-500 dark:text-gray-400'>
             <span>Don't have an account?</span>
-            <Link to='/sign-up' className=' text-purple-400 dark:text-purple-400 font-poppins poppins-semibold'>
+            <Link to='/sign-up' className=' text-purple-400 dark:text-purple-400 font-Montserrat Montserrat-semibold'>
               Create an account.
             </Link>
           </div>

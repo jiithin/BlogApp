@@ -68,7 +68,7 @@ function Header() {
   className='self-center whitespace-nowrap text-sm sm:text-xl  flex'
 >
     <img src={logo} className="mr-3 h-6 sm:h-9" alt=" Logo"/>
-    <span className="divulge self-center whitespace-nowrap lg:text-2xl text-lg font-poppins poppins-semibold">Divulge.</span>
+    <span className="divulge self-center whitespace-nowrap lg:text-2xl text-lg font-ElsieSwash font-bold ">Divulge.</span>
 </Link>
 
 
@@ -143,7 +143,7 @@ function Header() {
 </>
     ):(
           <Link to='/sign-in' className=' '>
-            <button className='divulge bg-transparent dark:bg-inherit py-2 font-poppins poppins-semibold'>
+            <button className='divulge bg-transparent dark:bg-inherit py-2 font-Montserrat Montserrat-semibold'>
             Sign In
             </button>
         </Link>
@@ -154,33 +154,35 @@ function Header() {
 </div>
 
 <Navbar.Collapse className='lg:text-center bg-transparent '>
-<form >
+<form onSubmit={handleSubmit}>
   <TextInput
     type='text'
     placeholder='Search...'
     rightIcon={IoSearchOutline}
     className='lg:hidden sm:hidden'
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
 
   />
 
   
 </form>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
-    <Link to={'/'} className='text-purple-500 dark:text-purple-400 lg:text-base  font-poppins poppins-medium'>Home</Link>
+    <Link to={'/'} className='text-purple-500 dark:text-purple-400 lg:text-base  font-Montserrat Montserrat-medium'>Home</Link>
   </Navbar.Link>
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300 text-center'>
-    <Link to={'/blogs'} className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Blogs</Link>
+    <Link to={'/blogs'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat Montserrat-medium'>Blogs</Link>
   </Navbar.Link>
   {/* <Navbar.Link  as={'div'} className='hover:translate-y-0.5  duration-300'>
-    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Features</Link>
+    <Link to='/about' className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat Montserrat-medium'>Features</Link>
   </Navbar.Link> */}
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-center'>
-    <Link to={'/about'} className='text-purple-500 dark:text-purple-400 lg:text-base font-poppins poppins-medium'>Contact</Link>
+    <Link to={'/about'} className='text-purple-500 dark:text-purple-400 lg:text-base font-Montserrat Montserrat-medium'>Contact</Link>
   </Navbar.Link>
   
   {currentUser ? (
   <Navbar.Link  as={'div'} className='hover:translate-y-0.5 duration-300 text-end lg:hidden md:hidden'>
-    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-poppins poppins-medium'>SignOut</Link>
+    <Link onClick={handleSignout} className='text-red-500 dark:text-red-400 lg:text-base font-Montserrat Montserrat-medium'>SignOut</Link>
   </Navbar.Link>):(<></>)}
   
 </Navbar.Collapse>

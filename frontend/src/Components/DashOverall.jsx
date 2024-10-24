@@ -71,14 +71,14 @@ function DashOverall() {
   return (
     <>
      {/* statistcs */}
-       <div className="flex-1 bg-transparent rounded-lg mt-2 p-8 ">
+       <div className="flex-1 bg-transparent rounded-lg mt-2 p-8 font-Montserrat ">
                     {/* <h4 className="text-xl text-purple-800/75 dark:text-purple-300 font-mono font-bold ">Dashboard</h4> */}
     <div className="flex-1 flex flex-col items-center lg:items-center justify-center px-8 mb-5">
             {/* create post button */}
               {currentUser.isAdmin && (
                 <Link to={'/create-post'}>
                 <button
-                  className="sigh mt-2 mb-2 w-44 h-11 font-poppins flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
+                  className="sigh mt-2 mb-2 w-44 h-11 font-Montserrat flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-600/75 text-red-500 hover:text-gray-100 dark:hover:text-gray-200 px-3 py-2 rounded-lg font-bold text-sm space-x-2 hover:hover:scale-105  transition duration-300"
                 >
                   <span>Create a Post</span>
                   <BsFilePost />
@@ -151,24 +151,23 @@ function DashOverall() {
                 </div>
 
 {currentUser.isMod && (
-    <div className='flex flex-wrap gap-4 py-3 mx-auto justify-center'>
+    <div className='flex flex-wrap gap-4 p-3 mx-auto justify-center font-Montserrat'>
         {/* recent users */}
         <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <p className='text-center'>Recent users</p>
             <p>
-              <Link to={'/dashboard?tab=users'}>See all</Link>
+              <Link to={'/dashboard?tab=users'} className='text-purple-600 dark:text-purple-400'>All users</Link>
             </p>
           </div>
-          <Table hoverable>
-            <Table.Head>
-              <Table.HeadCell>User image</Table.HeadCell>
-              <Table.HeadCell>Username</Table.HeadCell>
+          <Table hoverable className='bg-transparent'>
+            <Table.Head className='bg-transparent'>
+
             </Table.Head>
             {users &&
               users.map((user) => (
                 <Table.Body key={user._id} className='divide-y'>
-                  <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                  <Table.Row className='bg-white dark:border-gray-700  bg-transparent'>
                     <Table.Cell>
                       <img
                         src={user.profilePicture}
@@ -176,7 +175,7 @@ function DashOverall() {
                         className='w-10 h-10 rounded-full bg-gray-500'
                       />
                     </Table.Cell>
-                    <Table.Cell>{user.username}</Table.Cell>
+                    <Table.Cell className='text-end'>{user.username}</Table.Cell>
                   </Table.Row>
                 </Table.Body>
               ))}
@@ -186,18 +185,17 @@ function DashOverall() {
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <p className='text-center p-2'>Recent comments</p>
             <p>
-              <Link to={'/dashboard?tab=comments'}>See all</Link>
+              <Link to={'/dashboard?tab=comments'} className='text-purple-600 dark:text-purple-400'>See all comments</Link>
             </p>
           </div>
           <Table hoverable>
             <Table.Head>
-              <Table.HeadCell>Comment content</Table.HeadCell>
-              <Table.HeadCell>Likes</Table.HeadCell>
+
             </Table.Head>
             {comments &&
               comments.map((comment) => (
                 <Table.Body key={comment._id} className='divide-y'>
-                  <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                  <Table.Row className='bg-white dark:border-gray-700  bg-transparent'>
                     <Table.Cell className='w-96'>
                         <p className='line-clamp-2'>{comment.content}</p>
                     </Table.Cell>
@@ -211,19 +209,17 @@ function DashOverall() {
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <p className='text-center p-2'>Recent posts</p>
             <p>
-              <Link to={'/dashboard?tab=posts'}>See all</Link>
+              <Link to={'/dashboard?tab=posts'} className='text-purple-600 dark:text-purple-400'>See all posts</Link>
             </p>
           </div>
           <Table hoverable>
             <Table.Head>
-              <Table.HeadCell>Post image</Table.HeadCell>
-              <Table.HeadCell>Post Title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
+
             </Table.Head>
             {posts &&
               posts.map((post) => (
                 <Table.Body key={post._id} className='divide-y'>
-                  <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                  <Table.Row className='bg-white dark:border-gray-700 bg-transparent'>
                     <Table.Cell>
                       <img
                         src={post.image}

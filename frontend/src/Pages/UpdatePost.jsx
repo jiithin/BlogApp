@@ -121,7 +121,7 @@ const handleUpdloadImage = async () => {
   return (
     <>
     <div className='p-3 max-w-6xl mx-auto min-h-screen'>
-      <p className=' text-center lg:text-3xl md:text-xl sm:text-xl my-7 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600  font-poppins poppins-medium'>Update Post</p>
+      <p className=' text-center lg:text-3xl md:text-xl sm:text-xl my-7 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600  font-Montserrat Montserrat-medium'>Update Post</p>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
 
         {/*image upload error alerts */}

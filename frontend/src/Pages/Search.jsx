@@ -101,12 +101,13 @@ function Search() {
         }
       };
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col max-h-screen items-center justify-center font-Montserrat'>
 
-      <div className='max-h-screen'>
+      <div className='mb-32'>
         <div className='flex '>
         <p className='text-3xl font-semibold  p-3 mt-5 '>
-          Search results for "{sidebarData.searchTerm}"
+          Search results for "<span className='text-blue-500 dark:text-blue-400'>
+          {sidebarData.searchTerm}</span>"
         </p>
         </div>
         
@@ -127,7 +128,7 @@ function Search() {
               <option value='Fitness'>Fitness</option>
               <option value='Eduction'>Eduction</option>
             </Select>
-            <button type='submit' className='font-poppins font-semibold px-3 text-purple-600 hover:-translate-y-1 hover:scale-105 transition duration-300'>
+            <button type='submit' className='font-Montserrat font-semibold px-3 text-purple-600 hover:-translate-y-1 hover:scale-105 transition duration-300'>
             Apply
           </button>
           </div>
@@ -136,16 +137,16 @@ function Search() {
 
         <div className=' mt-5 justify-center grid grid-cols-1  gap-4 p-4'>
           {!loading && posts.length === 0 && (
-            <p className='text-xl text-gray-500'>No posts found.</p>
+            <p className='text-xl text-gray-500 text-center'>No posts found.</p>
           )}
-          {loading && <p className='text-xl text-gray-500'>Loading...</p>}
+          {loading && <p className='text-xl text-gray-500 text-center'>Loading...</p>}
           {!loading &&
             posts &&
             posts.map((post) => <PostCard key={post._id} post={post} />)}
           {showMore && (
             <button
               onClick={handleShowMore}
-              className='text-teal-500 text-lg hover:underline p-7 w-full'
+              className='text-indigo-600 dark:text-indigo-500 text-lg p-7 w-full'
             >
               Show More
             </button>

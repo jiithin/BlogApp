@@ -80,12 +80,12 @@ function DashComments() {
       <>
         <Table hoverable className='shadow-md'>
           <Table.Head>
-            <Table.HeadCell className='font-poppins'>Added</Table.HeadCell>
-            <Table.HeadCell className='font-poppins'>Comment</Table.HeadCell>
-            <Table.HeadCell className='font-poppins'>Likes</Table.HeadCell>
-            <Table.HeadCell className='font-poppins'>PostId</Table.HeadCell>
-            <Table.HeadCell className='font-poppins'>UserId</Table.HeadCell>
-            <Table.HeadCell className='font-poppins'>Action</Table.HeadCell>
+            <Table.HeadCell className='font-Montserrat'>Added</Table.HeadCell>
+            <Table.HeadCell className='font-Montserrat'>Comment</Table.HeadCell>
+            <Table.HeadCell className='font-Montserrat'>Likes</Table.HeadCell>
+            <Table.HeadCell className='font-Montserrat'>PostId</Table.HeadCell>
+            <Table.HeadCell className='font-Montserrat'>UserId</Table.HeadCell>
+            <Table.HeadCell className='font-Montserrat'>Action</Table.HeadCell>
           </Table.Head>
           {comments.map((comment) => (
             <Table.Body className='divide-y' key={comment._id}>
@@ -113,7 +113,7 @@ function DashComments() {
         {showMore && (
           <button
             onClick={handleShowMore}
-            className='w-full text-purple-500 font-poppins poppins-medium self-center text-sm py-7'
+            className='w-full text-purple-500 font-Montserrat Montserrat-medium self-center text-sm py-7'
           >
             Show more
           </button>
@@ -121,7 +121,7 @@ function DashComments() {
 </>
          
         ) : (
-          <p className='divulge text-center py-12 lg:text-3xl text-xl font-poppins poppins-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No comments to find.</p>
+          <p className='divulge text-center py-12 lg:text-3xl text-xl font-Montserrat Montserrat-medium mb-4 text-transparent bg-clip-text bg-gradient-to-l to-blue-400 from-purple-600 '>No comments to find.</p>
         )}
 
       

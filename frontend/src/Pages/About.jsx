@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../assets/divulge.png'
+import { MdArrowForwardIos } from "react-icons/md";
+import screenshot from '../assets/about.png'
 
 function About() {
   return (
@@ -23,19 +25,15 @@ function About() {
                         About Us
                     </p> */}
                     <h2 className="mb-6 max-w-lg text-5xl font-light leading-snug tracking-tight text-g1 sm:text-7xl sm:leading-snug">
-                        We make you look
-                        <span className="my-1 inline-block border-b-8 border-g4 bg-purple-500 px-4 font-bold text-g4 animate__animated animate__flash">different</span>
+                    Discover, delve deeper
+                        <span className="my-1 inline-block border-b-8 border-g4 bg-purple-500 px-4 font-bold text-g4 animate__animated animate__flash">Divulge</span>
                     </h2>
-                    <p className="text-base text-gray-700">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque it.</p>
+                    <p className="text-base text-gray-700">Divulge is a collaborative platform created by a jithin. We're committed to fostering a community where ideas are shared, knowledge is gained, and connections are made.</p>
                     <div className="mt-10 flex flex-col items-center md:flex-row backdrop-blur-md">
                         <a href="/" className="mb-3 inline-flex h-12 w-full items-center justify-center rounded-xl bg-purple-600/50 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-500/50 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
                             View More</a>
-                        <a href="/" aria-label="" className="group inline-flex items-center font-semibold text-g1">Watch how
-                            it works
-                            <svg xmlns="http://www.w3.org/2000/svg" className="ml-4 h-6 w-6 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
+                        <a href="https://github.com/jiithin/" aria-label="" className="group inline-flex items-center font-semibold text-g1">Watch how
+                            it works<MdArrowForwardIos className='ml-2 group-hover:translate-x-2 delay-100 duration-200' />
                         </a>
                     </div>
                 </div>
@@ -47,7 +45,7 @@ function About() {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3"></path>
                 </svg>
                 <div className="abg-orange-400 mx-auto w-fit overflow-hidden rounded-[6rem] rounded-br-none rounded-tl-none">
-                     <img src="https://placehold.co/400x400"/>
+                     <img src={screenshot}/>
                 </div>
             </div>
         </div>

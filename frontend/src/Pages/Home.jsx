@@ -67,11 +67,11 @@ function Home() {
           <Link to={'/blogs'} className='px-3'>
             Latest Blogs
             </Link>
-          <Link to={'/about'} className='px-5'>
+          <Link to={'/updates'} className='px-5'>
             Product News
             </Link>
             <span className='text-2xl'>|</span>
-            <Link  className='px-3'>
+            <Link to={'/about'} className='px-3'>
             Contact 
             </Link>
         </div>

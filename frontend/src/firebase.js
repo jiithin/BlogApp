@@ -5,12 +5,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "divulge-blog.firebaseapp.com",
-  projectId: "divulge-blog",
-  storageBucket: "divulge-blog.appspot.com",
-  messagingSenderId: "727270245085",
-  appId: "1:727270245085:web:a769352fea229c2da99134"
+//paste firebase config here
 };
 
 // Initialize Firebase
